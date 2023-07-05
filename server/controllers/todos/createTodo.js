@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { v4: uuid } = require("uuid");
 const { statusCodes } = require("../../constants/statuscodes");
+const { getIndexFromId } = require("../../constants/getIndexFromId");
 
 const TODOS_DIRECTORY = path.join(
   __dirname,
@@ -20,15 +21,6 @@ const USERS_DIRECTORY = path.join(
   "users",
   "users.json"
 );
-
-const getIndexFromId = (arr, id) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].id === id) {
-      return i;
-    }
-  }
-  return -1;
-};
 
 const createTodo = async (req, res) => {
   try {
@@ -66,7 +58,7 @@ const createTodo = async (req, res) => {
           fs.writeFileSync(TODOS_DIRECTORY, JSON.stringify(TODOS));
           res
             .status(statusCodes.CREATED)
-            .json({ message: "Todo created successfully", id: newTodo._id });
+            .json({ message: "Todo created successfully", todo: newTodo });
         }
       }
     }

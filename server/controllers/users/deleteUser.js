@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { statusCodes } = require("../../constants/statuscodes");
+const { getIndexFromId } = require("../../constants/getIndexFromId");
+const { removeUserById } = require("../../constants/removeUserById");
 const USERS_DIRECTORY = path.join(
   __dirname,
   "..",
@@ -9,27 +11,6 @@ const USERS_DIRECTORY = path.join(
   "users",
   "users.json"
 );
-
-const getIndexFromId = (arr, id) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].id === id) {
-      return i;
-    }
-  }
-  return -1;
-};
-
-const removeUserById = (arr, id) => {
-  let newArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].id !== id) {
-      newArray.push(arr[i]);
-    } else {
-      continue;
-    }
-  }
-  return newArray;
-};
 
 const deleteUser = async (req, res) => {
   try {
