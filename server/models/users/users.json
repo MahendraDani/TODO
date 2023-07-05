@@ -43,5 +43,14 @@
     "email": "louis@example.com",
     "password": "$2a$10$H8fQHyaKKsZwsaa4KCDyvedM9O7.Ik2SSbstQ.QMOgbjXjZSMoPnC",
     "createdAt": "2023-07-05T12:40:50.491Z"
+  },
+  {
+    "id": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "firstName": "Mike",
+    "lastName": "Ross",
+    "fullName": "Mike Ross",
+    "email": "mike@example.com",
+    "password": "$2a$10$Wttd9usqmX7xqaJWev5a9e2/xm.yZK.9.bIGQV0NL7FZGPPiDQSxe",
+    "createdAt": "2023-07-05T14:26:56.526Z"
   }
 ]

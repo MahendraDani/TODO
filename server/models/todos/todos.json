@@ -1,35 +1,47 @@
 [
   {
-    "_id": 1,
-    "title": "Todo title here",
-    "description": "Todo description here",
-    "completed": false,
-    "createdBy": "Name of the person",
-    "createdAt": "Date and time when todo created"
-  },
-  {
-    "_id": 2,
-    "title": "Eat Lunch",
-    "description": "Go to Hotel Taj to eat lunch",
-    "completed": false,
-    "createdBy": "rick@exmaple.com",
-    "createdAt": "Date and time when todo created"
-  },
-  {
-    "_id": 3,
-    "title": "Play cricket",
-    "description": "Complete homework before playing cricket! ",
-    "completed": false,
-    "createdBy": "harvey@example.com",
-    "createdAt": "Date and time when todo created"
-  },
-  {
-    "_id": "952cdaaf-5980-400f-bc1f-743f94fa7812",
+    "_id": "73d9dda4-9b50-4716-a51d-d1aea51992de",
     "userId": "cf0561da-fdd6-405f-8ea7-509fc6f5060f",
-    "title": "Sample todo title",
-    "description": "Sample todo description",
+    "title": "Eat breakfast",
+    "description": "Eat aloo and dossa",
     "isCompleted": true,
     "createdBy": "Rick Sorkin",
-    "createdAt": "2023-07-05T12:51:53.764Z"
+    "createdAt": "2023-07-05T13:27:30.432Z"
+  },
+  {
+    "_id": "620654d8-094e-4ee7-89f1-d8a245bf0a39",
+    "userId": "cf0561da-fdd6-405f-8ea7-509fc6f5060f",
+    "title": "Sing song",
+    "description": "But I don't know how to sing",
+    "isCompleted": true,
+    "createdBy": "Rick Sorkin",
+    "createdAt": "2023-07-05T13:27:55.215Z"
+  },
+  {
+    "_id": "8640f981-4fc5-40c2-a126-88bc23c34c29",
+    "userId": "e3023c62-14c3-45ea-9e2a-5ef44ee90213",
+    "title": "Win a case",
+    "description": "Mike lets win the case",
+    "isCompleted": true,
+    "createdBy": "Harvey Specter",
+    "createdAt": "2023-07-05T13:28:46.247Z"
+  },
+  {
+    "_id": "3ec80984-1ead-4f18-a3a5-92c1c06c6ed1",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "title": "Schedule calendar",
+    "description": "Schedule entire next week",
+    "isCompleted": false,
+    "createdBy": "Mike Ross",
+    "createdAt": "2023-07-05T14:27:29.186Z"
+  },
+  {
+    "_id": "3f314248-f177-4c17-8a1f-783f703fc253",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "title": "Practice maths",
+    "description": "Solve 10 problems of calculus",
+    "isCompleted": false,
+    "createdBy": "Mike Ross",
+    "createdAt": "2023-07-05T14:28:00.882Z"
   }
 ]

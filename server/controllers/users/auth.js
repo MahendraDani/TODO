@@ -4,6 +4,7 @@ const { statusCodes } = require("../../constants/statuscodes");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { getIndexFromEmail } = require("../../constants/getIndexFromEmail");
 
 const USERS_DIRECTORY = path.join(
   __dirname,
@@ -13,15 +14,6 @@ const USERS_DIRECTORY = path.join(
   "users",
   "users.json"
 );
-
-const getIndexFromEmail = (arr, email) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].email === email) {
-      return i;
-    }
-  }
-  return -1;
-};
 
 const signupController = async (req, res) => {
   try {
