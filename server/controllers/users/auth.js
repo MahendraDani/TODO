@@ -3,6 +3,7 @@ const path = require("path");
 const { statusCodes } = require("../../constants/statuscodes");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const USERS_DIRECTORY = path.join(
   __dirname,
@@ -21,6 +22,7 @@ const getIndexFromEmail = (arr, email) => {
   }
   return -1;
 };
+
 const signupController = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
@@ -29,8 +31,8 @@ const signupController = async (req, res) => {
         .status(statusCodes.BAD_REQUEST)
         .json({ message: "All fields are required!" });
     } else {
-      const file = fs.readFileSync(USERS_DIRECTORY, "utf8");
-      const TODOS = JSON.parse(file);
+      const data = fs.readFileSync(USERS_DIRECTORY, "utf8");
+      let TODOS = await JSON.parse(data);
 
       const userIndex = getIndexFromEmail(TODOS, email);
       if (userIndex !== -1) {
@@ -61,4 +63,55 @@ const signupController = async (req, res) => {
   }
 };
 
-module.exports = { signupController };
+const loginController = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      res
+        .status(statusCodes.BAD_REQUEST)
+        .json({ message: "All fields are required!" });
+    } else {
+      // check if user exists!
+      const data = fs.readFileSync(USERS_DIRECTORY, "utf-8");
+      let TODOS = await JSON.parse(data);
+
+      const userIndex = getIndexFromEmail(TODOS, email);
+      if (userIndex === -1) {
+        res
+          .status(statusCodes.UNAUTHORIZED)
+          .json({ message: "Email or password invalid" });
+      } else {
+        // check if the password is valid for the email at userIndex
+        const userExists = bcrypt.compareSync(
+          password,
+          TODOS[userIndex].password
+        );
+        if (!userExists) {
+          res
+            .status(statusCodes.UNAUTHORIZED)
+            .json({ message: "Invalid password!" });
+        } else {
+          // sign jwt here
+          const token = jwt.sign(
+            {
+              id: TODOS[userIndex].id,
+              createdAt: TODOS[userIndex].createdAt,
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+          );
+          res
+            .status(statusCodes.SUCCESS)
+            .json({
+              message: "User logged in successfully",
+              accessToken: token,
+            });
+        }
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = { signupController, loginController };
