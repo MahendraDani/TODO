@@ -45,6 +45,7 @@ const signupController = async (req, res) => {
           id: uuid(),
           firstName: firstName,
           lastName: lastName,
+          fullName: `${firstName} ${lastName}`,
           email: email,
           password: hashedPassword,
           createdAt: new Date().toISOString(),

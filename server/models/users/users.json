@@ -3,6 +3,7 @@
     "id": "3b7e13b3-78d6-49ae-a633-b091b982ea84",
     "firstName": "Jerry",
     "lastName": "Doe",
+    "fullName": "Jerry Doe",
     "email": "jerry@example.com",
     "password": "jerry@123",
     "createdAt": "2023-07-05T05:30:53.199Z"
@@ -11,6 +12,7 @@
     "id": "5122af4e-caef-4474-b639-47daddcee61e",
     "firstName": "Spank",
     "lastName": "Altman",
+    "fullName": "Spank Altman",
     "email": "spank@example.com",
     "password": "$2a$10$BId.gbS/yqgJvtQeiAjCQeTt/3JB8EWemekFcIv3u7RJUujHjI8Be",
     "createdAt": "2023-07-05T05:41:29.590Z"
@@ -19,6 +21,7 @@
     "id": "e3023c62-14c3-45ea-9e2a-5ef44ee90213",
     "firstName": "Harvey",
     "lastName": "Specter",
+    "fullName": "Harvey Specter",
     "email": "harvey@example.com",
     "password": "$2a$10$ebRh66dsZK56wjkb4DRJw.3ulB.nWLUZtnzJH2tCXDwEJ/VC8tw2u",
     "createdAt": "2023-07-05T05:43:23.399Z"
@@ -27,8 +30,18 @@
     "id": "cf0561da-fdd6-405f-8ea7-509fc6f5060f",
     "firstName": "Rick",
     "lastName": "Sorkin",
+    "fullName": "Rick Sorkin",
     "email": "rick@example.com",
     "password": "$2a$10$FitsQlIT5WESUmD48m07xuDn0XP67XKcs/gAYyEFArqmSfOU8GU8a",
     "createdAt": "2023-07-05T05:45:09.929Z"
+  },
+  {
+    "id": "a92a204b-fa30-484f-9500-6229df4603df",
+    "firstName": "Louis",
+    "lastName": "Litt",
+    "fullName": "Louis Litt",
+    "email": "louis@example.com",
+    "password": "$2a$10$H8fQHyaKKsZwsaa4KCDyvedM9O7.Ik2SSbstQ.QMOgbjXjZSMoPnC",
+    "createdAt": "2023-07-05T12:40:50.491Z"
   }
 ]
