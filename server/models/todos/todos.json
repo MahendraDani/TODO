@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "_id": 1,
     "title": "Todo title here",
     "description": "Todo description here",
     "completed": false,
@@ -8,7 +8,7 @@
     "createdAt": "Date and time when todo created"
   },
   {
-    "id": 2,
+    "_id": 2,
     "title": "Eat Lunch",
     "description": "Go to Hotel Taj to eat lunch",
     "completed": false,
@@ -16,11 +16,20 @@
     "createdAt": "Date and time when todo created"
   },
   {
-    "id": 3,
+    "_id": 3,
     "title": "Play cricket",
     "description": "Complete homework before playing cricket! ",
     "completed": false,
     "createdBy": "harvey@example.com",
     "createdAt": "Date and time when todo created"
+  },
+  {
+    "_id": "952cdaaf-5980-400f-bc1f-743f94fa7812",
+    "userId": "cf0561da-fdd6-405f-8ea7-509fc6f5060f",
+    "title": "Sample todo title",
+    "description": "Sample todo description",
+    "isCompleted": true,
+    "createdBy": "Rick Sorkin",
+    "createdAt": "2023-07-05T12:51:53.764Z"
   }
 ]
