@@ -13,6 +13,9 @@ app.use(bodyParser.json());
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users/auth"));
 app.use("/users", validateUser, require("./routes/users/deleteUser"));
+
+app.use("/todos", require("./routes/todos/todos"));
+
 app.listen(PORT, () => {
   console.log(`Server running at port : ${PORT}`);
 });
