@@ -32,9 +32,9 @@ const signupController = async (req, res) => {
         .json({ message: "All fields are required!" });
     } else {
       const data = fs.readFileSync(USERS_DIRECTORY, "utf8");
-      let TODOS = await JSON.parse(data);
+      let USERS = await JSON.parse(data);
 
-      const userIndex = getIndexFromEmail(TODOS, email);
+      const userIndex = getIndexFromEmail(USERS, email);
       if (userIndex !== -1) {
         res
           .status(statusCodes.UNAUTHORIZED)
@@ -50,8 +50,8 @@ const signupController = async (req, res) => {
           createdAt: new Date().toISOString(),
         };
 
-        TODOS.push(newUser);
-        fs.writeFileSync(USERS_DIRECTORY, JSON.stringify(TODOS));
+        USERS.push(newUser);
+        fs.writeFileSync(USERS_DIRECTORY, JSON.stringify(USERS));
         res.status(statusCodes.SUCCESS).json({
           message: "User signed up successfully",
           id: newUser.id,
@@ -73,9 +73,9 @@ const loginController = async (req, res) => {
     } else {
       // check if user exists!
       const data = fs.readFileSync(USERS_DIRECTORY, "utf-8");
-      let TODOS = await JSON.parse(data);
+      let USERS = await JSON.parse(data);
 
-      const userIndex = getIndexFromEmail(TODOS, email);
+      const userIndex = getIndexFromEmail(USERS, email);
       if (userIndex === -1) {
         res
           .status(statusCodes.UNAUTHORIZED)
@@ -84,7 +84,7 @@ const loginController = async (req, res) => {
         // check if the password is valid for the email at userIndex
         const userExists = bcrypt.compareSync(
           password,
-          TODOS[userIndex].password
+          USERS[userIndex].password
         );
         if (!userExists) {
           res
@@ -94,18 +94,16 @@ const loginController = async (req, res) => {
           // sign jwt here
           const token = jwt.sign(
             {
-              id: TODOS[userIndex].id,
-              createdAt: TODOS[userIndex].createdAt,
+              id: USERS[userIndex].id,
+              createdAt: USERS[userIndex].createdAt,
             },
             process.env.JWT_SECRET,
             { expiresIn: "1h" }
           );
-          res
-            .status(statusCodes.SUCCESS)
-            .json({
-              message: "User logged in successfully",
-              accessToken: token,
-            });
+          res.status(statusCodes.SUCCESS).json({
+            message: "User logged in successfully",
+            accessToken: token,
+          });
         }
       }
     }
