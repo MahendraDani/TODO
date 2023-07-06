@@ -43,5 +43,50 @@
     "isCompleted": false,
     "createdBy": "Mike Ross",
     "createdAt": "2023-07-05T14:28:00.882Z"
+  },
+  {
+    "_id": "a850eb01-8252-4aff-8c5f-e5d8621839a2",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "title": "play guitar",
+    "description": "play guitar from 4pm to 7pm",
+    "isCompleted": "false",
+    "createdBy": "Mike Ross",
+    "createdAt": "2023-07-06T13:03:37.474Z"
+  },
+  {
+    "_id": "7c469638-188a-45a3-95c7-25ba19f77ae8",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "title": "study",
+    "description": "study maths",
+    "isCompleted": "true",
+    "createdBy": "Mike Ross",
+    "createdAt": "2023-07-06T13:04:57.126Z"
+  },
+  {
+    "_id": "ef2a5992-2209-4b62-a860-a934267b8504",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "title": "run",
+    "description": "run for 1000m",
+    "isCompleted": "true",
+    "createdBy": "Mike Ross",
+    "createdAt": "2023-07-06T13:09:05.399Z"
+  },
+  {
+    "_id": "afc8800d-a533-49d6-b81c-6dbaba7bb8d2",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "title": "sample todo",
+    "description": "sample description",
+    "isCompleted": "false",
+    "createdBy": "Mike Ross",
+    "createdAt": "2023-07-06T13:12:59.010Z"
+  },
+  {
+    "_id": "76c5ecd7-e828-4b22-a5ec-ab74419fe947",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "title": "test title",
+    "description": "test description",
+    "isCompleted": "true",
+    "createdBy": "Mike Ross",
+    "createdAt": "2023-07-06T13:15:11.691Z"
   }
 ]
