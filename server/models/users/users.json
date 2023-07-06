@@ -61,5 +61,14 @@
     "email": "dummy@example.com",
     "password": "$2a$10$PFkCdkmxAF/j3sPdkMTGc.UNppWGdIuYccYciij6hKnYWgLKWaqXW",
     "createdAt": "2023-07-06T11:55:41.154Z"
+  },
+  {
+    "id": "6098cb11-869d-4b86-8329-cfb086cd19aa",
+    "firstName": "Jhon",
+    "lastName": "Doe",
+    "fullName": "Jhon Doe",
+    "email": "jhon@example.com",
+    "password": "$2a$10$I2SaFfaB5ClTBqBnxg7K4Oyt6cOjPuVhehq7HMfAaCRFTXKTXFdXO",
+    "createdAt": "2023-07-06T12:36:05.622Z"
   }
 ]

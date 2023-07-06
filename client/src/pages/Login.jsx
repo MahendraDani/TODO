@@ -12,11 +12,21 @@ const Login = () => {
         password,
       });
       const token = response.data.accessToken;
+      const userId = response.data.userId;
       console.log(token);
       localStorage.setItem("token", token);
+      const userIdExists = localStorage.getItem("userId");
+      if (!userIdExists) {
+        localStorage.setItem(localStorage.setItem("userId", userId));
+      }
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
   };
   return (
     <div>
@@ -49,6 +59,15 @@ const Login = () => {
           </button>
         </div>
       </div>
+
+      <br />
+      <button
+        type="submit"
+        className="px-3 py-1 rounded-full bg-sky-400 hover:bg-sky-600"
+        onClick={logout}
+      >
+        Logout
+      </button>
     </div>
   );
 };

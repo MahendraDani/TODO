@@ -14,6 +14,7 @@ const Signup = () => {
       password,
     });
     const userId = response.data.id;
+    localStorage.setItem("userId", userId);
     console.log(userId);
   };
 
