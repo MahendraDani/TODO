@@ -14,6 +14,7 @@ const Signup = () => {
       password,
     });
     const userId = response.data.id;
+    console.log(userId);
   };
 
   return (
