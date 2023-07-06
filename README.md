@@ -35,17 +35,17 @@
 
 # API Reference
 
-| Sr. No | Method | Route                | Access                 | Description                             | Input                                                                                   | Output                                              |
-| :----- | :----- | :------------------- | :--------------------- | :-------------------------------------- | :-------------------------------------------------------------------------------------- | :-------------------------------------------------- |
-| 1      | GET    | `/`                  | _Public_               | Home route                              | ---                                                                                     | Shows home route working                            |
-| 2      | POST   | `/users/signup`      | _Public_               | Users can signup to the websapp         | Request Body : `{fisrtName,lastName,email,passowrd}`                                    | Creates a new user and saves it in the database     |
-| 3      | POST   | `/users/login`       | _Public_               | Login to the webapp                     | Request Body : `{email, password}`                                                      | accessToken is generated for the user               |
-| 4      | DELETE | `/users/delete/:id`  | _Public_& _Proctected_ | Delete a user's account                 | Request params : `{id:<userId>}`                                                        | Deletes the user's data from database               |
-| 5      | GET    | `/todos`             | _Private_              | Displays all todos from the databse     | ---                                                                                     | ---                                                 |
-| 6      | POST   | `/todos`             | _Public_&_Proctected_  | Create a new todo                       | Request Headers : `{id: <userId>}`, Request Body : `{title, description, isCompleted }` | Creates a new todo and stores it in the databse     |
-| 7      | GET    | `/users/todos`       | _Public_&_Proctected_  | Display all todos of an individual user | Request Headers : `{id: <userId>}`                                                      | Shows all todos of that user                        |
-| 8      | GET    | `/users/todos/:_id`  | _Public_&_Proctected_  | Displays a todo by its id               | Request Params : `{_id: <todoId>}`                                                      | Shows a todo by its id if it is present in database |
-| 9      | DELETE | `/todos/delete/:_id` | _Public_&_Protected_   | Deletes a todo by its id                | Request Params : `{_id: <todoId>}`                                                      | Removes todo from database                          |
+| Sr. No | Method | Route                | Access                  | Description                             | Input                                                                                   | Output                                              |
+| :----- | :----- | :------------------- | :---------------------- | :-------------------------------------- | :-------------------------------------------------------------------------------------- | :-------------------------------------------------- |
+| 1      | GET    | `/`                  | _Public_                | Home route                              | ---                                                                                     | Shows home route working                            |
+| 2      | POST   | `/users/signup`      | _Public_                | Users can signup to the websapp         | Request Body : `{fisrtName,lastName,email,passowrd}`                                    | Creates a new user and saves it in the database     |
+| 3      | POST   | `/users/login`       | _Public_                | Login to the webapp                     | Request Body : `{email, password}`                                                      | accessToken is generated for the user               |
+| 4      | DELETE | `/users/delete/:id`  | _Public_ & _Proctected_ | Delete a user's account                 | Request params : `{id:<userId>}`                                                        | Deletes the user's data from database               |
+| 5      | GET    | `/todos`             | _Private_               | Displays all todos from the database    | ---                                                                                     | Displays all todos from the database                |
+| 6      | POST   | `/todos`             | _Public_ & _Proctected_ | Create a new todo                       | Request Headers : `{id: <userId>}`, Request Body : `{title, description, isCompleted }` | Creates a new todo and stores it in the databse     |
+| 7      | GET    | `/users/todos`       | _Public_ & _Proctected_ | Display all todos of an individual user | Request Headers : `{id: <userId>}`                                                      | Shows all todos of that user                        |
+| 8      | GET    | `/users/todos/:_id`  | _Public_ & _Proctected_ | Displays a todo by its id               | Request Params : `{_id: <todoId>}`                                                      | Shows a todo by its id if it is present in database |
+| 9      | DELETE | `/todos/delete/:_id` | _Public_ & _Protected_  | Deletes a todo by its id                | Request Params : `{_id: <todoId>}`                                                      | Removes todo from database                          |
 
 # Routes to create in future
 
