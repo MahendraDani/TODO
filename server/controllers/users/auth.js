@@ -96,6 +96,7 @@ const loginController = async (req, res) => {
           res.status(statusCodes.SUCCESS).json({
             message: "User logged in successfully",
             accessToken: token,
+            userId: USERS[userIndex].id,
           });
         }
       }

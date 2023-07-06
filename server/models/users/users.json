@@ -52,5 +52,23 @@
     "email": "mike@example.com",
     "password": "$2a$10$Wttd9usqmX7xqaJWev5a9e2/xm.yZK.9.bIGQV0NL7FZGPPiDQSxe",
     "createdAt": "2023-07-05T14:26:56.526Z"
+  },
+  {
+    "id": "b012fbf4-3523-4e46-94f2-62d4c5ee7e24",
+    "firstName": "dummy",
+    "lastName": "tummy",
+    "fullName": "dummy tummy",
+    "email": "dummy@example.com",
+    "password": "$2a$10$PFkCdkmxAF/j3sPdkMTGc.UNppWGdIuYccYciij6hKnYWgLKWaqXW",
+    "createdAt": "2023-07-06T11:55:41.154Z"
+  },
+  {
+    "id": "6098cb11-869d-4b86-8329-cfb086cd19aa",
+    "firstName": "Jhon",
+    "lastName": "Doe",
+    "fullName": "Jhon Doe",
+    "email": "jhon@example.com",
+    "password": "$2a$10$I2SaFfaB5ClTBqBnxg7K4Oyt6cOjPuVhehq7HMfAaCRFTXKTXFdXO",
+    "createdAt": "2023-07-06T12:36:05.622Z"
   }
 ]
