@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 //Routes
 app.use("/", require("./routes/index")); // home route
 app.use("/users", require("./routes/users/auth")); // login and signup user
+app.use("/users", validateUser, require("./routes/todos/getTodo"));
 app.use("/users", validateUser, require("./routes/todos/getTodos")); // get all todos of a particular user!
 app.use("/users", validateUser, require("./routes/users/deleteUser")); // delete user
 
