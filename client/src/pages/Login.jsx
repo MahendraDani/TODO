@@ -73,7 +73,7 @@ const Login = () => {
       </div>
       <div className="absolute top-0 left-0 right-0 w-full h-16 bg-slate-200 flex items-center justify-center">
         <Link to={"/"}>
-          <h1 className="text-3xl font-bold text-purple-800">TODO</h1>
+          <h1 className="text-3xl font-bold text-purple-700">TODO</h1>
         </Link>
       </div>
     </>

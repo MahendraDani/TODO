@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-// import GetTodo from "./pages/Get.todo";
-// import CreateTodo from "./pages/Create.todo";s
-import Home from "./pages/Home";
+import CreateTodos from "./pages/CreateTodos";
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/getTodos" element={<GetTodo />} />
-            <Route path="/createTodos" element={<CreateTodo />} /> */}
+            <Route path="/todos/create" element={<CreateTodos />} />
           </Routes>
         </BrowserRouter>
       </div>

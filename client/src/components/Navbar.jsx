@@ -16,7 +16,9 @@ const Navbar = () => {
     <>
       <div className="fixed left-0 right-0 top-0 w-full h-16 bg-slate-200 flex justify-between items-center px-20 pb-1">
         <div>
-          <h1 className="text-3xl font-bold text-purple-700">TODO</h1>
+          <Link to={"/"}>
+            <h1 className="text-3xl font-bold text-purple-700">TODO</h1>
+          </Link>
         </div>
         <div>
           {/* Desktop Screens */}
