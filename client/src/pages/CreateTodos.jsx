@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BsFillPlusCircleFill } from "react-icons/bs";
 
 const CreateTodos = () => {
   const [modal, setModal] = useState(false);
@@ -41,7 +42,6 @@ const CreateTodos = () => {
 
       console.log(response);
       setModal(!modal);
-      alert("Todo created successfully");
     } catch (error) {
       console.log(error);
     }
@@ -49,12 +49,11 @@ const CreateTodos = () => {
 
   return (
     <>
-      <button
-        className="px-2 bg-sky-400 rounded-sm hover:bg-sky-500"
-        onClick={handleModal}
-      >
-        Create todos
-      </button>
+      <div className="w-20 h-20 bg-gray-100 flex justify-center items-center">
+        <button onClick={handleCreateTodo}>
+          <BsFillPlusCircleFill className="text-3xl text-purple-500 hover:text-purple-700 ease-out duration-200" />
+        </button>
+      </div>
 
       {modal ? (
         <div className="w-full h-screen absolute inset-0 bg-[rgba(0,0,0,0.7)] flex justify-center items-center">
