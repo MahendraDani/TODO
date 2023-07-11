@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import CreateTodos from "./CreateTodos";
+import Sidebar from "../components/Sidebar";
 const Home = () => {
   const [user, setUser] = useState(false);
   useEffect(() => {
@@ -13,7 +14,8 @@ const Home = () => {
         <Navbar />
       </div>
       {user ? (
-        <div className="mt-20">
+        <div className="pt-16 pl-[16rem] w-full min-h-screen px-4 bg-[#EDF6F9]">
+          <Sidebar />
           <CreateTodos />
         </div>
       ) : null}
