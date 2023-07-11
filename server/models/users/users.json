@@ -70,5 +70,14 @@
     "email": "jhon@example.com",
     "password": "$2a$10$I2SaFfaB5ClTBqBnxg7K4Oyt6cOjPuVhehq7HMfAaCRFTXKTXFdXO",
     "createdAt": "2023-07-06T12:36:05.622Z"
+  },
+  {
+    "id": "9c832c51-3c30-4aa6-b8dc-ca0694eb7547",
+    "firstName": "Mick",
+    "lastName": "Haller",
+    "fullName": "Mick Haller",
+    "email": "mick@example.com",
+    "password": "$2a$10$mHlF2S0S1gav9csFVIdqA.amTn3dr1C08FZJ952xxJ1hgY2FUjESa",
+    "createdAt": "2023-07-11T03:14:56.001Z"
   }
 ]
