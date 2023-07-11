@@ -12,15 +12,22 @@ const Signup = () => {
   const handleSingup = async (e) => {
     try {
       e.preventDefault();
-      const response = await axios.post("http://localhost:3000/users/signup", {
-        firstName,
-        lastName,
-        email,
-        password: confirmPassword,
-      });
+      if (password !== confirmPassword) {
+        alert("Confirm Password and Create Password should be same!");
+      } else {
+        const response = await axios.post(
+          "http://localhost:3000/users/signup",
+          {
+            firstName,
+            lastName,
+            email,
+            password: confirmPassword,
+          }
+        );
 
-      const userId = response.data.id;
-      alert(response.data.message);
+        const userId = response.data.id;
+        alert(response.data.message);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +68,7 @@ const Signup = () => {
           <div className="w-full flex-grow flex flex-col justify-between items-start gap-1">
             <h3 className=" font-medium">Email Address</h3>
             <input
-              type="text"
+              type="email"
               placeholder="jhon@example.com"
               className="w-full text-gray-700 outline-none border-2 border-purple-400 focus:border-purple-500 focus:outline-none px-2 text-lg rounded-sm"
               onChange={(e) => setEmail(e.target.value)}
@@ -71,7 +78,7 @@ const Signup = () => {
             <div className="flex flex-col justify-between items-start gap-1">
               <h3 className=" font-medium">Password</h3>
               <input
-                type="text"
+                type="password"
                 placeholder="********"
                 className="text-gray-700 outline-none border-2 border-purple-400 focus:border-purple-500 focus:outline-none px-2 text-lg rounded-sm"
                 onChange={(e) => setPassword(e.target.value)}
@@ -80,7 +87,7 @@ const Signup = () => {
             <div className="flex flex-col justify-between items-start gap-1">
               <h3 className=" font-medium">Confirm Password</h3>
               <input
-                type="text"
+                type="password"
                 placeholder="********"
                 className="text-gray-700 outline-none border-2 border-purple-400 focus:border-purple-500 focus:outline-none px-2 text-lg rounded-sm"
                 onChange={(e) => setConfirmPassword(e.target.value)}
