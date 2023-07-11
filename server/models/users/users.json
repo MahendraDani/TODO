@@ -70,5 +70,50 @@
     "email": "jhon@example.com",
     "password": "$2a$10$I2SaFfaB5ClTBqBnxg7K4Oyt6cOjPuVhehq7HMfAaCRFTXKTXFdXO",
     "createdAt": "2023-07-06T12:36:05.622Z"
+  },
+  {
+    "id": "9c832c51-3c30-4aa6-b8dc-ca0694eb7547",
+    "firstName": "Mick",
+    "lastName": "Haller",
+    "fullName": "Mick Haller",
+    "email": "mick@example.com",
+    "password": "$2a$10$mHlF2S0S1gav9csFVIdqA.amTn3dr1C08FZJ952xxJ1hgY2FUjESa",
+    "createdAt": "2023-07-11T03:14:56.001Z"
+  },
+  {
+    "id": "30b7e447-088a-4623-aac4-dac31d98ceed",
+    "firstName": "Sam",
+    "lastName": "Karan",
+    "fullName": "Sam Karan",
+    "email": "sam@example.com",
+    "password": "$2a$10$1Wd2.HF9Xq1sXcsKU33mROGHvAxs7Nb1wHo3rbuLI9w15A.Y.LBAC",
+    "createdAt": "2023-07-11T04:22:07.308Z"
+  },
+  {
+    "id": "d751fc9c-74a2-45b6-a6c0-6ae9e2cbb202",
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "fullName": "Harry Potter",
+    "email": "harry@example.com",
+    "password": "$2a$10$U.2GM92zNXZX0CTfOsyRU.WwX0oFrxwRpbv.DRAQAY33w6.Xza2UG",
+    "createdAt": "2023-07-11T04:24:43.073Z"
+  },
+  {
+    "id": "58fcc3b3-686e-4375-bd71-11a0888a3434",
+    "firstName": "Ron",
+    "lastName": "Weasley",
+    "fullName": "Ron Weasley",
+    "email": "ron@example.com",
+    "password": "$2a$10$ZdYNwmQzzj9xZ3j0wVbUUO5V0F7J5Wca1ySYH5S3X58YxFRbd0zD.",
+    "createdAt": "2023-07-11T05:07:14.669Z"
+  },
+  {
+    "id": "6c37fb79-3b4b-46e7-8de9-11cc20a85557",
+    "firstName": "Lily",
+    "lastName": "Potter",
+    "fullName": "Lily Potter",
+    "email": "lily@example.com",
+    "password": "$2a$10$yTKBsQpM6UMKF4Ldt42B3ORPsN/v10TNrALZgLMiQpbD.gk.kFC4O",
+    "createdAt": "2023-07-11T05:09:45.096Z"
   }
 ]

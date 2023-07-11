@@ -1,36 +1,44 @@
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import React, { useState } from "react";
-
 const Login = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleForm = async () => {
-    try {
-      const response = await axios.post("http://localhost:3000/users/login", {
-        email,
-        password,
-      });
-      const token = response.data.accessToken;
-      const userId = response.data.userId;
-      console.log(token);
-      localStorage.setItem("token", token);
-      const userIdExists = localStorage.getItem("userId");
-      if (!userIdExists) {
-        localStorage.setItem(localStorage.setItem("userId", userId));
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await axios.post("http://localhost:3000/users/signup", {
+      firstName,
+      lastName,
+      email,
+      password,
+    });
+    const userId = response.data.id;
+    localStorage.setItem("userId", userId);
+    console.log(userId);
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
-  };
   return (
     <div>
       <div>
+        <div className="m-4">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            className="border-2 border-black px-2"
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </div>
+        <div className="m-4">
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            className="border-2 border-black px-2"
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </div>
         <div className="m-4">
           <label htmlFor="email">Eamil</label>
           <input
@@ -55,19 +63,10 @@ const Login = () => {
             className="px-3 py-1 rounded-full bg-sky-400 hover:bg-sky-600"
             onClick={handleForm}
           >
-            Login
+            Signup
           </button>
         </div>
       </div>
-
-      <br />
-      <button
-        type="submit"
-        className="px-3 py-1 rounded-full bg-sky-400 hover:bg-sky-600"
-        onClick={logout}
-      >
-        Logout
-      </button>
     </div>
   );
 };
