@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -8,6 +8,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSingup = async (e) => {
     try {
@@ -26,7 +27,7 @@ const Signup = () => {
         );
 
         const userId = response.data.id;
-        alert(response.data.message);
+        navigate("/login");
       }
     } catch (error) {
       console.log(error);
@@ -36,7 +37,9 @@ const Signup = () => {
     <>
       <div className="relative w-full h-screen flex justify-center items-center bg-gray-50">
         <div className="absolute top-0 left-0 right-0 w-full h-16 bg-slate-200 flex items-center justify-center">
-          <h1 className="text-3xl font-bold text-purple-800">TODO</h1>
+          <Link to={"/"}>
+            <h1 className="text-3xl font-bold text-purple-800">TODO</h1>
+          </Link>
         </div>
         <form className="bg-white shadow-md shadow-purple-200 flex flex-col justify-between items-center gap-6 p-4 rounded-sm text-gray-500 md:text-lg">
           <div>
@@ -105,7 +108,7 @@ const Signup = () => {
 
           <div>
             <h3>
-              Already a user?
+              Already a user?{" "}
               <Link to={"/login"} className="text-[#0000ff] hover:underline">
                 Login here
               </Link>
