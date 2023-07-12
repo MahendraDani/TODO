@@ -49,9 +49,9 @@ const CreateTodos = () => {
 
   return (
     <>
-      <div className="w-20 h-20 bg-[#83C5BE] flex justify-center items-center">
+      <div className="w-36 h-36 bg-[#77BBB5] flex justify-center items-center">
         <button onClick={handleCreateTodo}>
-          <BsFillPlusCircleFill className="text-3xl text-gray-600 hover:text-gray-800 ease-out duration-200" />
+          <BsFillPlusCircleFill className="text-5xl text-gray-700 hover:text-gray-800 ease-out duration-200" />
         </button>
       </div>
 

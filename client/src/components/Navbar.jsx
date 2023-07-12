@@ -1,20 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
-  const token = localStorage.getItem("token");
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    if (token) {
-      localStorage.removeItem("token");
-      localStorage.removeItem("userId");
-      window.location = "/";
-    } else {
-      null;
-    }
-  };
   return (
     <>
-      <div className="fixed left-0 right-0 top-0 w-full h-16 bg-[#BADEDB] flex justify-between items-center px-20 pb-1 border-b-2 border-gray-500 shadow-sm">
+      <div className="fixed left-0 right-0 top-0 w-full h-16 bg-[#BADEDB] flex justify-between items-center px-20 pb-1 border-b-2 border-gray-400 shadow-gray-300">
         <div
           onClick={() => {
             window.location = "/";
@@ -26,7 +15,7 @@ const Navbar = () => {
         </div>
         <div>
           {/* Desktop Screens */}
-          {!token ? (
+          {
             <div className="hidden md:flex justify-between items-center gap-6">
               <Link to={"/login"}>
                 <button className="text-lg font-medium border-[2px] border-[#2b2d42] px-4 pb-1 rounded-full text-[#2b2d42] hover:bg-[#2b2d42] hover:text-white ease-out duration-300">
@@ -39,17 +28,10 @@ const Navbar = () => {
                 </button>
               </Link>
             </div>
-          ) : (
-            <button
-              className="hidden md:block text-lg font-medium bg-[#2b2d42] border-2 border-[#2b2d42] text-white hover:bg-transparent hover:text-[#2b2d42] px-4 pb-1 rounded-full ease-in duration-500"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
-          )}
+          }
 
           {/* Mobile Screens */}
-          {!token ? (
+          {
             <div className="sm:flex md:hidden justify-between items-center gap-8">
               <Link to={"/login"}>
                 <button className="text-gray-800">
@@ -82,24 +64,7 @@ const Navbar = () => {
                 </button>
               </Link>
             </div>
-          ) : (
-            <button onClick={handleLogout} className="md:hidden text-gray-800">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
-                />
-              </svg>
-            </button>
-          )}
+          }
         </div>
       </div>
     </>

@@ -39,7 +39,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="jhon@example.com"
-                className=" w-[19rem] bg-[#EDF6F9] px-2 py-1 text-gray-800 outline-none border-b-2 border-gray-600 focus:outline-none text-lg  rounded-sm"
+                className=" w-[20rem] bg-[#EDF6F9] px-2 py-1 text-gray-800 outline-none border-b-2 border-gray-600 focus:outline-none text-lg  rounded-sm"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -48,7 +48,7 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="*******"
-                className="w-[19rem] py-1 bg-[#EDF6F9] text-gray-800 outline-none border-b-2 border-gray-600 px-2 focus:outline-none text-lg rounded-sm"
+                className="w-[20rem] py-1 bg-[#EDF6F9] text-gray-800 outline-none border-b-2 border-gray-600 px-2 focus:outline-none text-lg rounded-sm"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
