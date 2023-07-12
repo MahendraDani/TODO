@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { BsPersonCircle } from "react-icons/bs";
 import { SlLogout } from "react-icons/sl";
@@ -9,6 +9,7 @@ const Header = (props) => {
     if (token) {
       localStorage.removeItem("token");
       localStorage.removeItem("userId");
+      localStorage.removeItem("userFullName");
       window.location = "/";
     } else {
       null;
@@ -25,7 +26,7 @@ const Header = (props) => {
           </div>
           <input
             type="text"
-            className="w-96 px-2 py-1 bg-transparent outline-none focus:outline-none text-lg"
+            className="md:w-96 px-2 py-1 bg-transparent outline-none focus:outline-none text-lg"
             placeholder="Search todos here..."
           />
         </div>

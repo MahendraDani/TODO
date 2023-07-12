@@ -13,6 +13,7 @@ const Home = () => {
     token ? setUser(true) : setUser(false);
     setUserFullName(localStorage.getItem("userFullName"));
   }, []);
+
   return (
     <>
       <div>{!token && <Navbar />}</div>
@@ -20,6 +21,12 @@ const Home = () => {
         <div className="pl-[18rem] pt-4 w-full min-h-screen px-4 bg-[#EDF6F9]">
           <Sidebar />
           <Header fullName={userFullName} />
+          <section className="mt-4">
+            <div className="text-lg font-medium">
+              <h1>CREATE TODO</h1>
+            </div>
+            <CreateTodos />
+          </section>
         </div>
       ) : null}
     </>
