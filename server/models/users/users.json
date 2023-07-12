@@ -151,5 +151,14 @@
     "email": "william@example.com",
     "password": "$2a$10$KiIKRJagShcN/Xo9quF6VuYg/eO8d20ZQGX1eC1/pV/7jXCqBbsjO",
     "createdAt": "2023-07-11T06:24:02.631Z"
+  },
+  {
+    "id": "f6b50145-9061-4f81-a33f-ffdabe2b1078",
+    "firstName": "Ethan",
+    "lastName": "Hunt",
+    "fullName": "Ethan Hunt",
+    "email": "ethan@example.com",
+    "password": "$2a$10$/jAkiC21EByigAmkZnqyweVXBtRo5HTKfh4toCEnUCP65i5ZFsFgq",
+    "createdAt": "2023-07-12T13:17:37.764Z"
   }
 ]
