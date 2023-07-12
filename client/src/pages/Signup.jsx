@@ -53,7 +53,7 @@ const Signup = () => {
               <input
                 type="text"
                 placeholder="Jhon"
-                className="bg-[#EDF6F9] text-gray-800 outline-none border-b-2 border-gray-600 focus:outline-none text-lg rounded-sm px-2"
+                className="bg-[#EDF6F9] text-gray-800 outline-none border-b-2 py-1 border-gray-600 focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
@@ -62,7 +62,7 @@ const Signup = () => {
               <input
                 type="text"
                 placeholder="Doe"
-                className="bg-[#EDF6F9] text-gray-700 outline-none border-b-2 border-gray-600  focus:outline-none text-lg rounded-sm px-2"
+                className="bg-[#EDF6F9] text-gray-700 outline-none border-b-2 py-1 border-gray-600 focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setLastName(e.target.value)}
               />
             </div>
@@ -73,7 +73,7 @@ const Signup = () => {
             <input
               type="email"
               placeholder="jhon@example.com"
-              className="w-full bg-[#EDF6F9] text-gray-700 outline-none border-b-2 border-gray-600 focus:outline-nonetext-lg rounded-sm px-2"
+              className="w-full bg-[#EDF6F9] text-gray-700 outline-none border-b-2 py-1 text-lg border-gray-600 focus:outline-nonetext-lg rounded-sm px-2"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -83,7 +83,7 @@ const Signup = () => {
               <input
                 type="password"
                 placeholder="********"
-                className="bg-[#EDF6F9] text-gray-700 outline-none border-b-2 border-gray-600  focus:outline-none text-lg rounded-sm px-2"
+                className="bg-[#EDF6F9] text-gray-700 outline-none border-b-2 py-1 border-gray-600  focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -92,7 +92,7 @@ const Signup = () => {
               <input
                 type="password"
                 placeholder="********"
-                className="bg-[#EDF6F9] text-gray-700 outline-none border-b-2 border-gray-600 focus:border-[#593640]0 focus:outline-none text-lg rounded-sm px-2"
+                className="bg-[#EDF6F9] text-gray-700 outline-none border-b-2 py-1 border-gray-600 focus:border-[#593640]0 focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>

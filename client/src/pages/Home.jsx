@@ -16,7 +16,7 @@ const Home = () => {
       {user ? (
         <div className="pt-16 pl-[16rem] w-full min-h-screen px-4 bg-[#EDF6F9]">
           <Sidebar />
-          <CreateTodos />
+          {/* <CreateTodos /> */}
         </div>
       ) : null}
     </>

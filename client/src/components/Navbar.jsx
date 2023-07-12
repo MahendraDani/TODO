@@ -14,11 +14,15 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="fixed left-0 right-0 top-0 w-full h-16 bg-[#BADEDB] flex justify-between items-center px-20 pb-1">
-        <div>
-          <Link to={"/"}>
-            <h1 className="text-3xl font-bold text-black">TODO</h1>
-          </Link>
+      <div className="fixed left-0 right-0 top-0 w-full h-16 bg-[#BADEDB] flex justify-between items-center px-20 pb-1 border-b-2 border-gray-500 shadow-sm">
+        <div
+          onClick={() => {
+            window.location = "/";
+          }}
+        >
+          {/* <Link to={"/"}> */}
+          <h1 className="text-3xl font-bold text-black cursor-pointer">TODO</h1>
+          {/* </Link> */}
         </div>
         <div>
           {/* Desktop Screens */}

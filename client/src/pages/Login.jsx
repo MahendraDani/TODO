@@ -30,7 +30,7 @@ const Login = () => {
         <div className="w-full h-screen flex justify-center items-center">
           <form className="shadow-md shadow-[#BADEDB] bg-[#BADEDB] flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
             <div>
-              <h1 className="text-2xl font-bold text-gray-800 mb-2">
+              <h1 className="w-60 text-center text-2xl font-bold text-gray-800 mb-1">
                 LOGIN TO YOUR ACCOUNT
               </h1>
             </div>
@@ -39,7 +39,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="jhon@example.com"
-                className=" w-64 bg-[#EDF6F9] px-2 text-gray-800 outline-none border-b-2 border-gray-600 focus:outline-none text-lg  rounded-sm"
+                className=" w-[19rem] bg-[#EDF6F9] px-2 py-1 text-gray-800 outline-none border-b-2 border-gray-600 focus:outline-none text-lg  rounded-sm"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -48,7 +48,7 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="*******"
-                className="w-64 bg-[#EDF6F9] text-gray-800 outline-none border-b-2 border-gray-600 px-2 focus:outline-none text-lg rounded-sm"
+                className="w-[19rem] py-1 bg-[#EDF6F9] text-gray-800 outline-none border-b-2 border-gray-600 px-2 focus:outline-none text-lg rounded-sm"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>

@@ -49,9 +49,9 @@ const CreateTodos = () => {
 
   return (
     <>
-      <div className="w-20 h-20 bg-gray-100 flex justify-center items-center">
+      <div className="w-20 h-20 bg-[#83C5BE] flex justify-center items-center">
         <button onClick={handleCreateTodo}>
-          <BsFillPlusCircleFill className="text-3xl text-purple-500 hover:text-purple-700 ease-out duration-200" />
+          <BsFillPlusCircleFill className="text-3xl text-gray-600 hover:text-gray-800 ease-out duration-200" />
         </button>
       </div>
 
@@ -81,10 +81,10 @@ const CreateTodos = () => {
                 </svg>
               </button>
             </div>
-            <form className=" w-96 bg-white shadow-md flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
+            <form className=" w-96 bg-[#BADEDB] shadow-md flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
               <div>
-                <h1 className="text-2xl font-bold text-purple-700">
-                  What's your next Todo?
+                <h1 className="w-60 text-center text-2xl font-bold text-gray-800">
+                  WHAT'S YOUR NEXT TODO?
                 </h1>
               </div>
               <div className="flex flex-col justify-between items-start gap-1">
@@ -92,7 +92,7 @@ const CreateTodos = () => {
                 <input
                   type="text"
                   placeholder="Workout"
-                  className="w-72 text-gray-700 outline-none border-b-2 border-purple-400 focus:border-purple-500 focus:outline-none text-lg rounded-sm"
+                  className="w-[20rem] py-1 px-2 text-gray-700 bg-[#EDF6F9] outline-none border-b-2 border-gray-600 focus:outline-none text-lg rounded-sm"
                   onChange={(e) => setTitle(e.target.value)}
                 />
               </div>
@@ -101,7 +101,7 @@ const CreateTodos = () => {
                 <input
                   type="text"
                   placeholder="Go to Gym"
-                  className="w-72 text-gray-700 outline-none border-b-2 border-purple-400 focus:border-purple-500 focus:outline-none text-lg rounded-sm"
+                  className="w-[20rem] py-1 px-2 text-gray-700 bg-[#EDF6F9] outline-none border-b-2 border-gray-600 focus:outline-none text-lg rounded-sm"
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
@@ -110,16 +110,16 @@ const CreateTodos = () => {
                 <input
                   type="text"
                   placeholder="False"
-                  className="w-72 text-gray-700 outline-none border-b-2 border-purple-400 focus:border-purple-500 focus:outline-none text-lg rounded-sm"
+                  className="w-[20rem] py-1 px-2 text-gray-700 bg-[#EDF6F9] outline-none border-b-2 border-gray-600 focus:outline-none text-lg rounded-sm"
                   onChange={(e) => setIsCompleted(e.target.value)}
                 />
               </div>
               <div>
                 <button
-                  className="border-2 border-purple-700 px-5 text-lg text-purple-700 rounded-sm hover:bg-purple-700 hover:text-slate-200 ease-in duration-300 font-semibold"
+                  className="border-2 border-gray-800 px-5 text-lg text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-semibold"
                   onClick={handleCreateTodo}
                 >
-                  Create
+                  CREATE
                 </button>
               </div>
             </form>
