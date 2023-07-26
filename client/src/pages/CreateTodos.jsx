@@ -25,23 +25,29 @@ const CreateTodos = () => {
         alert("Please login to your account to create todos!");
         navigate("/users/login");
       }
-      const response = await axios.post(
-        "http://localhost:3000/todos",
-        {
-          title,
-          description,
-          isCompleted,
-        },
-        {
-          headers: {
-            Authorization: token,
-            id: userId,
-          },
-        }
-      );
 
-      console.log(response);
-      setModal(!modal);
+      if (title === "" || description === "" || isCompleted === "") {
+        alert("All fields are required!");
+        window.location = "/";
+      } else {
+        const response = await axios.post(
+          "http://localhost:3000/todos",
+          {
+            title,
+            description,
+            isCompleted,
+          },
+          {
+            headers: {
+              Authorization: token,
+              id: userId,
+            },
+          }
+        );
+        console.log(response);
+        setModal(!modal);
+        window.location = "/";
+      }
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +56,7 @@ const CreateTodos = () => {
   return (
     <>
       <div className="w-32 h-32 bg-[#77BBB5] flex justify-center items-center">
-        <button onClick={handleCreateTodo}>
+        <button onClick={handleModal}>
           <BsFillPlusCircleFill className="text-5xl text-gray-700 hover:text-gray-800 ease-out duration-200" />
         </button>
       </div>
