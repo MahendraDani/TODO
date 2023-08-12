@@ -10,7 +10,9 @@ const Navbar = () => {
           }}
         >
           {/* <Link to={"/"}> */}
-          <h1 className="text-3xl font-bold text-black cursor-pointer">TODO</h1>
+          <h1 className="text-3xl font-bold text-black cursor-pointer">
+            TO-DO
+          </h1>
           {/* </Link> */}
         </div>
         <div>
