@@ -160,5 +160,23 @@
     "email": "ethan@example.com",
     "password": "$2a$10$/jAkiC21EByigAmkZnqyweVXBtRo5HTKfh4toCEnUCP65i5ZFsFgq",
     "createdAt": "2023-07-12T13:17:37.764Z"
+  },
+  {
+    "id": "dbdc9d39-bd81-4dc2-af6b-21e16c62f5e0",
+    "firstName": "Ritvik",
+    "lastName": "Kumar",
+    "fullName": "Ritvik Kumar",
+    "email": "ritvik@example.com",
+    "password": "$2a$10$1V/rNXgcHAWenl1xCW3Tr.AdegKaDPkd8YCC/IRKUE.0lC29E4hAO",
+    "createdAt": "2023-08-15T04:44:45.064Z"
+  },
+  {
+    "id": "dcdfd261-8422-46c2-83ad-3c29f67b4ca5",
+    "firstName": "Ishant",
+    "lastName": "Gupta",
+    "fullName": "Ishant Gupta",
+    "email": "ishant@example.com",
+    "password": "$2a$10$cHexvSQ6Sirn4n2eZH0d5OLeEGc11/w0gMqAJgXk7/x50qxZZQLNq",
+    "createdAt": "15-Aug-2023"
   }
 ]

@@ -1,0 +1,11 @@
+[
+  {
+    "noteId": 1,
+    "userId": 11,
+    "createdBy": "name of the person",
+    "createdAt": "time at which note was create",
+    "title": "Title of the note",
+    "note": "The actual note",
+    "updatedAt": []
+  }
+]

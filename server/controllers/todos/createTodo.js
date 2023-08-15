@@ -3,6 +3,7 @@ const path = require("path");
 const { v4: uuid } = require("uuid");
 const { statusCodes } = require("../../constants/statuscodes");
 const { getIndexFromId } = require("../../constants/getIndexFromId");
+const { format } = require("date-fns");
 
 const TODOS_DIRECTORY = path.join(
   __dirname,
@@ -60,7 +61,7 @@ const createTodo = async (req, res) => {
               description: description,
               isCompleted: isCompleted,
               createdBy: USERS[userIndex].fullName,
-              createdAt: new Date().toISOString(),
+              createdAt: format(new Date(), "dd-MMM-yyyy"),
             };
 
             TODOS.push(newTodo);

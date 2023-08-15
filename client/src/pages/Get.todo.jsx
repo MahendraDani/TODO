@@ -33,8 +33,8 @@ const GetTodo = () => {
             <>
               <div key={index} className=" bg-green-300">
                 <div className="flex gap-2 ">
-                  <div>{todo._id}</div>
                   <div>{todo.title}</div>
+                  <div>{todo.description}</div>
                   <div>{todo.createdBy}</div>
                   <div>{todo.createdAt}</div>
                 </div>

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { format } = require("date-fns");
 const { statusCodes } = require("../../constants/statuscodes");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcryptjs");
@@ -40,7 +41,7 @@ const signupController = async (req, res) => {
           fullName: `${firstName} ${lastName}`,
           email: email,
           password: hashedPassword,
-          createdAt: new Date().toISOString(),
+          createdAt: format(new Date(), "dd-MMM-yyyy"),
         };
 
         USERS.push(newUser);

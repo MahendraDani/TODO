@@ -16,7 +16,7 @@ const getTodo = async (req, res) => {
   try {
     const todoId = req.params._id;
     if (!todoId) {
-      resourceLimits
+      res
         .status(statusCodes.BAD_REQUEST)
         .json({ message: "Todo id is required!" });
     } else {
