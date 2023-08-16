@@ -41,7 +41,8 @@ const signupController = async (req, res) => {
           fullName: `${firstName} ${lastName}`,
           email: email,
           password: hashedPassword,
-          createdAt: format(new Date(), "dd-MMM-yyyy"),
+          createdOn: format(new Date(), "dd-MMM-yyyy"),
+          createdAt: format(new Date(), "HH:mm:ss"),
         };
 
         USERS.push(newUser);

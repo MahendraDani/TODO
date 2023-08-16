@@ -7,5 +7,30 @@
     "title": "Title of the note",
     "note": "The actual note",
     "updatedAt": []
+  },
+  {
+    "noteId": "b3cd7fb8-424c-4d90-aaf5-cf90e89ca08d",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "note": "THis is a note description",
+    "title": "This is a note title",
+    "createdAt": "16-Aug-2023",
+    "createdBy": "Mike Ross"
+  },
+  {
+    "noteId": "32626ee2-3b8b-43d6-b8ee-74f69cf5ad78",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "note": "Trees provides us oxygen",
+    "title": "Essay on Trees",
+    "createdAt": "16-Aug-2023",
+    "createdBy": "Mike Ross"
+  },
+  {
+    "noteId": "3eeb530f-282c-4bdc-bb1e-6435fa563587",
+    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
+    "note": "Rivers provides us water",
+    "title": "Essay on Rivers",
+    "createdOn": "16-Aug-2023",
+    "createdAt": "12:21:36",
+    "createdBy": "Mike Ross"
   }
 ]

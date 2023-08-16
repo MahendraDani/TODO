@@ -178,5 +178,24 @@
     "email": "ishant@example.com",
     "password": "$2a$10$cHexvSQ6Sirn4n2eZH0d5OLeEGc11/w0gMqAJgXk7/x50qxZZQLNq",
     "createdAt": "15-Aug-2023"
+  },
+  {
+    "id": "a875410f-ac21-4d02-8749-4123e6b66398",
+    "firstName": "Dipanta",
+    "lastName": "Bhat",
+    "fullName": "Dipanta Bhat",
+    "email": "dipanta@example.com",
+    "password": "$2a$10$M3geZ2R/rx8ND3zm5OsPvukipUa/J7TzweNv6geN31z2Os5cuCi3m",
+    "createdAt": "16-Aug-2023"
+  },
+  {
+    "id": "833daff0-7733-473e-b993-312387b05406",
+    "firstName": "Vikas",
+    "lastName": "Singh",
+    "fullName": "Vikas Singh",
+    "email": "vikas@example.com",
+    "password": "$2a$10$Rt43KEpp.vJKo96yUMgdc.KiT4sMgr/x02pbwDevLuvZ7VMbdAy8C",
+    "createdOn": "16-Aug-2023",
+    "createdAt": "13:41:06"
   }
 ]

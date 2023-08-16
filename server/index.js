@@ -22,8 +22,8 @@ app.use("/todos", require("./routes/todos/todos")); // get all todos from db
 app.use("/todos", validateUser, require("./routes/todos/createTodo")); //create a new todo
 app.use("/todos", validateUser, require("./routes/todos/deleteTodo")); // delete a todo by its id
 
-app.use("/notes", require("./routes/notes/createNote"));
-app.use("/users", require("./routes/notes/getNote"));
+app.use("/users", validateUser, require("./routes/notes/createNote"));
+app.use("/users", validateUser, require("./routes/notes/getNote"));
 app.listen(PORT, () => {
   console.log(`Server running at port : ${PORT}`);
 });
