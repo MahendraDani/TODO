@@ -39,7 +39,7 @@ const createNote = async (req, res) => {
         userId: userId,
         note: note,
         title: title,
-        createdOn: format(new Date(), "dd-MMM-yyyy"),
+        createdOn: format(new Date(), "dd-MM-yyyy"),
         createdAt: format(new Date(), "HH:mm:ss"),
         createdBy: USERS[userIndex].fullName,
       };

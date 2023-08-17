@@ -20,29 +20,72 @@ const GetTodo = () => {
   };
   useState(getTodosOfUser, []);
   return (
-    <div>
+    <div className="">
       {/* <button
         onClick={getTodosOfUser}
         className="bg-sky-400 px-3 py-1 rounded-full"
       >
         Get todos
       </button> */}
-      <div className="flex flex-col justify-between items-start">
-        {todos.map((todo, index) => {
-          return (
-            <>
-              <div key={index} className=" bg-green-300">
-                <div className="flex gap-2 ">
-                  <div>{todo.title}</div>
-                  <div>{todo.description}</div>
-                  <div>{todo.createdBy}</div>
-                  <div>{todo.createdAt}</div>
+      <section className="flex flex-row justify-start gap-4 items-start">
+        {/* Not Started */}
+        <div className="flex flex-col justify-evenly items-start gap-2 mt-4">
+          {todos.map((todo, index) => {
+            return (
+              <>
+                <div key={index}>
+                  <div className="bg-[#E88796] w-[13rem] max-w-[15rem] min-h-[14rem] rounded-sm p-2 px-4">
+                    <div className="flex justify-between items-center gap-4">
+                      <span className="text-lg font-bold uppercase">
+                        {todo.title}
+                      </span>
+                    </div>
+                    <div>{todo.description}</div>
+                    <div>{todo.createdOn}</div>
+                    <div>{todo.createdAt}</div>
+                  </div>
                 </div>
-              </div>
-            </>
-          );
-        })}
-      </div>
+              </>
+            );
+          })}
+        </div>
+        {/* In Progress */}
+        <div className="flex flex-col justify-evenly items-start gap-2 mt-4">
+          {todos.map((todo, index) => {
+            return (
+              <>
+                <div key={index}>
+                  <div className="bg-[#FDE587] w-[13rem] max-w-[15rem] min-h-[14rem] rounded-sm p-2 px-4">
+                    <div className="flex justify-between items-center gap-4">
+                      <span className="text-lg font-bold uppercase">
+                        {todo.title}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          })}
+        </div>
+        {/* Completed */}
+        <div className="flex flex-col justify-evenly items-start gap-2 mt-4">
+          {todos.map((todo, index) => {
+            return (
+              <>
+                <div key={index}>
+                  <div className="bg-[#8FCCC0] w-[13rem] max-w-[15rem] min-h-[14rem] rounded-sm p-2 px-4">
+                    <div className="flex justify-between items-center gap-4">
+                      <span className="text-lg font-bold uppercase">
+                        {todo.title}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 };

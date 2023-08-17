@@ -29,7 +29,7 @@ const Login = () => {
     <>
       <div className="relative w-full h-screen bg-[#EDF6F9]">
         <div className="w-full h-screen flex justify-center items-center">
-          <form className="shadow-md shadow-[#BADEDB] bg-[#BADEDB] flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
+          <form className="shadow-md shadow-[#E2D6EA] bg-[#E2D6EA] flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
             <div>
               <h1 className="w-60 text-center text-2xl font-bold text-gray-800 mb-1">
                 LOGIN TO YOUR ACCOUNT
@@ -72,7 +72,7 @@ const Login = () => {
           </form>
         </div>
       </div>
-      <div className="absolute top-0 left-0 right-0 w-full h-16 bg-[#BADEDB] flex items-center justify-center">
+      <div className="absolute top-0 left-0 right-0 w-full h-16 bg-[#E2D6EA] flex items-center justify-center">
         <Link to={"/"}>
           <h1 className="text-3xl font-bold text-gray-800">TODO</h1>
         </Link>

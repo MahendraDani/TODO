@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="fixed left-0 right-0 top-0 w-full h-16 bg-[#BADEDB] flex justify-between items-center px-20 pb-1 shadow-md shadow-gray-300">
+      <div className="fixed left-0 right-0 top-0 w-full h-16 bg-[#E2D6EA] flex justify-between items-center px-20 pb-1 shadow-md shadow-gray-300">
         <div
           onClick={() => {
             window.location = "/";
