@@ -4,12 +4,17 @@ import CreateTodos from "./CreateTodos";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/dashboards/Header";
 import GetTodo from "./Get.todo";
+import Greet from "../components/Greet";
 
 const Home = () => {
   const token = localStorage.getItem("token");
   const [userFullName, setUserFullName] = useState("");
   const [user, setUser] = useState(false);
+  const [showGreet, setShowGreet] = useState(false);
 
+  const handleShowGreet = () => {
+    setShowGreet(!showGreet);
+  };
   useEffect(() => {
     token ? setUser(true) : setUser(false);
     setUserFullName(localStorage.getItem("userFullName"));
@@ -20,7 +25,7 @@ const Home = () => {
       <div>{!token && <Navbar />}</div>
       {user ? (
         <div className="pl-[18rem] pt-4 w-full min-h-screen px-4 bg-[#EDF6F9]">
-          <Sidebar />
+          <Sidebar onButtonClick={handleShowGreet} />
           <Header fullName={userFullName} />
           <section className="mt-4">
             <div className="text-lg font-medium">
@@ -29,6 +34,7 @@ const Home = () => {
             <CreateTodos />
           </section>
           <GetTodo />
+          <div>{showGreet && <Greet />}</div>
         </div>
       ) : null}
     </>
