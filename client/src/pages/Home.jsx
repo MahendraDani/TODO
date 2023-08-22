@@ -10,6 +10,15 @@ const Home = () => {
   const [userFullName, setUserFullName] = useState("");
   const [user, setUser] = useState(false);
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+  const closeModal = () => {
+    showModal ? setShowModal(false) : null;
+  };
+
   useEffect(() => {
     token ? setUser(true) : setUser(false);
     setUserFullName(localStorage.getItem("userFullName"));
@@ -20,13 +29,13 @@ const Home = () => {
       <div>{!token && <Navbar />}</div>
       {user ? (
         <div className="pl-[18rem] pt-4 w-full min-h-screen px-4 bg-[#EDF6F9]">
-          <Sidebar />
+          <Sidebar onButtonClick={handleModal} />
           <Header fullName={userFullName} />
           <section className="mt-4">
             <div className="text-lg font-medium">
               <h1>CREATE TODO</h1>
             </div>
-            <CreateTodos />
+            {showModal && <CreateTodos closeModal={closeModal} />}
           </section>
           <GetTodo />
         </div>

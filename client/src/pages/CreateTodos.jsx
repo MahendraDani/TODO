@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 
-const CreateTodos = () => {
-  const [modal, setModal] = useState(false);
+const CreateTodos = ({ closeModal }) => {
+  // const [modal, setModal] = useState(false);
   const navigate = useNavigate();
 
-  const handleModal = () => {
-    setModal(!modal);
-  };
+  // const handleModal = () => {
+  //   setModal(!modal);
+  // };
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -43,7 +43,7 @@ const CreateTodos = () => {
             },
           }
         );
-        setModal(!modal);
+        // setModal(!modal);
         window.location = "/";
       }
     } catch (error) {
@@ -53,21 +53,19 @@ const CreateTodos = () => {
 
   return (
     <>
-      <div className="w-32 h-32 bg-[#77BBB5] flex justify-center items-center">
-        <button onClick={handleModal}>
+      {/* <div className="w-32 h-32 bg-[#77BBB5] flex justify-center items-center">
+        <button>
           <BsFillPlusCircleFill className="text-5xl text-gray-700 hover:text-gray-800 ease-out duration-200" />
         </button>
-      </div>
+      </div> */}
 
-      {modal ? (
-        <div className="w-full h-screen absolute inset-0 bg-[rgba(0,0,0,0.7)] flex justify-center items-center">
+      {
+        <div className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.7)] flex justify-center items-center">
           <div className="rounded-sm shadow-sm">
             <div className="flex justify-end p-2 -mb-[2.5rem]">
               <button
                 className="text-red-700 rounded-sm hover:bg-red-600 hover:text-white ease-out duration-200"
-                onClick={() => {
-                  setModal(!modal);
-                }}
+                onClick={closeModal}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +148,7 @@ const CreateTodos = () => {
             </form>
           </div>
         </div>
-      ) : null}
+      }
     </>
   );
 };

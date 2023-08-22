@@ -18,5 +18,15 @@
     "password": "$2a$10$BUWbPyUlXGQT4MS4BJ8AkeX2uEa/GvMi6Pf9oaV/HU.1B1vpQMtXa",
     "createdOn": "17-08-2023",
     "createdAt": "17:25:33"
+  },
+  {
+    "id": "e9a76a27-eaab-499f-8990-3e84a8de0a87",
+    "firstName": "Jhon",
+    "lastName": "Doe",
+    "fullName": "Jhon Doe",
+    "email": "example@gmail.com",
+    "password": "$2a$10$CTeMGAo1hfC/AYpPN/2YPeZle2DxVFlhN2JW4fu2TY7zNuPWrd2OK",
+    "createdOn": "21-08-2023",
+    "createdAt": "14:33:59"
   }
 ]
