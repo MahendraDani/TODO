@@ -11,7 +11,8 @@ const Home = () => {
   const [user, setUser] = useState(false);
 
   const [showModal, setShowModal] = useState(false);
-  const [showTodoList, setShowTodoList] = useState(false);
+  const [showTodoList, setShowTodoList] = useState(true);
+  const [showTodoCards, setShowTodoCards] = useState(false);
 
   const handleModal = () => {
     setShowModal(!showModal);
@@ -19,9 +20,21 @@ const Home = () => {
   const closeModal = () => {
     showModal ? setShowModal(false) : null;
   };
+  const closeTodoList = () => {
+    showTodoList ? setShowTodoList(false) : null;
+  };
+  const closeTodoCards = () => {
+    showTodoCards ? setShowTodoCards(false) : null;
+  };
 
   const handleShowTodoList = () => {
     setShowTodoList(!showTodoList);
+    closeTodoCards();
+  };
+
+  const handleShowTodoCards = () => {
+    setShowTodoCards(!showTodoCards);
+    closeTodoList();
   };
 
   useEffect(() => {
@@ -40,12 +53,18 @@ const Home = () => {
             {showModal && <CreateTodos closeModal={closeModal} />}
           </section>
           <button
-            className="px-3 py-1 border-[#2b2d42] border-2 hover:bg-[#2b2d42] ease-in duration-300 hover:text-white"
+            className="px-3 py-1 border-[#2b2d42] border-2 hover:bg-[#2b2d42] ease-in duration-300 hover:text-white m-2"
             onClick={handleShowTodoList}
           >
             Todo list
           </button>
-          {showTodoList && <GetTodo />}
+          <button
+            className="px-3 py-1 border-[#2b2d42] border-2 hover:bg-[#2b2d42] ease-in duration-300 hover:text-white m-2"
+            onClick={handleShowTodoCards}
+          >
+            Todo Cards
+          </button>
+          <GetTodo showTodoList={showTodoList} showTodoCards={showTodoCards} />
         </div>
       ) : null}
     </>
