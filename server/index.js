@@ -27,6 +27,7 @@ app.use("/users", validateUser, require("./routes/notes/getNote")); // get a not
 
 app.use("/notes", validateUser, require("./routes/notes/getNotes")); // get all notes by user id
 app.use("/notes", validateUser, require("./routes/notes/deleteNote"));
+
 app.listen(PORT, () => {
   console.log(`Server running at port : ${PORT}`);
 });

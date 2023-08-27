@@ -32,9 +32,6 @@ const Home = () => {
           <Sidebar onButtonClick={handleModal} />
           <Header fullName={userFullName} />
           <section className="mt-4">
-            <div className="text-lg font-medium">
-              <h1>CREATE TODO</h1>
-            </div>
             {showModal && <CreateTodos closeModal={closeModal} />}
           </section>
           <GetTodo />

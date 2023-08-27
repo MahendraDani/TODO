@@ -61,7 +61,7 @@ const createTodo = async (req, res) => {
               description: description,
               isCompleted: isCompleted,
               createdBy: USERS[userIndex].fullName,
-              createdOn: format(new Date(), "dd-MM-yyyy"),
+              createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
               createdAt: format(new Date(), "HH:mm:ss"),
             };
 
