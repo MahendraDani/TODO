@@ -1,39 +1,5 @@
 [
   {
-    "noteId": 1,
-    "userId": 11,
-    "createdBy": "name of the person",
-    "createdAt": "time at which note was create",
-    "title": "Title of the note",
-    "note": "The actual note",
-    "updatedAt": []
-  },
-  {
-    "noteId": "b3cd7fb8-424c-4d90-aaf5-cf90e89ca08d",
-    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
-    "note": "THis is a note description",
-    "title": "This is a note title",
-    "createdAt": "16-Aug-2023",
-    "createdBy": "Mike Ross"
-  },
-  {
-    "noteId": "32626ee2-3b8b-43d6-b8ee-74f69cf5ad78",
-    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
-    "note": "Trees provides us oxygen",
-    "title": "Essay on Trees",
-    "createdAt": "16-Aug-2023",
-    "createdBy": "Mike Ross"
-  },
-  {
-    "noteId": "3eeb530f-282c-4bdc-bb1e-6435fa563587",
-    "userId": "b90be72e-de9f-4114-b81f-acc11796724b",
-    "note": "Rivers provides us water",
-    "title": "Essay on Rivers",
-    "createdOn": "16-Aug-2023",
-    "createdAt": "12:21:36",
-    "createdBy": "Mike Ross"
-  },
-  {
     "noteId": "fbfaeedf-9d55-4a65-9cd0-5a72abb6e8df",
     "userId": "332b625f-80f4-4e3c-9f4c-ad3ac91d31b4",
     "title": "My Mother",
@@ -47,14 +13,6 @@
     "title": "My Father",
     "createdOn": "27-08-2023",
     "createdAt": "11:12:37",
-    "createdBy": "Jessica Pearson"
-  },
-  {
-    "noteId": "419b9d4f-5055-4b92-8e57-8c090e4f3ff2",
-    "userId": "332b625f-80f4-4e3c-9f4c-ad3ac91d31b4",
-    "title": "Sun",
-    "createdOn": "27-08-2023",
-    "createdAt": "11:13:19",
     "createdBy": "Jessica Pearson"
   }
 ]

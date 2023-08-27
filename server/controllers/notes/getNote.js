@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { statusCodes } = require("../../constants/statuscodes");
+const { statusCodes } = require("../../constants/globals/statuscodes");
 
 const NOTES_DIRECTORY = path.join(
   __dirname,

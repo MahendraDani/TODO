@@ -1,11 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 const { format } = require("date-fns");
-const { statusCodes } = require("../../constants/statuscodes");
+const { statusCodes } = require("../../constants/globals/statuscodes");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { getIndexFromEmail } = require("../../constants/getIndexFromEmail");
+const {
+  getIndexFromEmail,
+} = require("../../constants/globals/getIndexFromEmail");
 
 const USERS_DIRECTORY = path.join(
   __dirname,

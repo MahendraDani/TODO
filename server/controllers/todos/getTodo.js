@@ -1,7 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const { statusCodes } = require("../../constants/statuscodes");
-const { getTodoIndexFromId } = require("../../constants/getTodoIndexFromId");
+const { statusCodes } = require("../../constants/globals/statuscodes");
+const {
+  getTodoIndexFromId,
+} = require("../../constants/todos/getTodoIndexFromId");
 
 const TODOS_DIRECTORY = path.join(
   __dirname,

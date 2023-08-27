@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuid } = require("uuid");
-const { statusCodes } = require("../../constants/statuscodes");
-const { getIndexFromId } = require("../../constants/getIndexFromId");
+const { statusCodes } = require("../../constants/globals/statuscodes");
+const { getIndexFromId } = require("../../constants/globals/getIndexFromId");
 const { format } = require("date-fns");
 
 const TODOS_DIRECTORY = path.join(

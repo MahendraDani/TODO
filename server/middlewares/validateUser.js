@@ -1,4 +1,4 @@
-const { statusCodes } = require("../constants/statuscodes");
+const { statusCodes } = require("../constants/globals/statuscodes");
 const jwt = require("jsonwebtoken");
 
 const validateUser = (req, res, next) => {

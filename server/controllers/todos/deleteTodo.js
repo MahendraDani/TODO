@@ -1,9 +1,11 @@
 const fs = require("fs");
 const path = require("path");
-const { statusCodes } = require("../../constants/statuscodes");
-const { getTodoIndexFromId } = require("../../constants/getTodoIndexFromId");
-const { removeTodoById } = require("../../constants/removeTodoById");
-const { getIndexFromId } = require("../../constants/getIndexFromId");
+const { statusCodes } = require("../../constants/globals/statuscodes");
+const {
+  getTodoIndexFromId,
+} = require("../../constants/todos/getTodoIndexFromId");
+const { removeTodoById } = require("../../constants/todos/removeTodoById");
+const { getIndexFromId } = require("../../constants/globals/getIndexFromId");
 
 const TODOS_DIRECTORY = path.join(
   __dirname,

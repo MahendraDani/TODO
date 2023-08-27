@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const { statusCodes } = require("../../constants/statuscodes");
+const { statusCodes } = require("../../constants/globals/statuscodes");
 const { v4: uuid } = require("uuid");
 const { format } = require("date-fns");
-const { getIndexFromId } = require("../../constants/getIndexFromId");
+const { getIndexFromId } = require("../../constants/globals/getIndexFromId");
 
 const NOTES_DIRECTORY = path.join(
   __dirname,
