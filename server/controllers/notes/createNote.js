@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const { statusCodes } = require("../../constants/statuscodes");
-const { json } = require("body-parser");
 const { v4: uuid } = require("uuid");
 const { format } = require("date-fns");
 const { getIndexFromId } = require("../../constants/getIndexFromId");

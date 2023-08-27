@@ -24,6 +24,7 @@ app.use("/todos", validateUser, require("./routes/todos/deleteTodo")); // delete
 
 app.use("/users", validateUser, require("./routes/notes/createNote"));
 app.use("/users", validateUser, require("./routes/notes/getNote"));
+app.use("/", validateUser, require("./routes/notes/getNotes"));
 app.listen(PORT, () => {
   console.log(`Server running at port : ${PORT}`);
 });
