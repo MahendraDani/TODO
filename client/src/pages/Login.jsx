@@ -31,7 +31,7 @@ const Login = () => {
         <div className="w-full h-screen flex justify-center items-center">
           <form className="shadow-md shadow-[#E2D6EA] bg-[#E2D6EA] flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
             <div>
-              <h1 className="w-60 text-center text-2xl font-bold text-gray-800 mb-1">
+              <h1 className="w-60 text-center text-2xl font-bold text-[#2b2d42] mb-1">
                 LOGIN TO YOUR ACCOUNT
               </h1>
             </div>
@@ -55,7 +55,7 @@ const Login = () => {
             </div>
             <div className="mt-4">
               <button
-                className="align-center border-2 border-gray-800 px-5 text-lg text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-semibold"
+                className="align-center border-2 border-[#2b2d42] px-5 text-lg text-[#2b2d42] rounded-sm hover:bg-[#2b2d42] hover:text-slate-200 ease-in duration-300 font-semibold"
                 onClick={handleLogin}
               >
                 LOGIN

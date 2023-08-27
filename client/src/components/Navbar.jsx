@@ -10,7 +10,7 @@ const Navbar = () => {
           }}
         >
           {/* <Link to={"/"}> */}
-          <h1 className="text-3xl font-bold text-black cursor-pointer">
+          <h1 className="text-3xl font-bold text-[#2b2d42] cursor-pointer">
             TO-DO
           </h1>
           {/* </Link> */}
@@ -20,12 +20,12 @@ const Navbar = () => {
           {
             <div className="hidden md:flex justify-between items-center gap-6">
               <Link to={"/login"}>
-                <button className="text-lg font-medium border-[2px] border-[#2b2d42] px-4 pb-1 rounded-full text-[#2b2d42] hover:bg-[#2b2d42] hover:text-white ease-out duration-300">
+                <button className="text-lg font-medium border-[2px] border-[#2b2d42] px-4 pb-1 rounded-full text-[#2b2d42] hover:bg-[#2b2d42] hover:text-white ease-in duration-300">
                   Login
                 </button>
               </Link>
               <Link to={"/signup"}>
-                <button className="text-lg font-medium border-2 border-[#2b2d42] bg-[#2b2d42] text-white hover:bg-transparent hover:text-[#2b2d42] px-4 pb-1 rounded-full ease-out duration-500">
+                <button className="text-lg font-medium border-2 border-[#2b2d42] bg-[#2b2d42] text-white hover:bg-transparent hover:text-[#2b2d42] px-4 pb-1 rounded-full ease-in duration-300">
                   Signup
                 </button>
               </Link>

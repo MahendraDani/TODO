@@ -99,7 +99,7 @@ const Signup = () => {
           </div>
           <div>
             <button
-              className="border-2 border-gray-800 px-5 text-lg text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-semibold mt-4"
+              className="border-2 border-[#2b2d42] px-5 text-lg text-[#2b2d42] rounded-sm hover:bg-[#2b2d42] hover:text-slate-200 ease-in duration-300 font-semibold mt-4"
               onClick={handleSingup}
             >
               SIGNUP
