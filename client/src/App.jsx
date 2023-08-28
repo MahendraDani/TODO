@@ -7,7 +7,7 @@ import CreateTodos from "./pages/CreateTodos";
 function App() {
   return (
     <>
-      <div>
+      <div className="font-mono">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />

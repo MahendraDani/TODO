@@ -47,23 +47,15 @@ const Home = () => {
       <div>{!token && <Navbar />}</div>
       {user ? (
         <div className="pl-[18rem] pt-4 w-full min-h-screen px-4 bg-slate-50">
-          <Sidebar onButtonClick={handleModal} />
+          <Sidebar
+            onButtonClick={handleModal}
+            handleTodoList={handleShowTodoList}
+            handleTodoCards={handleShowTodoCards}
+          />
           <Header fullName={userFullName} />
           <section className="mt-4">
             {showModal && <CreateTodos closeModal={closeModal} />}
           </section>
-          <button
-            className="px-3 py-1 border-[#2b2d42] border-2 hover:bg-[#2b2d42] ease-in duration-300 hover:text-white m-2"
-            onClick={handleShowTodoList}
-          >
-            Todo list
-          </button>
-          <button
-            className="px-3 py-1 border-[#2b2d42] border-2 hover:bg-[#2b2d42] ease-in duration-300 hover:text-white m-2"
-            onClick={handleShowTodoCards}
-          >
-            Todo Cards
-          </button>
           <GetTodo showTodoList={showTodoList} showTodoCards={showTodoCards} />
         </div>
       ) : null}

@@ -1,21 +1,32 @@
 import React from "react";
+import { BiTask } from "react-icons/bi";
+import { BiTimeFive } from "react-icons/bi";
+import { AiOutlineCalendar } from "react-icons/ai";
+import { BsCardText } from "react-icons/bs";
+import { MdNumbers } from "react-icons/md";
 
 const TodoList = ({ todos }) => {
   return (
-    <section className="flex flex-col justify-start gap-4 items-start">
+    <section
+      className={`${
+        todos.length === 0 ? "hidden" : "flex"
+      } flex-col justify-start gap-4 items-start`}
+    >
       <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
-        <div className="min-w-[2rem] text-center">#</div>
+        <div className="min-w-[2rem] text-center">
+          <MdNumbers className="ml-2 text-xl text-slate-600" />
+        </div>
         <div className="min-w-[12.2rem] text-lg font-semibold text-[#2b2d42]">
-          Todo
+          <BiTask className="text-xl text-slate-600" />
         </div>
         <div className="text-lg font-semibold max-w-[47rem] min-w-[47rem] text-[#2b2d42]">
-          Description
+          <BsCardText className="text-xl text-slate-800" />
+        </div>
+        <div className="max-w-[6rem] min-w-[6rem] text-lg font-semibold text-[#2b2d42] mr-2">
+          <AiOutlineCalendar className="text-xl text-slate-800" />
         </div>
         <div className="max-w-[6rem] min-w-[6rem] text-lg font-semibold text-[#2b2d42]">
-          Date
-        </div>
-        <div className="max-w-[6rem] min-w-[6rem] text-lg font-semibold text-[#2b2d42]">
-          Time
+          <BiTimeFive className="text-xl text-slate-800" />
         </div>
       </div>
       <div>
@@ -29,15 +40,21 @@ const TodoList = ({ todos }) => {
                   : `border-b-[1.6px]`
               }  p-2 gap-2 border-slate-200 hover:bg-slate-200 ease-in duration-200 cursor-default`}
             >
-              <div className="min-w-[2rem] max-w-[2rem] text-center">
+              <div className="min-w-[2rem] max-w-[2rem] text-center text-slate-500">
                 {index + 1}.
               </div>
-              <div className="min-w-[12rem] max-w-[12rem]">{todos.title}</div>
-              <div className="max-w-[47rem] min-w-[47rem]">
+              <div className="min-w-[12rem] max-w-[12rem] text-slate-600 font-bold font-mono">
+                {todos.title}
+              </div>
+              <div className="max-w-[47rem] min-w-[47rem] text-slate-500">
                 {todos.description}
               </div>
-              <div className="max-w-[6rem] min-w-[6rem]">{todos.createdOn}</div>
-              <div className="max-w-[6rem] min-w-[6rem]">{todos.createdAt}</div>
+              <div className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-500">
+                {todos.createdOn}
+              </div>
+              <div className="max-w-[6rem] min-w-[6rem] text-slate-500">
+                {todos.createdAt}
+              </div>
             </div>
           );
         })}
