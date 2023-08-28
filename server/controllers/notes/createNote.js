@@ -33,13 +33,22 @@ const createNote = async (req, res) => {
     } else {
       const { note, title } = req.body;
       let NOTES = await JSON.parse(fs.readFileSync(NOTES_DIRECTORY, "utf8"));
+      const hour = format(new Date(), "HH:mm:ss").split(":")[0];
+      const time = format(new Date(), "HH:mm:ss").split(":");
+      if (hour < 12) {
+        time[1] = ":";
+        time[3] = " AM";
+      } else {
+        time[1] = ":";
+        time[3] = " PM";
+      }
       const newNote = {
         noteId: uuid(),
         userId: userId,
         note: note,
         title: title,
         createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
-        createdAt: format(new Date(), "HH:mm:ss"),
+        createdAt: time,
         createdBy: USERS[userIndex].fullName,
       };
       NOTES.push(newNote);

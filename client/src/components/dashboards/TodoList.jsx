@@ -4,7 +4,7 @@ const TodoList = ({ todos }) => {
   return (
     <section className="flex flex-col justify-start gap-4 items-start">
       <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
-        <div>#</div>
+        <div className="min-w-[2rem] text-center">#</div>
         <div className="min-w-[12.2rem] text-lg font-semibold text-[#2b2d42]">
           Todo
         </div>
@@ -29,7 +29,9 @@ const TodoList = ({ todos }) => {
                   : `border-b-[1.6px]`
               }  p-2 gap-2 border-slate-200 hover:bg-slate-200 ease-in duration-200 cursor-default`}
             >
-              <div>{index + 1}.</div>
+              <div className="min-w-[2rem] max-w-[2rem] text-center">
+                {index + 1}.
+              </div>
               <div className="min-w-[12rem] max-w-[12rem]">{todos.title}</div>
               <div className="max-w-[47rem] min-w-[47rem]">
                 {todos.description}
