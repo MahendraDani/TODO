@@ -2,7 +2,6 @@ import React from "react";
 import { BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
-import { BsCardText } from "react-icons/bs";
 import { MdNumbers } from "react-icons/md";
 
 const TodoList = ({ todos }) => {
@@ -16,11 +15,8 @@ const TodoList = ({ todos }) => {
         <div className="min-w-[2rem] text-center">
           <MdNumbers className="ml-2 text-xl text-slate-600" />
         </div>
-        <div className="min-w-[12.2rem] text-lg font-semibold text-[#2b2d42]">
+        <div className="min-w-[47.5rem] pl-2 text-lg font-semibold text-[#2b2d42]">
           <BiTask className="text-xl text-slate-600" />
-        </div>
-        <div className="text-lg font-semibold max-w-[47rem] min-w-[47rem] text-[#2b2d42]">
-          <BsCardText className="text-xl text-slate-800" />
         </div>
         <div className="max-w-[6rem] min-w-[6rem] text-lg font-semibold text-[#2b2d42] mr-2">
           <AiOutlineCalendar className="text-xl text-slate-800" />
@@ -40,19 +36,19 @@ const TodoList = ({ todos }) => {
                   : `border-b-[1.6px]`
               }  p-2 gap-2 border-slate-200 hover:bg-slate-200 ease-in duration-200 cursor-default`}
             >
-              <div className="min-w-[2rem] max-w-[2rem] text-center text-slate-500">
-                {index + 1}.
+              <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
+                {index + 1}
               </div>
-              <div className="min-w-[12rem] max-w-[12rem] text-slate-600 font-bold font-mono">
-                {todos.title}
+              <div className="max-w-[47rem] min-w-[47rem] ">
+                <div className="text-slate-600 font-extrabold text-lg">
+                  {todos.title}
+                </div>
+                <div className=" text-slate-400">{todos.description}</div>
               </div>
-              <div className="max-w-[47rem] min-w-[47rem] text-slate-500">
-                {todos.description}
-              </div>
-              <div className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-500">
+              <div className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-400">
                 {todos.createdOn}
               </div>
-              <div className="max-w-[6rem] min-w-[6rem] text-slate-500">
+              <div className="max-w-[6rem] min-w-[6rem] text-slate-400">
                 {todos.createdAt}
               </div>
             </div>
