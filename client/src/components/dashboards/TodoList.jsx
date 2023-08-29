@@ -15,7 +15,7 @@ const TodoList = ({ todos }) => {
         <div className="min-w-[2rem] text-center">
           <MdNumbers className="ml-2 text-xl text-slate-600" />
         </div>
-        <div className="min-w-[47.5rem] pl-2 text-lg font-semibold text-[#2b2d42]">
+        <div className="min-w-[37.5rem] pl-2 text-lg font-semibold text-[#2b2d42]">
           <BiTask className="text-xl text-slate-600" />
         </div>
         <div className="max-w-[6rem] min-w-[6rem] text-lg font-semibold text-[#2b2d42] mr-2">
@@ -39,11 +39,11 @@ const TodoList = ({ todos }) => {
               <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
                 {index + 1}
               </div>
-              <div className="max-w-[47rem] min-w-[47rem] ">
+              <div className="max-w-[37rem] min-w-[37rem] ">
                 <div className="text-slate-600 font-extrabold text-lg">
                   {todos.title}
                 </div>
-                <div className=" text-slate-400">{todos.description}</div>
+                <div className=" text-slate-400 mr-2">{todos.description}</div>
               </div>
               <div className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-400">
                 {todos.createdOn}
