@@ -4,7 +4,7 @@ const Sidebar = ({ onButtonClick, handleTodoList, handleTodoCards }) => {
   return (
     <>
       {/* #83C5BE */}
-      <div className="w-64 bg-slate-200 fixed top-0 left-0 bottom-0 rounded-sm p-2 purple text-[#001011] font-medium">
+      <div className="w-64 border-r-2 border-slate-200 bg-slate-100 fixed top-0 left-0 bottom-0 rounded-sm p-2 purple text-[#001011] font-medium">
         <p>DASHBOARD</p>
 
         <div className="flex flex-col items-start justify-start gap-4">

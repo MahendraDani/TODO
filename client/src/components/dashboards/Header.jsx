@@ -5,7 +5,7 @@ import { SlLogout } from "react-icons/sl";
 
 const Header = (props) => {
   const token = localStorage.getItem("token");
-  const handleLogout = () => {
+  const handleLogout = (e) => {
     if (token) {
       localStorage.removeItem("token");
       localStorage.removeItem("userId");
@@ -31,6 +31,7 @@ const Header = (props) => {
           />
         </div>
         <button
+          id="logoutButton"
           onClick={() => {
             setDropdown(!dropdown);
           }}

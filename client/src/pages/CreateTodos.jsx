@@ -53,14 +53,17 @@ const CreateTodos = ({ closeModal }) => {
 
   return (
     <>
-      {/* <div className="w-32 h-32 bg-[#77BBB5] flex justify-center items-center">
-        <button>
-          <BsFillPlusCircleFill className="text-5xl text-gray-700 hover:text-gray-800 ease-out duration-200" />
-        </button>
-      </div> */}
-
       {
-        <div className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.7)] flex justify-center items-center">
+        <div
+          className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.7)] flex justify-center items-center"
+          id="overlay"
+          onClick={(e) => {
+            const overlay = document.getElementById("overlay");
+            if (e.target === overlay) {
+              closeModal();
+            }
+          }}
+        >
           <div className="rounded-sm shadow-sm">
             <div className="flex justify-end p-2 -mb-[2.5rem]">
               <button
