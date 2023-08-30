@@ -27,9 +27,9 @@ const Login = () => {
 
   return (
     <>
-      <div className="relative w-full h-screen bg-slate-50">
+      <div className="relative w-full h-screen">
         <div className="w-full h-screen flex justify-center items-center">
-          <form className="shadow-md shadow-[#E2D6EA] bg-slate-200 flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
+          <form className="border-2 border-slate-200 bg-slate-100 flex flex-col justify-between items-center gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
             <div>
               <h1 className="w-60 text-center text-2xl font-bold text-[#2b2d42] mb-1">
                 LOGIN TO YOUR ACCOUNT
@@ -40,7 +40,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="jhon@example.com"
-                className=" w-[20rem] bg-slate-100 px-2 py-1 text-[#2b2d42] outline-none border-b-2 border-gray-600 focus:outline-none text-lg  rounded-sm"
+                className=" w-[20rem] bg-slate-200 px-2 py-1 text-[#2b2d42] outline-none border-b-2 border-gray-600 focus:outline-none text-lg  rounded-sm"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -49,7 +49,7 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="*******"
-                className="w-[20rem] py-1 bg-slate-100 text-[#2b2d42] outline-none border-b-2 border-gray-600 px-2 focus:outline-none text-lg rounded-sm"
+                className="w-[20rem] py-1 bg-slate-200 text-[#2b2d42] outline-none border-b-2 border-gray-600 px-2 focus:outline-none text-lg rounded-sm"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -72,7 +72,7 @@ const Login = () => {
           </form>
         </div>
       </div>
-      <div className="absolute top-0 left-0 right-0 w-full h-16 bg-slate-200 flex items-center justify-center">
+      <div className="absolute top-0 left-0 right-0 w-full h-16 bg-slate-100 border-b-2 border-slate-200 flex items-center justify-center">
         <Link to={"/"}>
           <h1 className="text-3xl font-bold text-gray-800">TODO</h1>
         </Link>

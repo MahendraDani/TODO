@@ -46,7 +46,7 @@ const Home = () => {
     <>
       <div>{!token && <Navbar />}</div>
       {user ? (
-        <div className="pl-[18rem] pt-4 w-full min-h-screen px-4 bg-slate-50">
+        <div className="pl-[18rem] pt-4 w-full min-h-screen px-4">
           <Sidebar
             onButtonClick={handleModal}
             handleTodoList={handleShowTodoList}

@@ -35,13 +35,13 @@ const Signup = () => {
   };
   return (
     <>
-      <div className="relative w-full h-screen flex justify-center items-center bg-slate-50">
-        <div className="absolute top-0 left-0 right-0 w-full h-16 bg-slate-200 flex items-center justify-center">
+      <div className="relative w-full h-screen flex justify-center items-center">
+        <div className="absolute top-0 left-0 right-0 w-full h-16 bg-slate-100 border-b-2 border-slate-200 flex items-center justify-center">
           <Link to={"/"}>
             <h1 className="text-3xl font-bold text-gray-800">TODO</h1>
           </Link>
         </div>
-        <form className="bg-slate-200 shadow-md shadow-[#E2D6EA] flex flex-col justify-between items-center gap-6 p-4 rounded-sm text-gray-500 md:text-lg">
+        <form className="bg-slate-100 border-2 border-slate-200 flex flex-col justify-between items-center gap-6 p-4 rounded-sm text-gray-500 md:text-lg">
           <div>
             <h1 className="mb-2 text-2xl font-bold text-gray-800">
               CREATE YOUR ACCOUNT
@@ -53,7 +53,7 @@ const Signup = () => {
               <input
                 type="text"
                 placeholder="Jhon"
-                className="bg-slate-100 text-[#2b2d42] outline-none border-b-2 py-1 border-gray-600 focus:outline-none text-lg rounded-sm px-2"
+                className="bg-slate-200 text-[#2b2d42] outline-none border-b-2 py-1 border-gray-600 focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
@@ -62,7 +62,7 @@ const Signup = () => {
               <input
                 type="text"
                 placeholder="Doe"
-                className="bg-slate-100 text-[#2b2d42]  outline-none border-b-2 py-1 border-gray-600 focus:outline-none text-lg rounded-sm px-2"
+                className="bg-slate-200 text-[#2b2d42]  outline-none border-b-2 py-1 border-gray-600 focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setLastName(e.target.value)}
               />
             </div>
@@ -73,7 +73,7 @@ const Signup = () => {
             <input
               type="email"
               placeholder="jhon@example.com"
-              className="w-full bg-slate-100 text-[#2b2d42]  outline-none border-b-2 py-1 text-lg border-gray-600 focus:outline-nonetext-lg rounded-sm px-2"
+              className="w-full bg-slate-200 text-[#2b2d42]  outline-none border-b-2 py-1 text-lg border-gray-600 focus:outline-nonetext-lg rounded-sm px-2"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -83,7 +83,7 @@ const Signup = () => {
               <input
                 type="password"
                 placeholder="********"
-                className="bg-slate-100 text-[#2b2d42]  outline-none border-b-2 py-1 border-gray-600  focus:outline-none text-lg rounded-sm px-2"
+                className="bg-slate-200 text-[#2b2d42]  outline-none border-b-2 py-1 border-gray-600  focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -92,7 +92,7 @@ const Signup = () => {
               <input
                 type="password"
                 placeholder="********"
-                className="bg-slate-100 text-[#2b2d42]  outline-none border-b-2 py-1 border-gray-600 focus:border-[#593640]0 focus:outline-none text-lg rounded-sm px-2"
+                className="bg-slate-200 text-[#2b2d42]  outline-none border-b-2 py-1 border-gray-600 focus:border-[#593640]0 focus:outline-none text-lg rounded-sm px-2"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
