@@ -1,6 +1,5 @@
 import axios from "axios";
-import React from "react";
-import { AiOutlineDelete } from "react-icons/ai";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const DeleteTodo = ({ todoId }) => {
@@ -21,12 +20,12 @@ const DeleteTodo = ({ todoId }) => {
   };
   return (
     <>
-      <div>
-        <AiOutlineDelete
-          onClick={deleteTodoById}
-          className="text-lg hover:cursor-pointer"
-        />
-      </div>
+      <button
+        onClick={deleteTodoById}
+        className="border-2 border-gray-800 min-w-[5rem] text-lg text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-normal"
+      >
+        Yes
+      </button>
     </>
   );
 };

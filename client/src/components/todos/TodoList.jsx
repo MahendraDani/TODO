@@ -3,7 +3,7 @@ import { BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
-import DeleteTodo from "./deleteTodo";
+import DeleteTodoWarning from "./DeleteTodoWarning";
 
 const TodoList = ({ todos }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
@@ -50,7 +50,7 @@ const TodoList = ({ todos }) => {
                     {todo.title}
                   </div>
                   <div className="text-sm mr-8">
-                    <DeleteTodo todoId={selectedTodoId} />
+                    <DeleteTodoWarning todoId={selectedTodoId} />
                   </div>
                 </h2>
                 <p className=" text-slate-400 mr-2 text-sm">
