@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
+import DeleteTodo from "./deleteTodo";
 
 const TodoList = ({ todos }) => {
+  const [selectedTodoId, setSelectedTodoId] = useState("");
   return (
     <section
       className={`${
@@ -26,10 +28,13 @@ const TodoList = ({ todos }) => {
         </div>
       </div>
       <div>
-        {todos.map((todos, index) => {
+        {todos.map((todo, index) => {
           return (
             <div
               key={index}
+              onClick={() => {
+                setSelectedTodoId(todo._id);
+              }}
               className={`flex flex-row justify-start items-center ${
                 index == 0
                   ? `border-t-[1.6px] border-b-[1.6px] hover:border-t-[1.6px] hover:border-slate-50`
@@ -40,16 +45,23 @@ const TodoList = ({ todos }) => {
                 {index + 1}
               </div>
               <div className="max-w-[37rem] min-w-[37rem] ">
-                <h2 className="text-slate-600 mb-1">{todos.title}</h2>
+                <h2 className="flex justify-between items-center text-slate-600 mb-1 ">
+                  <div className="hover:text-sky-400 hover:cursor-pointer">
+                    {todo.title}
+                  </div>
+                  <div className="text-sm mr-8">
+                    <DeleteTodo todoId={selectedTodoId} />
+                  </div>
+                </h2>
                 <p className=" text-slate-400 mr-2 text-sm">
-                  {todos.description}
+                  {todo.description}
                 </p>
               </div>
               <p className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-400 text-sm">
-                {todos.createdOn}
+                {todo.createdOn}
               </p>
               <p className="max-w-[6rem] min-w-[6rem] text-slate-400 text-sm">
-                {todos.createdAt}
+                {todo.createdAt}
               </p>
             </div>
           );
