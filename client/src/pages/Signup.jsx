@@ -43,7 +43,7 @@ const Signup = () => {
         </div>
         <form className="bg-slate-100 border-2 border-slate-200 flex flex-col justify-between items-center gap-6 p-4 rounded-sm text-gray-500 md:text-lg">
           <div>
-            <h1 className="mb-2 text-2xl font-bold text-gray-800">
+            <h1 className="mb-2 text-2xl font-bold text-gray-800 mt-6">
               CREATE YOUR ACCOUNT
             </h1>
           </div>
@@ -106,13 +106,13 @@ const Signup = () => {
             </button>
           </div>
 
-          <div>
-            <h3 className="text-gray-600">
+          <div className="-mt-2 mb-6">
+            <p className="text-gray-600 text-sm">
               Already a user?{" "}
               <Link to={"/login"} className="text-[#0000ff] hover:underline">
                 Login here
               </Link>
-            </h3>
+            </p>
           </div>
         </form>
       </div>

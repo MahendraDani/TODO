@@ -62,12 +62,12 @@ const Login = () => {
               </button>
             </div>
             <div className="w-72 flex justify-center items-center -mt-2 text-gray-600">
-              <h3>
+              <p className="text-sm">
                 Not an user?{" "}
                 <Link to={"/signup"} className="text-[#0000ff] hover:underline">
                   Signup here!
                 </Link>
-              </h3>
+              </p>
             </div>
           </form>
         </div>

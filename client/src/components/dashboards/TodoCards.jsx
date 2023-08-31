@@ -10,31 +10,29 @@ const TodoCards = ({ todos }) => {
           return (
             <section key={index}>
               <div>
-                <div className="bg-slate-100 border-[1.6px] border-slate-200 hover:bg-slate-200 duration-300 ease-in cursor-default w-[13rem] max-w-[15rem] min-h-[16rem] rounded-sm p-2 px-4 flex flex-col justify-between">
+                <div className="bg-slate-100 border-[1.6px] border-slate-300 hover:bg-slate-300 duration-300 ease-in cursor-default w-[13rem] max-w-[15rem] min-h-[16rem] rounded-sm p-2 px-4 flex flex-col justify-between">
                   <div>
                     <div className="my-2 flex justify-between items-center gap-4">
-                      <span className="text-lg font-bold uppercase">
+                      <span className="text-lg font-bold uppercase text-slate-600">
                         {todo.title}
                       </span>
                     </div>
-                    <div className="text-slate-400">{todo.description}</div>
+                    <p className="text-slate-400 text-sm">{todo.description}</p>
                   </div>
                   <div className="flex justify-between items-center gap-1">
                     <div className="my-2 flex justify-between items-start flex-col gap-1">
                       <div className="text-slate-600 ">
                         <AiOutlineCalendar />
                       </div>
-                      <div className="text-md font-semibold text-slate-400">
-                        {todo.createdOn}
-                      </div>
+                      <p className="text-sm text-slate-400">{todo.createdOn}</p>
                     </div>
                     <div className="my-2 flex justify-between items-start flex-col gap-1">
                       <div className="text-slate-600">
                         <BiTimeFive />
                       </div>
-                      <div className="text-md font-semibold text-slate-400">
+                      <p className="text-sm  text-slate-400">
                         {todo.createdAt}
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>

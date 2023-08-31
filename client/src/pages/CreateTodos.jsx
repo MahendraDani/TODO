@@ -4,12 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 
 const CreateTodos = ({ closeModal }) => {
-  // const [modal, setModal] = useState(false);
   const navigate = useNavigate();
-
-  // const handleModal = () => {
-  //   setModal(!modal);
-  // };
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -43,7 +38,6 @@ const CreateTodos = ({ closeModal }) => {
             },
           }
         );
-        // setModal(!modal);
         window.location = "/";
       }
     } catch (error) {
@@ -55,7 +49,7 @@ const CreateTodos = ({ closeModal }) => {
     <>
       {
         <div
-          className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.7)] flex justify-center items-center"
+          className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center"
           id="overlay"
           onClick={(e) => {
             const overlay = document.getElementById("overlay");
@@ -86,9 +80,9 @@ const CreateTodos = ({ closeModal }) => {
                 </svg>
               </button>
             </div>
-            <form className="w-[30rem] bg-[#E2D6EA] shadow-md flex flex-col justify-between gap-6 p-8 rounded-lg text-gray-500 md:text-lg">
+            <form className="w-[30rem] bg-slate-300 shadow-md flex flex-col justify-between gap-6 p-8 rounded-sm text-gray-500 md:text-lg">
               <div>
-                <h1 className="text-center text-2xl font-bold text-gray-800">
+                <h1 className="text-center text-2xl font-bold text-slate-800">
                   WHAT'S YOUR NEXT TODO?
                 </h1>
               </div>
@@ -96,7 +90,7 @@ const CreateTodos = ({ closeModal }) => {
                 <input
                   type="text"
                   placeholder="Title..."
-                  className="w-full bg-transparent focus:outline-none text-black placeholder:text-[#2b2d42]"
+                  className="text-xl w-full bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-400"
                   onChange={(e) => {
                     setTitle(e.target.value);
                   }}
@@ -107,39 +101,12 @@ const CreateTodos = ({ closeModal }) => {
                   cols={25}
                   rows={5}
                   placeholder="Todo description..."
-                  className="w-full resize-none bg-transparent focus:outline-none placeholder:text-[#2b2d42] text-black"
+                  className="w-full resize-none bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-400"
                   onChange={(e) => {
                     setDescription(e.target.value);
                   }}
                 ></textarea>
               </div>
-              {/* <div className="flex flex-col justify-between items-start gap-1">
-                <h3 className="font-medium">Title</h3>
-                <input
-                  type="text"
-                  placeholder="Workout"
-                  className="w-[20rem] py-1 px-2 text-gray-700 bg-[#EDF6F9] outline-none border-b-2 border-gray-600 focus:outline-none text-lg rounded-sm"
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-              </div> */}
-              {/* <div className="flex flex-col justify-between items-start gap-1">
-                <h3 className="font-medium">Description</h3>
-                <input
-                  type="text"
-                  placeholder="Go to Gym"
-                  className="w-[20rem] py-1 px-2 text-gray-700 bg-[#EDF6F9] outline-none border-b-2 border-gray-600 focus:outline-none text-lg rounded-sm"
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </div> */}
-              {/* <div className="flex flex-col justify-between items-start gap-1">
-                <h3 className="font-medium">Is Completed?</h3>
-                <input
-                  type="text"
-                  placeholder="False"
-                  className="w-[20rem] py-1 px-2 text-gray-700 bg-[#EDF6F9] outline-none border-b-2 border-gray-600 focus:outline-none text-lg rounded-sm"
-                  onChange={(e) => setIsCompleted(e.target.value)}
-                />
-              </div> */}
               <div className=" grid place-items-center">
                 <button
                   className="border-2 border-gray-800 px-5 text-lg text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-semibold"
