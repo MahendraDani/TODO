@@ -4,7 +4,6 @@ const { v4: uuid } = require("uuid");
 const { statusCodes } = require("../../constants/globals/statuscodes");
 const { getIndexFromId } = require("../../constants/globals/getIndexFromId");
 const { format } = require("date-fns");
-const { time } = require("console");
 
 const TODOS_DIRECTORY = path.join(
   __dirname,

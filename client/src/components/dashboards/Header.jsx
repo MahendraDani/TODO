@@ -40,7 +40,7 @@ const Header = (props) => {
             <div className="text-xl">
               <BsPersonCircle />
             </div>
-            <p className="text-lg font-medium pr-2 text-gray-800">
+            <p className="text-[1rem] font-medium pr-2 text-gray-800">
               {props.fullName}
             </p>
           </div>
@@ -54,7 +54,7 @@ const Header = (props) => {
               <div>
                 <SlLogout />
               </div>
-              <div className="text-md">Logout</div>
+              <p className="text-md">Logout</p>
             </div>
           </div>
         )}
