@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import TodoList from "../components/dashboards/TodoList";
-import TodoCards from "../components/dashboards/TodoCards";
+import TodoList from "./TodoList";
+import TodoCards from "./TodoCards";
 
 const GetTodo = ({ showTodoList, showTodoCards }) => {
   const [todos, setTodos] = useState([]);

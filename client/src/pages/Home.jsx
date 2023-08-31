@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import CreateTodos from "./CreateTodos";
-import Sidebar from "../components/Sidebar";
-import Header from "../components/dashboards/Header";
-import GetTodo from "./Todos";
+import Navbar from "../layout/Navbar";
+import CreateTodos from "../components/todos/CreateTodos";
+import Sidebar from "../layout/dashboard/Sidebar";
+import Header from "../layout/dashboard/Header";
+import GetTodo from "../components/todos/Todos";
 
 const Home = () => {
   const token = localStorage.getItem("token");

@@ -104,7 +104,7 @@ const loginController = async (req, res) => {
               createdAt: USERS[userIndex].createdAt,
             },
             process.env.JWT_SECRET,
-            { expiresIn: "3h" }
+            { expiresIn: "3d" }
           );
           res.status(statusCodes.SUCCESS).json({
             message: "User logged in successfully",
