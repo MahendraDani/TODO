@@ -26,6 +26,7 @@ const TodoList = ({ todos }) => {
         <div className="max-w-[6rem] min-w-[6rem] text-lg font-semibold text-[#2b2d42]">
           <BiTimeFive className="text-xl text-slate-800" />
         </div>
+        <div className="max-w-[2rem] min-w-[2rem]">{null}</div>
       </div>
       <div>
         {todos.map((todo, index) => {
@@ -49,9 +50,6 @@ const TodoList = ({ todos }) => {
                   <div className="hover:text-sky-400 hover:cursor-pointer">
                     {todo.title}
                   </div>
-                  <div className="text-sm mr-8">
-                    <DeleteTodoWarning todoId={selectedTodoId} />
-                  </div>
                 </h2>
                 <p className=" text-slate-400 mr-2 text-sm">
                   {todo.description}
@@ -63,6 +61,11 @@ const TodoList = ({ todos }) => {
               <p className="max-w-[6rem] min-w-[6rem] text-slate-400 text-sm">
                 {todo.createdAt}
               </p>
+              <div>
+                <div className="text-sm max-w-[2rem] min-w-[2rem]">
+                  <DeleteTodoWarning todoId={selectedTodoId} />
+                </div>
+              </div>
             </div>
           );
         })}
