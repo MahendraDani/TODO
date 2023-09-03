@@ -4,6 +4,7 @@ import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
 import DeleteTodoWarning from "./DeleteTodoWarning";
+import UpdateTodo from "./UpdateTodo";
 
 const TodoList = ({ todos }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
@@ -65,6 +66,9 @@ const TodoList = ({ todos }) => {
                 <div className="text-sm max-w-[2rem] min-w-[2rem]">
                   <DeleteTodoWarning todoId={selectedTodoId} />
                 </div>
+              </div>
+              <div>
+                <UpdateTodo todoId={selectedTodoId} />
               </div>
             </div>
           );
