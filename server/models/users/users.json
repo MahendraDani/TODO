@@ -63,5 +63,20 @@
       "24",
       " PM"
     ]
+  },
+  {
+    "id": "8b1c7419-64d9-40a7-b0c8-5add43bc58bc",
+    "firstName": "Vikas",
+    "lastName": "Pathak",
+    "fullName": "Vikas Pathak",
+    "email": "vikas@example.com",
+    "password": "$2a$10$2/kMt9FOaoWWh1XSmXc3XeU0mQKUkchaKiWvWfFP70Y4oRitDtU2e",
+    "createdOn": "01.09.2023",
+    "createdAt": [
+      "14",
+      ":",
+      "47",
+      " PM"
+    ]
   }
 ]

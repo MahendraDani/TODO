@@ -1,1 +1,131 @@
-[{"_id":"01955f7f-de14-4bbd-9a62-fbe373822424","userId":"833daff0-7733-473e-b993-312387b05406","title":"Study C++","description":"Practice questions on if-else statements , loops and arrays in C++","createdBy":"Vikas Singh","createdOn":"17-08-2023","createdAt":"14:32:16"},{"_id":"469d0532-e28b-4793-8346-2671042b842c","userId":"01486d35-81bb-40f9-8f27-c00f9a825332","title":"Have dinner","description":"Eat dinner at Boys Hostel, Block 01 mess at 2nd floor.","createdBy":"Tony Stark","createdOn":"17-08-2023","createdAt":"17:23:25"},{"_id":"0c70f225-f07a-4c7c-a518-4991c3c9211a","userId":"e9a76a27-eaab-499f-8990-3e84a8de0a87","title":"Learning","description":"Learn Maths","createdBy":"Jhon Doe","createdOn":"21-08-2023","createdAt":"14:34:40"},{"_id":"c992600f-9ca8-45d0-b915-70257e8027b0","userId":"11e95312-c4e4-45a4-a794-05c3eb1f2524","title":"Study Maths","description":"Prepare module 01 of differential equations","createdBy":"ayush pandey","createdOn":"23-08-2023","createdAt":"13:33:50"},{"_id":"0205ff0d-10b1-47db-b97e-c99590e1a3b0","userId":"332b625f-80f4-4e3c-9f4c-ad3ac91d31b4","title":"Meet Harvey","description":"Discuss with Harvey about how to take down Hardman.","createdBy":"Jessica Pearson","createdOn":"27.08.2023","createdAt":"22:17:38"},{"_id":"51caf964-cb72-4a13-8626-e4e1d1dc1480","userId":"b90b4ab5-9275-409a-ac52-bd59241bc1f9","title":"Study physics","description":"Study how a ball drops on a ground!","createdBy":"Mike Ross","createdOn":"28.08.2023","createdAt":["21","04",":"," PM"]},{"_id":"9bfebc46-c057-4b53-be45-b884f12dc3fb","userId":"332b625f-80f4-4e3c-9f4c-ad3ac91d31b4","title":"Scold Louis","description":"School him for losing another deal because he couldn't control his emotions","createdBy":"Jessica Pearson","createdOn":"28.08.2023","createdAt":["21",":","31"," PM"]},{"_id":"7cc6e67d-b8ad-439f-ad64-566940379ffe","userId":"a16f8d1c-ba7f-4698-93f3-7a3ad254dcf1","title":"Sleep","description":"Sleep for 8 hours","createdBy":"Harry Potter","createdOn":"28.08.2023","createdAt":["23",":","46"," PM"]},{"_id":"5ba9aaae-6056-490c-86b4-c51f4aa3e090","userId":"a16f8d1c-ba7f-4698-93f3-7a3ad254dcf1","title":"Eat lunch","description":"Eat lunch at 12:30 pm at 2nd floor mess in Block 1.\n","createdBy":"Harry Potter","createdOn":"29.08.2023","createdAt":["11",":","28"," AM"]},{"_id":"88a1aae0-f873-432f-8732-0cd7c037dc49","userId":"b90b4ab5-9275-409a-ac52-bd59241bc1f9","title":"Sleep tight","description":"Good night, sweet dreams don't let the bedbugs bite","createdBy":"Mike Ross","createdOn":"30.08.2023","createdAt":["22",":","10"," PM"]},{"_id":"db28e7ff-917d-480c-bcfc-9aba80ab3fda","userId":"b90b4ab5-9275-409a-ac52-bd59241bc1f9","title":"Read","description":"Read all pages of all your notebooks","createdBy":"Mike Ross","createdOn":"30.08.2023","createdAt":["22",":","45"," PM"]},{"_id":"382ace29-bef2-43d1-bd2a-84c179e25340","userId":"b90b4ab5-9275-409a-ac52-bd59241bc1f9","title":"Delete me","description":"I am going to be deleted","createdBy":"Mike Ross","createdOn":"31.08.2023","createdAt":["22",":","03"," PM"]}]
+[
+  {
+    "_id": "01955f7f-de14-4bbd-9a62-fbe373822424",
+    "userId": "833daff0-7733-473e-b993-312387b05406",
+    "title": "Study C++",
+    "description": "Practice questions on if-else statements , loops and arrays in C++",
+    "createdBy": "Vikas Singh",
+    "createdOn": "17-08-2023",
+    "createdAt": "14:32:16"
+  },
+  {
+    "_id": "469d0532-e28b-4793-8346-2671042b842c",
+    "userId": "01486d35-81bb-40f9-8f27-c00f9a825332",
+    "title": "Have dinner",
+    "description": "Eat dinner at Boys Hostel, Block 01 mess at 2nd floor.",
+    "createdBy": "Tony Stark",
+    "createdOn": "17-08-2023",
+    "createdAt": "17:23:25"
+  },
+  {
+    "_id": "0c70f225-f07a-4c7c-a518-4991c3c9211a",
+    "userId": "e9a76a27-eaab-499f-8990-3e84a8de0a87",
+    "title": "Learning",
+    "description": "Learn Maths",
+    "createdBy": "Jhon Doe",
+    "createdOn": "21-08-2023",
+    "createdAt": "14:34:40"
+  },
+  {
+    "_id": "c992600f-9ca8-45d0-b915-70257e8027b0",
+    "userId": "11e95312-c4e4-45a4-a794-05c3eb1f2524",
+    "title": "Study Maths",
+    "description": "Prepare module 01 of differential equations",
+    "createdBy": "ayush pandey",
+    "createdOn": "23-08-2023",
+    "createdAt": "13:33:50"
+  },
+  {
+    "_id": "0205ff0d-10b1-47db-b97e-c99590e1a3b0",
+    "userId": "332b625f-80f4-4e3c-9f4c-ad3ac91d31b4",
+    "title": "Meet Harvey",
+    "description": "Discuss with Harvey about how to take down Hardman.",
+    "createdBy": "Jessica Pearson",
+    "createdOn": "27.08.2023",
+    "createdAt": "22:17:38"
+  },
+  {
+    "_id": "7cc6e67d-b8ad-439f-ad64-566940379ffe",
+    "userId": "a16f8d1c-ba7f-4698-93f3-7a3ad254dcf1",
+    "title": "Sleep",
+    "description": "Sleep for 8 hours",
+    "createdBy": "Harry Potter",
+    "createdOn": "28.08.2023",
+    "createdAt": [
+      "23",
+      ":",
+      "46",
+      " PM"
+    ]
+  },
+  {
+    "_id": "5ba9aaae-6056-490c-86b4-c51f4aa3e090",
+    "userId": "a16f8d1c-ba7f-4698-93f3-7a3ad254dcf1",
+    "title": "Eat lunch",
+    "description": "Eat lunch at 12:30 pm at 2nd floor mess in Block 1.",
+    "createdBy": "Harry Potter",
+    "createdOn": "29.08.2023",
+    "createdAt": [
+      "11",
+      ":",
+      "28",
+      " AM"
+    ]
+  },
+  {
+    "_id": "ccf94dec-8149-420b-b7c6-5f38d856cc5e",
+    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
+    "title": "Play football",
+    "description": "Play from 4pm to 8pm",
+    "createdBy": "Mike Ross",
+    "createdOn": "01.09.2023",
+    "createdAt": [
+      "14",
+      ":",
+      "06",
+      " PM"
+    ]
+  },
+  {
+    "_id": "24217d4a-8825-4acf-937d-02f566c04de5",
+    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
+    "title": "Maths module 02",
+    "description": "Solve problems on Fourier series both half range and full range.",
+    "createdBy": "Mike Ross",
+    "createdOn": "03.09.2023",
+    "createdAt": [
+      "08",
+      ":",
+      "23",
+      " AM"
+    ]
+  },
+  {
+    "_id": "97c5eb4c-ea90-4ddb-96c1-f6dd9fd15374",
+    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
+    "title": "Project Exhibition PPT",
+    "description": "Prepare the ppt for first review.",
+    "createdBy": "Mike Ross",
+    "createdOn": "03.09.2023",
+    "createdAt": [
+      "09",
+      ":",
+      "06",
+      " AM"
+    ]
+  },
+  {
+    "_id": "b76a214e-5ae1-44b0-8c23-d8130e291797",
+    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
+    "title": "Eat breakfast",
+    "description": "Eat breakfast tomorrow at 8am",
+    "createdBy": "Mike Ross",
+    "createdOn": "03.09.2023",
+    "createdAt": [
+      "10",
+      ":",
+      "31",
+      " AM"
+    ]
+  }
+]

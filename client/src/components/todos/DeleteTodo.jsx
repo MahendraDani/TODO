@@ -7,6 +7,7 @@ const DeleteTodo = ({ todoId }) => {
   const deleteTodoById = async () => {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
+
     const response = await axios.delete(
       "http://localhost:3000/todos/delete" + `/${todoId}`,
       {

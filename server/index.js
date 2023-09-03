@@ -21,12 +21,13 @@ app.use("/users", validateUser, require("./routes/users/deleteUser")); // delete
 app.use("/todos", require("./routes/todos/todos")); // get all todos from db
 app.use("/todos", validateUser, require("./routes/todos/createTodo")); //create a new todo
 app.use("/todos", validateUser, require("./routes/todos/deleteTodo")); // delete a todo by its id
-app.use("/todos", validateUser, require("./routes/todos/updateTodoTitle")); // update todo title by id
-app.use(
-  "/todos",
-  validateUser,
-  require("./routes/todos/updateTodoDescription")
-); //update todo desc by id
+// app.use("/todos", validateUser, require("./routes/todos/updateTodoTitle")); // update todo title by id
+// app.use(
+//   "/todos",
+//   validateUser,
+//   require("./routes/todos/updateTodoDescription")
+// ); //update todo desc by id
+app.use("/todos", validateUser, require("./routes/todos/updateTodo"));
 
 app.use("/users", validateUser, require("./routes/notes/createNote")); // create a new note
 app.use("/users", validateUser, require("./routes/notes/getNote")); // get a note by its id
