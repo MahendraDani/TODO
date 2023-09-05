@@ -73,24 +73,10 @@
     ]
   },
   {
-    "_id": "24217d4a-8825-4acf-937d-02f566c04de5",
-    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
-    "title": "SIH Meeting",
-    "description": "Attend meeting to finalize SIH problem statement at 8pm",
-    "createdBy": "Mike Ross",
-    "createdOn": "03.09.2023",
-    "createdAt": [
-      "08",
-      ":",
-      "23",
-      " AM"
-    ]
-  },
-  {
     "_id": "97c5eb4c-ea90-4ddb-96c1-f6dd9fd15374",
     "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
-    "title": "Project Exhibition PPT",
-    "description": "Prepare the ppt for first review.",
+    "title": "Sleep",
+    "description": "Sleep from 11:30pm to 6:00am",
     "createdBy": "Mike Ross",
     "createdOn": "03.09.2023",
     "createdAt": [
@@ -112,6 +98,20 @@
       ":",
       "31",
       " AM"
+    ]
+  },
+  {
+    "_id": "9b67cb58-8e27-486d-bd94-65cd3abb61f1",
+    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
+    "title": "Drink Coffeee",
+    "description": "Drink tea in mess",
+    "createdBy": "Mike Ross",
+    "createdOn": "04.09.2023",
+    "createdAt": [
+      "16",
+      ":",
+      "56",
+      " PM"
     ]
   }
 ]

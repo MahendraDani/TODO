@@ -27,7 +27,8 @@ const TodoList = ({ todos }) => {
         <div className="max-w-[6rem] min-w-[6rem] text-lg font-semibold text-[#2b2d42]">
           <BiTimeFive className="text-xl text-slate-800" />
         </div>
-        <div className="max-w-[2rem] min-w-[2rem]">{null}</div>
+        <div className="max-w-[2rem] min-w-[2rem]"></div>
+        <div className="max-w-[2rem] min-w-[2rem]"></div>
       </div>
       <div>
         {todos.map((todo, index) => {
@@ -67,8 +68,8 @@ const TodoList = ({ todos }) => {
                   <DeleteTodoWarning todoId={selectedTodoId} />
                 </div>
               </div>
-              <div>
-                <UpdateTodo todoId={selectedTodoId} />
+              <div className="grid place-content-center min-w-[2rem] max-w-[2rem]">
+                <UpdateTodo todoId={selectedTodoId} todos={todos} />
               </div>
             </div>
           );

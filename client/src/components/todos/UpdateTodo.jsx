@@ -1,18 +1,32 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { FiEdit2 } from "react-icons/fi";
 
-const UpdateTodo = ({ todoId }) => {
+const UpdateTodo = ({ todoId, todos }) => {
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [showUpdateTodoModal, setShowUpdateTodoModal] = useState(false);
+  const [selectedTodoTitle, setSelectedTodoTitle] = useState("");
+  const [selectedTodoDescription, setSelectedTodoDescription] = useState("");
 
   const handleCloseUpdateTodoModal = () => {
     setShowUpdateTodoModal(false);
+  };
+  const handleShowUpdateModal = () => {
+    let selectedTodo = todos.find((todo) => {
+      if (todo._id === todoId) {
+        return todo;
+      }
+    });
+    setSelectedTodoTitle(selectedTodo.title);
+    setSelectedTodoDescription(selectedTodo.description);
+    setShowUpdateTodoModal(true);
   };
 
   const handleUpdateTodo = async (e) => {
     try {
       e.preventDefault();
+
       const response = await axios.put(
         `http://localhost:3000/todos/update/${todoId}`,
         {
@@ -33,13 +47,11 @@ const UpdateTodo = ({ todoId }) => {
   };
   return (
     <>
-      <button
-        onClick={() => {
-          setShowUpdateTodoModal(true);
-        }}
-      >
-        Update
-      </button>
+      {
+        <button onClick={handleShowUpdateModal}>
+          <FiEdit2 className="text-md" />
+        </button>
+      }
       {showUpdateTodoModal && (
         <div
           className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center"
@@ -82,8 +94,8 @@ const UpdateTodo = ({ todoId }) => {
               <div>
                 <input
                   type="text"
-                  placeholder="Title..."
-                  className="text-xl w-full bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-400"
+                  placeholder={selectedTodoTitle}
+                  className="text-xl w-full bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-700"
                   onChange={(e) => {
                     setNewTitle(e.target.value);
                   }}
@@ -93,8 +105,8 @@ const UpdateTodo = ({ todoId }) => {
                 <textarea
                   cols={25}
                   rows={5}
-                  placeholder="Todo description..."
-                  className="w-full resize-none bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-400"
+                  placeholder={selectedTodoDescription}
+                  className="w-full resize-none bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-700"
                   onChange={(e) => {
                     setNewDescription(e.target.value);
                   }}
