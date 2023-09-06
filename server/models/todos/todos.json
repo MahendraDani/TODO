@@ -73,34 +73,6 @@
     ]
   },
   {
-    "_id": "97c5eb4c-ea90-4ddb-96c1-f6dd9fd15374",
-    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
-    "title": "Sleep",
-    "description": "Sleep from 11:30pm to 6:00am",
-    "createdBy": "Mike Ross",
-    "createdOn": "03.09.2023",
-    "createdAt": [
-      "09",
-      ":",
-      "06",
-      " AM"
-    ]
-  },
-  {
-    "_id": "b76a214e-5ae1-44b0-8c23-d8130e291797",
-    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
-    "title": "Eat breakfast",
-    "description": "Why do humans eat breakfast?",
-    "createdBy": "Mike Ross",
-    "createdOn": "03.09.2023",
-    "createdAt": [
-      "10",
-      ":",
-      "31",
-      " AM"
-    ]
-  },
-  {
     "_id": "9b67cb58-8e27-486d-bd94-65cd3abb61f1",
     "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
     "title": "Drink Coffeee",
@@ -111,6 +83,20 @@
       "16",
       ":",
       "56",
+      " PM"
+    ]
+  },
+  {
+    "_id": "93f922d4-6c75-4391-826a-abec23d0d100",
+    "userId": "b90b4ab5-9275-409a-ac52-bd59241bc1f9",
+    "title": "Watch TV",
+    "description": "Watch TV today morning",
+    "createdBy": "Mike Ross",
+    "createdOn": "06.09.2023",
+    "createdAt": [
+      "13",
+      ":",
+      "39",
       " PM"
     ]
   }

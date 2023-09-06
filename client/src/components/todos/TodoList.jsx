@@ -63,13 +63,14 @@ const TodoList = ({ todos }) => {
               <p className="max-w-[6rem] min-w-[6rem] text-slate-400 text-sm">
                 {todo.createdAt}
               </p>
+
+              <div className="grid place-content-center min-w-[2rem] max-w-[2rem] pr-7">
+                <UpdateTodo todoId={selectedTodoId} todos={todos} />
+              </div>
               <div>
                 <div className="text-sm max-w-[2rem] min-w-[2rem]">
                   <DeleteTodoWarning todoId={selectedTodoId} />
                 </div>
-              </div>
-              <div className="grid place-content-center min-w-[2rem] max-w-[2rem]">
-                <UpdateTodo todoId={selectedTodoId} todos={todos} />
               </div>
             </div>
           );

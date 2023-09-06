@@ -1,22 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import UpdateTodo from "./UpdateTodo";
+import DeleteTodoWarning from "./DeleteTodoWarning";
+import DeleteTodo from "./deleteTodo";
 
 const TodoCards = ({ todos }) => {
+  const [showDropbox, setShowDropbox] = useState(false);
+  const [selectedTodoId, setSelectedTodoId] = useState(false);
+
   return (
     <section className="flex flex-row justify-start gap-4 items-start">
-      <div className="w-[75rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
+      <div className=" w-[75rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
         {todos.map((todo, index) => {
           return (
-            <section key={index}>
+            <section
+              key={index}
+              className="relative"
+              onClick={() => {
+                setSelectedTodoId(todo._id);
+              }}
+            >
               <div>
-                <div className="bg-slate-100 border-[1.6px] border-slate-300 hover:bg-slate-300 duration-300 ease-in cursor-default w-[13rem] max-w-[15rem] min-h-[16rem] rounded-sm p-2 px-4 flex flex-col justify-between">
+                <div className="bg-slate-100 border-[1.6px] hover:shadow-lg duration-300 ease-in cursor-default w-[13rem] max-w-[15rem] min-h-[16rem] rounded-sm p-2 px-4 flex flex-col justify-between">
                   <div>
-                    <div className="my-2 flex justify-between items-center gap-4">
-                      <span className="text-lg font-bold uppercase text-slate-600">
+                    <div className="my-2 flex justify-between items-start gap-4">
+                      <div className="text-lg font-bold uppercase text-slate-600">
                         {todo.title}
-                      </span>
+                      </div>
+                      <div
+                        className="cursor-pointer"
+                        onClick={() => {
+                          setShowDropbox(!showDropbox);
+                        }}
+                      >
+                        <BiDotsVerticalRounded className="text-lg text-slate-600  w-fit h-fit  rounded-full hover:bg-slate-200 duration-300 ease-in p-1" />
+                      </div>
                     </div>
+                    {(todo._id === selectedTodoId ? showDropbox : null) && (
+                      <aside
+                        className={`${
+                          !showDropbox ? "hidden" : null
+                        } absolute top-12 right-8 w-fit p-3 rounded-md shadow-md flex flex-col gap-2 bg-slate-300 ease-in`}
+                      >
+                        <div className="flex justify-around items-center">
+                          <UpdateTodo
+                            className="cursor-pointer"
+                            todos={todos}
+                            todoId={selectedTodoId}
+                          />
+                        </div>
+                        <div className="flex justify-around items-center cursor-pointer">
+                          <DeleteTodoWarning
+                            todoId={selectedTodoId}
+                            onClick={() => {
+                              setIsActionClicked(true);
+                            }}
+                          />
+                        </div>
+                      </aside>
+                    )}
                     <p className="text-slate-400 text-sm">{todo.description}</p>
                   </div>
                   <div className="flex justify-between items-center gap-1">

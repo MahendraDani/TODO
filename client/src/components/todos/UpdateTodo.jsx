@@ -26,7 +26,7 @@ const UpdateTodo = ({ todoId, todos }) => {
   const handleUpdateTodo = async (e) => {
     try {
       e.preventDefault();
-
+      console.log(todos.reverse());
       const response = await axios.put(
         `http://localhost:3000/todos/update/${todoId}`,
         {
@@ -49,7 +49,7 @@ const UpdateTodo = ({ todoId, todos }) => {
     <>
       {
         <button onClick={handleShowUpdateModal}>
-          <FiEdit2 className="text-md" />
+          <FiEdit2 className="text-sm" />
         </button>
       }
       {showUpdateTodoModal && (

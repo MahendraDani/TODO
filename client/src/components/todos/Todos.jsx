@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import TodoList from "./TodoList";
 import TodoCards from "./TodoCards";
-import { createContext } from "react";
 
 const GetTodo = ({ showTodoList, showTodoCards }) => {
   const [todos, setTodos] = useState([]);
