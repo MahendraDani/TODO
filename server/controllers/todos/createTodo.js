@@ -4,6 +4,7 @@ const { v4: uuid } = require("uuid");
 const { statusCodes } = require("../../constants/globals/statuscodes");
 const { getIndexFromId } = require("../../constants/globals/getIndexFromId");
 const { format } = require("date-fns");
+const { setTime } = require("../../constants/globals/time");
 
 const TODOS_DIRECTORY = path.join(
   __dirname,
@@ -54,15 +55,6 @@ const createTodo = async (req, res) => {
               .status(statusCodes.FORBIDDEN)
               .json({ message: "Invalid userid" });
           } else {
-            const hour = format(new Date(), "HH:mm:ss").split(":")[0];
-            const time = format(new Date(), "HH:mm:ss").split(":");
-            if (hour < 12) {
-              time[1] = ":";
-              time[3] = " AM";
-            } else {
-              time[1] = ":";
-              time[3] = " PM";
-            }
             const newTodo = {
               _id: uuid(),
               userId: userId,
@@ -71,7 +63,7 @@ const createTodo = async (req, res) => {
               isCompleted: isCompleted,
               createdBy: USERS[userIndex].fullName,
               createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
-              createdAt: time,
+              createdAt: setTime(),
             };
 
             TODOS.push(newTodo);

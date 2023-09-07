@@ -4,7 +4,6 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import UpdateTodo from "./UpdateTodo";
 import DeleteTodoWarning from "./DeleteTodoWarning";
-import DeleteTodo from "./deleteTodo";
 
 const TodoCards = ({ todos }) => {
   const [showDropbox, setShowDropbox] = useState(false);
@@ -17,7 +16,6 @@ const TodoCards = ({ todos }) => {
           return (
             <section
               key={index}
-              className="relative"
               onClick={() => {
                 setSelectedTodoId(todo._id);
               }}
@@ -52,12 +50,7 @@ const TodoCards = ({ todos }) => {
                           />
                         </div>
                         <div className="flex justify-around items-center cursor-pointer">
-                          <DeleteTodoWarning
-                            todoId={selectedTodoId}
-                            onClick={() => {
-                              setIsActionClicked(true);
-                            }}
-                          />
+                          <DeleteTodoWarning todoId={selectedTodoId} />
                         </div>
                       </aside>
                     )}

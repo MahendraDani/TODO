@@ -5,10 +5,10 @@ import { FiEdit2 } from "react-icons/fi";
 const UpdateTodo = ({ todoId, todos }) => {
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
-  const [showUpdateTodoModal, setShowUpdateTodoModal] = useState(false);
   const [selectedTodoTitle, setSelectedTodoTitle] = useState("");
   const [selectedTodoDescription, setSelectedTodoDescription] = useState("");
 
+  const [showUpdateTodoModal, setShowUpdateTodoModal] = useState(false);
   const handleCloseUpdateTodoModal = () => {
     setShowUpdateTodoModal(false);
   };

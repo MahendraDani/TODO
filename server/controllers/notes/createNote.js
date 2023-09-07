@@ -4,6 +4,7 @@ const { statusCodes } = require("../../constants/globals/statuscodes");
 const { v4: uuid } = require("uuid");
 const { format } = require("date-fns");
 const { getIndexFromId } = require("../../constants/globals/getIndexFromId");
+const { setTime } = require("../../constants/globals/time");
 
 const NOTES_DIRECTORY = path.join(
   __dirname,
@@ -33,22 +34,13 @@ const createNote = async (req, res) => {
     } else {
       const { note, title } = req.body;
       let NOTES = await JSON.parse(fs.readFileSync(NOTES_DIRECTORY, "utf8"));
-      const hour = format(new Date(), "HH:mm:ss").split(":")[0];
-      const time = format(new Date(), "HH:mm:ss").split(":");
-      if (hour < 12) {
-        time[1] = ":";
-        time[3] = " AM";
-      } else {
-        time[1] = ":";
-        time[3] = " PM";
-      }
       const newNote = {
         noteId: uuid(),
         userId: userId,
         note: note,
         title: title,
         createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
-        createdAt: time,
+        createdAt: setTime(),
         createdBy: USERS[userIndex].fullName,
       };
       NOTES.push(newNote);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -55,7 +56,7 @@ const Login = () => {
             </div>
             <div className="mt-4">
               <button
-                className="align-center border-2 border-[#2b2d42] px-5 text-lg text-[#2b2d42] rounded-sm hover:bg-[#2b2d42] hover:text-slate-200 ease-in duration-300 font-semibold"
+                className="align-center border-2 border-[#2b2d42] min-w-[6rem] text-lg text-[#2b2d42] rounded-sm hover:bg-[#2b2d42] hover:text-slate-200 ease-in duration-300 font-semibold"
                 onClick={handleLogin}
               >
                 LOGIN

@@ -8,6 +8,7 @@ const jwt = require("jsonwebtoken");
 const {
   getIndexFromEmail,
 } = require("../../constants/globals/getIndexFromEmail");
+const { setTime } = require("../../constants/globals/time");
 
 const USERS_DIRECTORY = path.join(
   __dirname,
@@ -36,15 +37,6 @@ const signupController = async (req, res) => {
           .json({ message: "User is already signed up!" });
       } else {
         const hashedPassword = bcrypt.hashSync(password, 10);
-        const hour = format(new Date(), "HH:mm:ss").split(":")[0];
-        const time = format(new Date(), "HH:mm:ss").split(":");
-        if (hour < 12) {
-          time[1] = ":";
-          time[3] = " AM";
-        } else {
-          time[1] = ":";
-          time[3] = " PM";
-        }
         const newUser = {
           id: uuid(),
           firstName: firstName,
@@ -53,7 +45,7 @@ const signupController = async (req, res) => {
           email: email,
           password: hashedPassword,
           createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
-          createdAt: time,
+          createdAt: setTime(),
         };
 
         USERS.push(newUser);
