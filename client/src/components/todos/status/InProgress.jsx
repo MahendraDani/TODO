@@ -12,10 +12,16 @@ const InProgressTodos = ({ todos, status }) => {
   const NOT_STARTED = "not started";
   const IN_PROGRESS = "in progress";
 
+  const InProgressTodos = todos.filter((todo) => {
+    if (todo.status === IN_PROGRESS) {
+      return todo;
+    }
+  });
+
   return (
     <section
       className={`${
-        todos.length === 0 ? "hidden" : "flex"
+        InProgressTodos.length === 0 ? "hidden" : "flex"
       } flex-col justify-start gap-4 items-start`}
     >
       <h1 className="text-2xl text-slate-700">IN PROGRESS</h1>
