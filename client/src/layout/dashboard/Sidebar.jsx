@@ -44,7 +44,7 @@ const Sidebar = ({
               className="border-2 border-black bg-transparent hover:bg-black hover:text-white px-2 py-1 text-center min-w-[8rem] ease-in duration-200 font-normal"
               onClick={handleCompletedTodosList}
             >
-              Completed Todos
+              Completed List
             </button>
           </div>
           <div>
@@ -52,7 +52,7 @@ const Sidebar = ({
               className="border-2 border-black bg-transparent hover:bg-black hover:text-white px-2 py-1 text-center min-w-[8rem] ease-in duration-200 font-normal"
               onClick={handleNotStartedTodosList}
             >
-              Not Started Todos
+              Not Started List
             </button>
           </div>
           <div>
@@ -60,7 +60,7 @@ const Sidebar = ({
               className="border-2 border-black bg-transparent hover:bg-black hover:text-white px-2 py-1 text-center min-w-[8rem] ease-in duration-200 font-normal"
               onClick={handleInProgressTodosList}
             >
-              In Progress Todos
+              In Progress List
             </button>
           </div>
         </div>

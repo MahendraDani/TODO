@@ -1,7 +1,10 @@
 const setTime = () => {
   const date = new Date();
   const hour = date.getHours().toString();
-  const minute = date.getMinutes().toString();
+  let minute = date.getMinutes().toString();
+  if (minute < "10") {
+    minute = `${"0"}${minute}`;
+  }
   const time = [hour, ":", minute];
 
   if (hour > 12) {

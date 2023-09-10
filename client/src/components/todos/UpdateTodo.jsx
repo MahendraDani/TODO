@@ -5,8 +5,10 @@ import { FiEdit2 } from "react-icons/fi";
 const UpdateTodo = ({ todoId, todos }) => {
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
+  const [newStatus, setNewStatus] = useState("");
   const [selectedTodoTitle, setSelectedTodoTitle] = useState("");
   const [selectedTodoDescription, setSelectedTodoDescription] = useState("");
+  const [selectedTodoStatus, setSelectedTodoStatus] = useState(false);
 
   const [showUpdateTodoModal, setShowUpdateTodoModal] = useState(false);
   const handleCloseUpdateTodoModal = () => {
@@ -20,6 +22,7 @@ const UpdateTodo = ({ todoId, todos }) => {
     });
     setSelectedTodoTitle(selectedTodo.title);
     setSelectedTodoDescription(selectedTodo.description);
+    setSelectedTodoStatus(selectedTodo.status);
     setShowUpdateTodoModal(true);
   };
 
@@ -32,6 +35,7 @@ const UpdateTodo = ({ todoId, todos }) => {
         {
           newTitle: newTitle,
           newDescription: newDescription,
+          newStatus: newStatus,
         },
         {
           headers: {
@@ -111,6 +115,16 @@ const UpdateTodo = ({ todoId, todos }) => {
                     setNewDescription(e.target.value);
                   }}
                 ></textarea>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder={selectedTodoStatus}
+                  className="text-xl w-full bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-700"
+                  onChange={(e) => {
+                    setNewStatus(e.target.value);
+                  }}
+                />
               </div>
               <div className=" grid place-items-center">
                 <button

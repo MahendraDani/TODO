@@ -11,6 +11,9 @@ const {
 const {
   updateTodoDescriptionById,
 } = require("../../constants/todos/updateTodoDescriptionById");
+const {
+  updateTodoStatusById,
+} = require("../../constants/todos/updateTodoStatusById");
 
 const TODOS_DIRECTORY = path.join(
   __dirname,
@@ -63,7 +66,7 @@ const updateTodo = async (req, res) => {
         .json({ message: "Invalid or incorrect todo Id" });
     }
 
-    const { newTitle, newDescription } = req.body;
+    const { newTitle, newDescription, newStatus } = req.body;
     if (newTitle && !newDescription) {
       // Only update title
       TODOS = updateTodoTitleById(TODOS, todoId, newTitle);
@@ -83,13 +86,23 @@ const updateTodo = async (req, res) => {
         .json({ message: "Todo updated successfully", todo: TODOS[todoIndex] });
     }
 
-    if (newTitle && newDescription) {
+    if (newTitle && newDescription && newStatus) {
       // update both title and description
       TODOS = updateTodoTitleById(TODOS, todoId, newTitle);
       TODOS = updateTodoDescriptionById(TODOS, todoId, newDescription);
+      TODOS = updateTodoStatusById(TODOS, todoId, newStatus);
       fs.writeFileSync(TODOS_DIRECTORY, JSON.stringify(TODOS));
       return res.status(statusCodes.SUCCESS).json({
-        messaage: "Todo updated successfully",
+        message: "Todo updated successfully",
+        todo: TODOS[todoIndex],
+      });
+    }
+
+    if (newStatus) {
+      TODOS = updateTodoStatusById(TODOS, todoId, newStatus);
+      fs.writeFileSync(TODOS_DIRECTORY, JSON.stringify(TODOS));
+      return res.status(statusCodes.SUCCESS).json({
+        message: "Todo updated successfully",
         todo: TODOS[todoIndex],
       });
     }
