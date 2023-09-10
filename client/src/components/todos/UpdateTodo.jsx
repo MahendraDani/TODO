@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FiEdit2 } from "react-icons/fi";
 
 const UpdateTodo = ({ todoId, todos }) => {
@@ -54,7 +54,7 @@ const UpdateTodo = ({ todoId, todos }) => {
       }
       {showUpdateTodoModal && (
         <div
-          className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center"
+          className="w-full h-screen fixed z-20 inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center"
           id="overlay"
           onClick={(e) => {
             const overlay = document.getElementById("overlay");

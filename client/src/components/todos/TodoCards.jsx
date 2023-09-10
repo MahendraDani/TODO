@@ -11,11 +11,12 @@ const TodoCards = ({ todos }) => {
 
   return (
     <section className="flex flex-row justify-start gap-4 items-start">
-      <div className=" w-[75rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
+      <div className="w-[75rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
         {todos.map((todo, index) => {
           return (
             <section
               key={index}
+              className="relative"
               onClick={() => {
                 setSelectedTodoId(todo._id);
               }}
@@ -38,6 +39,7 @@ const TodoCards = ({ todos }) => {
                     </div>
                     {(todo._id === selectedTodoId ? showDropbox : null) && (
                       <aside
+                        id="dropbox"
                         className={`${
                           !showDropbox ? "hidden" : null
                         } absolute top-12 right-8 w-fit p-3 rounded-md shadow-md flex flex-col gap-2 bg-slate-300 ease-in`}
