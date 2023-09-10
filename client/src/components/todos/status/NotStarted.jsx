@@ -3,10 +3,10 @@ import { BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
-import DeleteTodoWarning from "./DeleteTodoWarning";
-import UpdateTodo from "./UpdateTodo";
+import DeleteTodoWarning from "../DeleteTodoWarning";
+import UpdateTodo from "../UpdateTodo";
 
-const TodoList = ({ todos }) => {
+const NotStartedTodos = ({ todos, status }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
   const COMPLETED = "completed";
   const NOT_STARTED = "not started";
@@ -18,7 +18,8 @@ const TodoList = ({ todos }) => {
         todos.length === 0 ? "hidden" : "flex"
       } flex-col justify-start gap-4 items-start`}
     >
-      <h1 className="text-2xl text-slate-700">MY TODOS</h1>
+      <h1 className="text-2xl text-slate-700">NOT STARTED</h1>
+
       <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
         <div className="min-w-[2rem] text-center">
           <MdNumbers className="ml-2 text-xl text-slate-600" />
@@ -37,7 +38,7 @@ const TodoList = ({ todos }) => {
       </div>
       <div>
         {todos.map((todo, index) => {
-          return (
+          return todo.status === status ? (
             <div
               key={index}
               onClick={() => {
@@ -54,7 +55,9 @@ const TodoList = ({ todos }) => {
               </div>
               <div className="max-w-[37rem] min-w-[37rem] ">
                 <h2 className="flex justify-start items-center text-slate-600 mb-1 gap-2 ">
-                  <div>{todo.title}</div>
+                  <div className="hover:text-sky-400 hover:cursor-pointer">
+                    {todo.title}
+                  </div>
                   <div
                     className={`font-normal w-2 h-2 rounded-full text-sm ${
                       todo.status === COMPLETED
@@ -67,7 +70,7 @@ const TodoList = ({ todos }) => {
                     }`}
                   ></div>
                 </h2>
-                <p className=" text-slate-400 mr-2 text-sm ">
+                <p className=" text-slate-400 mr-2 text-sm">
                   {todo.description}
                 </p>
               </div>
@@ -87,11 +90,11 @@ const TodoList = ({ todos }) => {
                 </div>
               </div>
             </div>
-          );
+          ) : null;
         })}
       </div>
     </section>
   );
 };
 
-export default TodoList;
+export default NotStartedTodos;

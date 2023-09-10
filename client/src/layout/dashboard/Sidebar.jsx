@@ -1,6 +1,13 @@
 import React from "react";
 
-const Sidebar = ({ onButtonClick, handleTodoList, handleTodoCards }) => {
+const Sidebar = ({
+  onButtonClick,
+  handleTodoList,
+  handleTodoCards,
+  handleCompletedTodosList,
+  handleNotStartedTodosList,
+  handleInProgressTodosList,
+}) => {
   return (
     <>
       {/* #83C5BE */}
@@ -30,6 +37,30 @@ const Sidebar = ({ onButtonClick, handleTodoList, handleTodoCards }) => {
               onClick={handleTodoCards}
             >
               Todo Cards
+            </button>
+          </div>
+          <div>
+            <button
+              className="border-2 border-black bg-transparent hover:bg-black hover:text-white px-2 py-1 text-center min-w-[8rem] ease-in duration-200 font-normal"
+              onClick={handleCompletedTodosList}
+            >
+              Completed Todos
+            </button>
+          </div>
+          <div>
+            <button
+              className="border-2 border-black bg-transparent hover:bg-black hover:text-white px-2 py-1 text-center min-w-[8rem] ease-in duration-200 font-normal"
+              onClick={handleNotStartedTodosList}
+            >
+              Not Started Todos
+            </button>
+          </div>
+          <div>
+            <button
+              className="border-2 border-black bg-transparent hover:bg-black hover:text-white px-2 py-1 text-center min-w-[8rem] ease-in duration-200 font-normal"
+              onClick={handleInProgressTodosList}
+            >
+              In Progress Todos
             </button>
           </div>
         </div>

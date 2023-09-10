@@ -7,7 +7,7 @@ const CreateTodos = ({ closeModal }) => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [isCompleted, setIsCompleted] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleCreateTodo = async (e) => {
     try {
@@ -29,6 +29,7 @@ const CreateTodos = ({ closeModal }) => {
           {
             title,
             description,
+            status,
           },
           {
             headers: {
@@ -48,7 +49,7 @@ const CreateTodos = ({ closeModal }) => {
     <>
       {
         <div
-          className="w-full h-screen fixed inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center"
+          className="w-full h-screen fixed z-20 inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center"
           id="overlay"
           onClick={(e) => {
             const overlay = document.getElementById("overlay");
@@ -105,6 +106,16 @@ const CreateTodos = ({ closeModal }) => {
                     setDescription(e.target.value);
                   }}
                 ></textarea>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Status"
+                  className="text-xl w-full bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-400"
+                  onChange={(e) => {
+                    setStatus(e.target.value);
+                  }}
+                />
               </div>
               <div className=" grid place-items-center">
                 <button

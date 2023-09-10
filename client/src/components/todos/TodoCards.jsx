@@ -10,7 +10,8 @@ const TodoCards = ({ todos }) => {
   const [selectedTodoId, setSelectedTodoId] = useState(false);
 
   return (
-    <section className="flex flex-row justify-start gap-4 items-start">
+    <section className="flex flex-col justify-start gap-1 items-start">
+      <h1 className="text-2xl text-slate-700">MY TODOS</h1>
       <div className="w-[75rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
         {todos.map((todo, index) => {
           return (

@@ -27,8 +27,8 @@ const USERS_DIRECTORY = path.join(
 const createTodo = async (req, res) => {
   try {
     const userId = req.headers.id; // This is users's id should be set from frontend
-    const { title, description, isCompleted } = req.body;
-    if (title === "" || description === "" || isCompleted === "") {
+    const { title, description, status } = req.body;
+    if (title === "" || description === "" || status === "") {
       res
         .status(statusCodes.BAD_REQUEST)
         .json({ message: "All fields are required to create a todo!" });
@@ -60,7 +60,7 @@ const createTodo = async (req, res) => {
               userId: userId,
               title: title,
               description: description,
-              isCompleted: isCompleted,
+              status: status.toLowerCase(),
               createdBy: USERS[userIndex].fullName,
               createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
               createdAt: setTime(),

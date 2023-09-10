@@ -2,9 +2,19 @@ import axios from "axios";
 import React, { useState } from "react";
 import TodoList from "./TodoList";
 import TodoCards from "./TodoCards";
+import CompletedTodos from "./status/Completed";
+import NotStartedTodos from "./status/NotStarted";
+import InProgressTodos from "./status/InProgress";
 
-const GetTodo = ({ showTodoList, showTodoCards }) => {
+const GetTodo = ({
+  showTodoList,
+  showTodoCards,
+  showCompletedTodosList,
+  showNotStartedTodosList,
+  showInProgressTodosLists,
+}) => {
   const [todos, setTodos] = useState([]);
+
   const getTodosOfUser = async () => {
     const token = localStorage.getItem("token");
     const userId = localStorage.getItem("userId");
@@ -25,6 +35,15 @@ const GetTodo = ({ showTodoList, showTodoCards }) => {
     <div>
       {showTodoCards && <TodoCards todos={todos} />}
       {showTodoList && <TodoList todos={todos} />}
+      {showCompletedTodosList && (
+        <CompletedTodos todos={todos} status={"completed"} />
+      )}
+      {showNotStartedTodosList && (
+        <NotStartedTodos todos={todos} status={"not started"} />
+      )}
+      {showInProgressTodosLists && (
+        <InProgressTodos todos={todos} status={"in progress"} />
+      )}
     </div>
   );
 };
