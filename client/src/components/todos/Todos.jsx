@@ -5,6 +5,9 @@ import TodoCards from "./TodoCards";
 import CompletedTodos from "./status/Completed";
 import NotStartedTodos from "./status/NotStarted";
 import InProgressTodos from "./status/InProgress";
+import CompletedCards from "./status/cards/CompletedCards";
+import InProgressCards from "./status/cards/InProgressCards";
+import NotStartedCards from "./status/cards/NotStartedCards";
 
 const GetTodo = ({
   showTodoList,
@@ -12,6 +15,9 @@ const GetTodo = ({
   showCompletedTodosList,
   showNotStartedTodosList,
   showInProgressTodosLists,
+  showCompletedTodosCards,
+  showInProgressTodosCards,
+  showNotStartedTodosCards,
 }) => {
   const [todos, setTodos] = useState([]);
 
@@ -44,6 +50,15 @@ const GetTodo = ({
       )}
       {showInProgressTodosLists && (
         <InProgressTodos todos={todos} status={"in progress"} />
+      )}
+      {showCompletedTodosCards && (
+        <CompletedCards todos={todos} status={"completed"} />
+      )}
+      {showInProgressTodosCards && (
+        <InProgressCards todos={todos} status={"in progress"} />
+      )}
+      {showNotStartedTodosCards && (
+        <NotStartedCards todos={todos} status={"not started"} />
       )}
     </div>
   );

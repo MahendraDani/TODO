@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { BiDotsVerticalRounded } from "react-icons/bi";
-import UpdateTodo from "./UpdateTodo";
-import DeleteTodoWarning from "./DeleteTodoWarning";
+import UpdateTodo from "../../UpdateTodo";
+import DeleteTodoWarning from "../../DeleteTodoWarning";
 
-const TodoCards = ({ todos }) => {
+const NotStartedCards = ({ todos, status }) => {
   const [showDropbox, setShowDropbox] = useState(false);
   const [selectedTodoId, setSelectedTodoId] = useState(false);
 
@@ -15,10 +15,10 @@ const TodoCards = ({ todos }) => {
 
   return (
     <section className="flex flex-col justify-start gap-1 items-start">
-      <h1 className="text-2xl text-slate-700">MY TODOS</h1>
+      <h1 className="text-2xl text-slate-700">NOT STARTED</h1>
       <div className="w-[75rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
         {todos.map((todo, index) => {
-          return (
+          return todo.status === status ? (
             <section
               key={index}
               className="relative"
@@ -30,7 +30,7 @@ const TodoCards = ({ todos }) => {
                 <div className="bg-slate-100 border-[1.6px] hover:shadow-lg duration-300 ease-in cursor-default w-[13rem] max-w-[15rem] min-h-[16rem] rounded-sm p-2 px-4 flex flex-col justify-between">
                   <div>
                     <div className="my-2 flex justify-between items-start gap-4">
-                      <div className="text-lg font-bold uppercase text-slate-600 flex justify-start items-center gap-2">
+                      <div className="text-lg font-bold uppercase text-slate-600 flex justify-center items-center gap-2">
                         <div
                           className={`font-normal w-2 h-2 rounded-full text-sm ${
                             todo.status === COMPLETED
@@ -93,11 +93,11 @@ const TodoCards = ({ todos }) => {
                 </div>
               </div>
             </section>
-          );
+          ) : null;
         })}
       </div>
     </section>
   );
 };
 
-export default TodoCards;
+export default NotStartedCards;

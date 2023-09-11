@@ -7,6 +7,9 @@ const Sidebar = ({
   handleCompletedTodosList,
   handleNotStartedTodosList,
   handleInProgressTodosList,
+  handleCompletedTodosCards,
+  handleInProgressTodosCards,
+  handleNotStartedTodosCards,
 }) => {
   return (
     <>
@@ -60,6 +63,30 @@ const Sidebar = ({
             onClick={handleInProgressTodosList}
           >
             In Progress List
+          </button>
+        </div>
+        <div className="w-full">
+          <button
+            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
+            onClick={handleCompletedTodosCards}
+          >
+            Completed Cards
+          </button>
+        </div>
+        <div className="w-full">
+          <button
+            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
+            onClick={handleInProgressTodosCards}
+          >
+            In progress Cards
+          </button>
+        </div>
+        <div className="w-full">
+          <button
+            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
+            onClick={handleNotStartedTodosCards}
+          >
+            Not started Cards
           </button>
         </div>
       </div>

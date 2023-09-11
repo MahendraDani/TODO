@@ -16,6 +16,12 @@ const Home = () => {
   const [showCompletedTodosList, setShowCompletedTodosList] = useState(false);
   const [showNotStartedTodosList, setShowNotStartedTodosList] = useState(false);
   const [showInProgressTodosList, setShowInProgressTodosList] = useState(false);
+  const [showCompletedTodosCards, setShowCompletedTodosCards] = useState(false);
+  const [showInProgressTodosCards, setShowInProgressTodosCards] =
+    useState(false);
+
+  const [showNotStartedTodosCards, setShowNotStartedTodosCards] =
+    useState(false);
 
   const closeModal = () => {
     showModal ? setShowModal(false) : null;
@@ -37,6 +43,15 @@ const Home = () => {
   const closeInProgressTodosList = () => {
     showInProgressTodosList ? setShowInProgressTodosList(false) : null;
   };
+  const closeCompletedTodosCards = () => {
+    showCompletedTodosCards ? setShowCompletedTodosCards(false) : null;
+  };
+  const closeInProgressTodosCards = () => {
+    showInProgressTodosCards ? setShowInProgressTodosCards(false) : null;
+  };
+  const closeNotStartedTodosCards = () => {
+    showNotStartedTodosCards ? setShowNotStartedTodosCards(false) : null;
+  };
 
   const handleModal = () => {
     setShowModal(!showModal);
@@ -48,6 +63,9 @@ const Home = () => {
     closeCompletedTodosList();
     closeInProgressTodosList();
     closeNotStartedTodosList();
+    closeCompletedTodosCards();
+    closeInProgressTodosCards();
+    closeNotStartedTodosCards();
   };
 
   const handleShowTodoCards = () => {
@@ -56,6 +74,9 @@ const Home = () => {
     closeCompletedTodosList();
     closeInProgressTodosList();
     closeNotStartedTodosList();
+    closeCompletedTodosCards();
+    closeInProgressTodosCards();
+    closeNotStartedTodosCards();
   };
 
   const handleCompletedTodosList = () => {
@@ -64,6 +85,9 @@ const Home = () => {
     closeTodoCards();
     closeInProgressTodosList();
     closeNotStartedTodosList();
+    closeCompletedTodosCards();
+    closeInProgressTodosCards();
+    closeNotStartedTodosCards();
   };
 
   const handleNotStartedTodosList = () => {
@@ -72,6 +96,9 @@ const Home = () => {
     closeTodoCards();
     closeInProgressTodosList();
     closeCompletedTodosList();
+    closeCompletedTodosCards();
+    closeInProgressTodosCards();
+    closeNotStartedTodosCards();
   };
   const handleInProgressTodosList = () => {
     setShowInProgressTodosList(true);
@@ -79,6 +106,42 @@ const Home = () => {
     closeTodoCards();
     closeNotStartedTodosList();
     closeCompletedTodosList();
+    closeCompletedTodosCards();
+    closeInProgressTodosCards();
+    closeNotStartedTodosCards();
+  };
+
+  const handleCompletedTodosCards = () => {
+    setShowCompletedTodosCards(true);
+    closeTodoList();
+    closeTodoCards();
+    closeCompletedTodosList();
+    closeInProgressTodosList();
+    closeNotStartedTodosList();
+    closeInProgressTodosCards();
+    closeNotStartedTodosCards();
+  };
+
+  const handleInProgressTodosCards = () => {
+    setShowInProgressTodosCards(true);
+    closeTodoList();
+    closeTodoCards();
+    closeCompletedTodosList();
+    closeInProgressTodosList();
+    closeNotStartedTodosList();
+    closeCompletedTodosCards();
+    closeNotStartedTodosCards();
+  };
+
+  const handleNotStartedTodosCards = () => {
+    setShowNotStartedTodosCards(true);
+    closeTodoList();
+    closeTodoCards();
+    closeCompletedTodosList();
+    closeInProgressTodosList();
+    closeNotStartedTodosList();
+    closeCompletedTodosCards();
+    closeInProgressTodosCards();
   };
 
   useEffect(() => {
@@ -98,6 +161,9 @@ const Home = () => {
             handleCompletedTodosList={handleCompletedTodosList}
             handleNotStartedTodosList={handleNotStartedTodosList}
             handleInProgressTodosList={handleInProgressTodosList}
+            handleCompletedTodosCards={handleCompletedTodosCards}
+            handleInProgressTodosCards={handleInProgressTodosCards}
+            handleNotStartedTodosCards={handleNotStartedTodosCards}
           />
           <Header fullName={userFullName} />
           <section className="mt-4">
@@ -109,6 +175,9 @@ const Home = () => {
             showCompletedTodosList={showCompletedTodosList}
             showNotStartedTodosList={showNotStartedTodosList}
             showInProgressTodosLists={showInProgressTodosList}
+            showCompletedTodosCards={showCompletedTodosCards}
+            showInProgressTodosCards={showInProgressTodosCards}
+            showNotStartedTodosCards={showNotStartedTodosCards}
           />
         </div>
       ) : null}
