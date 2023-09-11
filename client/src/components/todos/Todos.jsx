@@ -27,7 +27,8 @@ const GetTodo = ({
       headers,
     });
     const TODOS = response.data;
-    setTodos(TODOS);
+    const REVERSE_TODOS = TODOS.reverse();
+    setTodos(REVERSE_TODOS);
   };
 
   useState(getTodosOfUser, []);
