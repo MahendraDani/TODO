@@ -108,14 +108,22 @@ const CreateTodos = ({ closeModal }) => {
                 ></textarea>
               </div>
               <div>
-                <input
-                  type="text"
-                  placeholder="Status"
-                  className="text-xl w-full bg-transparent focus:outline-none text-slate-800 placeholder:text-slate-400"
-                  onChange={(e) => {
+                <select
+                  name="status"
+                  onClick={(e) => {
                     setStatus(e.target.value);
                   }}
-                />
+                  className="p-1 bg-slate-200 text-sm rounded-sm focus:outline-none "
+                >
+                  <option
+                    value="completed"
+                    className="hover:bg-slate-400 hover:text-slate-100 ease-in duration-200 "
+                  >
+                    Completed
+                  </option>
+                  <option value="in progress">In progress</option>
+                  <option value="not started">Not started</option>
+                </select>
               </div>
               <div className=" grid place-items-center">
                 <button
