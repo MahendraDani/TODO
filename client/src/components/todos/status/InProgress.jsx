@@ -5,6 +5,7 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
 import DeleteTodoWarning from "../DeleteTodoWarning";
 import UpdateTodo from "../UpdateTodo";
+import CreateTodos from "../CreateTodos";
 
 const InProgressTodos = ({ todos, status }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
@@ -12,13 +13,46 @@ const InProgressTodos = ({ todos, status }) => {
   const NOT_STARTED = "not started";
   const IN_PROGRESS = "in progress";
 
+  const [showCreateTodoModal, setShowCreateTodoModal] = useState(false);
+
+  const handleShowCreateTodoModal = () => {
+    setShowCreateTodoModal(true);
+  };
+
+  const closeModal = () => {
+    showCreateTodoModal ? setShowCreateTodoModal(false) : null;
+  };
+
   const InProgressTodos = todos.filter((todo) => {
     if (todo.status === IN_PROGRESS) {
       return todo;
     }
   });
 
-  return (
+  return InProgressTodos.length === 0 ? (
+    <div className="h-[80vh] grid place-content-center">
+      <div className="flex flex-col gap-3 justify-center items-center">
+        <div className="text-center">
+          <h2 className="text-2xl text-slate-700">
+            Looks like you don't have any{" "}
+            <span className="text-yellow-400">ongoing </span> todos!
+          </h2>
+          <h2 className="text-2xl text-slate-700">Create new todo?</h2>
+        </div>
+        <div className=" grid place-items-center">
+          <button
+            className="border-2 border-gray-800 px-5 text-md text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-normal"
+            onClick={handleShowCreateTodoModal}
+          >
+            Create Todos
+          </button>
+        </div>
+        <div>
+          {showCreateTodoModal && <CreateTodos closeModal={closeModal} />}
+        </div>
+      </div>
+    </div>
+  ) : (
     <section
       className={`${
         InProgressTodos.length === 0 ? "hidden" : "flex"
