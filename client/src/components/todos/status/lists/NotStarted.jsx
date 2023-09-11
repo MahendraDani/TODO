@@ -3,16 +3,21 @@ import { BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
-import DeleteTodoWarning from "../DeleteTodoWarning";
-import UpdateTodo from "../UpdateTodo";
-import CreateTodos from "../CreateTodos";
+import DeleteTodoWarning from "../../DeleteTodoWarning";
+import UpdateTodo from "../../UpdateTodo";
+import CreateTodos from "../../CreateTodos";
 
-const InProgressTodos = ({ todos, status }) => {
+const NotStartedTodos = ({ todos, status }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
   const COMPLETED = "completed";
   const NOT_STARTED = "not started";
   const IN_PROGRESS = "in progress";
 
+  const notStartedTodos = todos.filter((todo) => {
+    if (todo.status === NOT_STARTED) {
+      return todo;
+    }
+  });
   const [showCreateTodoModal, setShowCreateTodoModal] = useState(false);
 
   const handleShowCreateTodoModal = () => {
@@ -23,19 +28,13 @@ const InProgressTodos = ({ todos, status }) => {
     showCreateTodoModal ? setShowCreateTodoModal(false) : null;
   };
 
-  const InProgressTodos = todos.filter((todo) => {
-    if (todo.status === IN_PROGRESS) {
-      return todo;
-    }
-  });
-
-  return InProgressTodos.length === 0 ? (
+  return notStartedTodos.length === 0 ? (
     <div className="h-[80vh] grid place-content-center">
       <div className="flex flex-col gap-3 justify-center items-center">
         <div className="text-center">
           <h2 className="text-2xl text-slate-700">
             Looks like you don't have any{" "}
-            <span className="text-yellow-400">ongoing </span> todos!
+            <span className="text-red-400">not started</span> todos!
           </h2>
           <h2 className="text-2xl text-slate-700">Create new todo?</h2>
         </div>
@@ -55,10 +54,11 @@ const InProgressTodos = ({ todos, status }) => {
   ) : (
     <section
       className={`${
-        InProgressTodos.length === 0 ? "hidden" : "flex"
+        notStartedTodos.length === 0 ? "hidden" : "flex"
       } flex-col justify-start gap-4 items-start`}
     >
-      <h1 className="text-2xl text-slate-700">IN PROGRESS</h1>
+      <h1 className="text-2xl text-slate-700">NOT STARTED</h1>
+
       <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
         <div className="min-w-[2rem] text-center">
           <MdNumbers className="ml-2 text-xl text-slate-600" />
@@ -136,4 +136,4 @@ const InProgressTodos = ({ todos, status }) => {
   );
 };
 
-export default InProgressTodos;
+export default NotStartedTodos;
