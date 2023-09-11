@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../layout/Navbar";
-import CreateTodos from "../components/todos/CreateTodos";
+import CreateTodos from "../components/todos/create/CreateTodos";
 import Sidebar from "../layout/dashboard/Sidebar";
 import Header from "../layout/dashboard/Header";
 import GetTodo from "../components/todos/Todos";

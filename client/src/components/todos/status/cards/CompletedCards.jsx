@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { BiDotsVerticalRounded } from "react-icons/bi";
-import UpdateTodo from "../../UpdateTodo";
-import DeleteTodoWarning from "../../DeleteTodoWarning";
+import UpdateTodo from "../../update/UpdateTodo";
+import DeleteTodoWarning from "../../delete/DeleteTodoWarning";
 
 const CompletedCards = ({ todos, status }) => {
   const [showDropbox, setShowDropbox] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import DeleteTodo from "./deleteTodo";
+import DeleteTodo from "./DeleteTodo";
 
 const DeleteTodoWarning = ({ todoId }) => {
   const [showDeleteWarning, setShowDeletWarning] = useState(false);

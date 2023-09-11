@@ -3,8 +3,8 @@ import { BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
-import DeleteTodoWarning from "./DeleteTodoWarning";
-import UpdateTodo from "./UpdateTodo";
+import DeleteTodoWarning from "./delete/DeleteTodoWarning";
+import UpdateTodo from "./update/UpdateTodo";
 
 const TodoList = ({ todos }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
