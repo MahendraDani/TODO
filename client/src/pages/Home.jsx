@@ -4,6 +4,7 @@ import CreateTodos from "../components/todos/create/CreateTodos";
 import Sidebar from "../layout/dashboard/Sidebar";
 import Header from "../layout/dashboard/Header";
 import GetTodo from "../components/todos/Todos";
+import Rightbar from "../layout/dashboard/Rightbar";
 
 const Home = () => {
   const token = localStorage.getItem("token");
@@ -165,6 +166,7 @@ const Home = () => {
             handleInProgressTodosCards={handleInProgressTodosCards}
             handleNotStartedTodosCards={handleNotStartedTodosCards}
           />
+          <Rightbar />
           <Header fullName={userFullName} />
           <section className="mt-4">
             {showModal && <CreateTodos closeModal={closeModal} />}

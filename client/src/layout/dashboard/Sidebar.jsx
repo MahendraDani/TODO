@@ -21,7 +21,7 @@ const Sidebar = ({
   return (
     <>
       {/* #83C5BE */}
-      <div className="w-64 border-2 border-slate-200 bg-slate-50 fixed top-3 left-3 bottom-3 shadow-md rounded-sm purple text-slate-700 font-medium flex flex-col justify-start items-start gap-4">
+      <div className="w-64 border-2 border-slate-200 bg-slate-50 fixed top-3 left-3 bottom-3 shadow-md rounded-sm purple text-slate-700 font-medium flex flex-col justify-start items-start gap-8">
         <section className="w-full">
           <div className="text-center">
             <p className="text-2xl font-extrabold text-slate-800 my-4">TODOS</p>
@@ -74,7 +74,7 @@ const Sidebar = ({
           <div className="flex justify-between items-center gap-3 px-6 py-2">
             <h1 className="text-lg">Grid View</h1>
             <div>
-              <IoGridOutline />
+              <IoGridOutline className="text-xl" />
             </div>
           </div>
           <div className="flex flex-col justify-between gap-1">
