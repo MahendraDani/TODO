@@ -160,6 +160,10 @@ const Home = () => {
             handleCompletedTodosList={handleCompletedTodosList}
             handleNotStartedTodosList={handleNotStartedTodosList}
             handleInProgressTodosList={handleInProgressTodosList}
+            handleShowTodoCards={handleShowTodoCards}
+            handleCompletedTodosCards={handleCompletedTodosCards}
+            handleInProgressTodosCards={handleInProgressTodosCards}
+            handleNotStartedTodosCards={handleNotStartedTodosCards}
           />
           <Header fullName={userFullName} />
           <section className="mt-4">
