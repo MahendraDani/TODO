@@ -6,8 +6,9 @@ import { MdNumbers } from "react-icons/md";
 import DeleteTodoWarning from "../../delete/DeleteTodoWarning";
 import UpdateTodo from "../../update/UpdateTodo";
 import CreateTodos from "../../create/CreateTodos";
+import { IoGridOutline } from "react-icons/io5";
 
-const InProgressTodos = ({ todos, status }) => {
+const InProgressTodos = ({ todos, status, handleInProgressTodosCards }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
   const COMPLETED = "completed";
   const NOT_STARTED = "not started";
@@ -58,7 +59,15 @@ const InProgressTodos = ({ todos, status }) => {
         InProgressTodos.length === 0 ? "hidden" : "flex"
       } flex-col justify-start gap-4 items-start`}
     >
-      <h1 className="text-2xl text-slate-700">IN PROGRESS</h1>
+      <div className="w-[59.5rem] flex justify-between items-center">
+        <h1 className="text-2xl text-slate-700">IN PROGRESS TODOS</h1>
+        <div>
+          <IoGridOutline
+            className="text-xl text-slate-600 cursor-pointer"
+            onClick={handleInProgressTodosCards}
+          />
+        </div>
+      </div>
       <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
         <div className="min-w-[2rem] text-center">
           <MdNumbers className="ml-2 text-xl text-slate-600" />

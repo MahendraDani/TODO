@@ -18,6 +18,14 @@ const GetTodo = ({
   showCompletedTodosCards,
   showInProgressTodosCards,
   showNotStartedTodosCards,
+  handleTodoCards,
+  handleTodoList,
+  handleCompletedTodosCards,
+  handleCompletedTodosList,
+  handleInProgressTodosCards,
+  handleInProgressTodosList,
+  handleNotStartedTodosCards,
+  handleNotStartedTodosList,
 }) => {
   const [todos, setTodos] = useState([]);
 
@@ -40,25 +48,53 @@ const GetTodo = ({
   useState(getTodosOfUser, []);
   return (
     <div>
-      {showTodoCards && <TodoCards todos={todos} />}
-      {showTodoList && <TodoList todos={todos} />}
+      {showTodoCards && (
+        <TodoCards todos={todos} handleTodoList={handleTodoList} />
+      )}
+      {showTodoList && (
+        <TodoList todos={todos} handleTodoCards={handleTodoCards} />
+      )}
       {showCompletedTodosList && (
-        <CompletedTodos todos={todos} status={"completed"} />
+        <CompletedTodos
+          todos={todos}
+          status={"completed"}
+          handleCompletedTodosCards={handleCompletedTodosCards}
+        />
       )}
       {showNotStartedTodosList && (
-        <NotStartedTodos todos={todos} status={"not started"} />
+        <NotStartedTodos
+          todos={todos}
+          status={"not started"}
+          handleNotStartedTodosCards={handleNotStartedTodosCards}
+        />
       )}
       {showInProgressTodosLists && (
-        <InProgressTodos todos={todos} status={"in progress"} />
+        <InProgressTodos
+          todos={todos}
+          status={"in progress"}
+          handleInProgressTodosCards={handleInProgressTodosCards}
+        />
       )}
       {showCompletedTodosCards && (
-        <CompletedCards todos={todos} status={"completed"} />
+        <CompletedCards
+          todos={todos}
+          status={"completed"}
+          handleCompletedTodosList={handleCompletedTodosList}
+        />
       )}
       {showInProgressTodosCards && (
-        <InProgressCards todos={todos} status={"in progress"} />
+        <InProgressCards
+          todos={todos}
+          status={"in progress"}
+          handleInProgressTodosList={handleInProgressTodosList}
+        />
       )}
       {showNotStartedTodosCards && (
-        <NotStartedCards todos={todos} status={"not started"} />
+        <NotStartedCards
+          todos={todos}
+          status={"not started"}
+          handleNotStartedTodosList={handleNotStartedTodosList}
+        />
       )}
     </div>
   );

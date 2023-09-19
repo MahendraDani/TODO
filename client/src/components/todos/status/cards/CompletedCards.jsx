@@ -4,8 +4,9 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import UpdateTodo from "../../update/UpdateTodo";
 import DeleteTodoWarning from "../../delete/DeleteTodoWarning";
+import { BsList } from "react-icons/bs";
 
-const CompletedCards = ({ todos, status }) => {
+const CompletedCards = ({ todos, status, handleCompletedTodosList }) => {
   const [showDropbox, setShowDropbox] = useState(false);
   const [selectedTodoId, setSelectedTodoId] = useState(false);
 
@@ -15,8 +16,16 @@ const CompletedCards = ({ todos, status }) => {
 
   return (
     <section className="flex flex-col justify-start gap-1 items-start">
-      <h1 className="text-2xl text-slate-700">COMPLETED</h1>
-      <div className="w-[75rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
+      <div className={`w-[56.5rem] flex justify-between items-center`}>
+        <h1 className="text-2xl text-slate-700">COMPLETED TODOS</h1>
+        <div>
+          <BsList
+            className="text-xl text-slate-800 cursor-pointer"
+            onClick={handleCompletedTodosList}
+          />
+        </div>
+      </div>
+      <div className="w-[70rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
         {todos.map((todo, index) => {
           return todo.status === status ? (
             <section

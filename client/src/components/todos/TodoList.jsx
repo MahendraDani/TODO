@@ -5,8 +5,8 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
 import DeleteTodoWarning from "./delete/DeleteTodoWarning";
 import UpdateTodo from "./update/UpdateTodo";
-
-const TodoList = ({ todos }) => {
+import { IoGridOutline } from "react-icons/io5";
+const TodoList = ({ todos, handleTodoCards }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
   const COMPLETED = "completed";
   const NOT_STARTED = "not started";
@@ -18,10 +18,18 @@ const TodoList = ({ todos }) => {
         todos.length === 0 ? "hidden" : "flex"
       } flex-col justify-start gap-4 items-start`}
     >
-      <h1 className="text-2xl text-slate-700">MY TODOS</h1>
+      <div className="w-[59.5rem] flex justify-between items-center">
+        <h1 className="text-2xl text-slate-700">MY TODOS</h1>
+        <div>
+          <IoGridOutline
+            className="text-xl text-slate-600 cursor-pointer"
+            onClick={handleTodoCards}
+          />
+        </div>
+      </div>
       <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
         <div className="min-w-[2rem] text-center">
-          <MdNumbers className="ml-2 text-xl text-slate-600" />
+          <MdNumbers className="ml-2 text-xl text-slate-800" />
         </div>
         <div className="min-w-[37.5rem] pl-2 text-lg font-semibold text-[#2b2d42]">
           <BiTask className="text-xl text-slate-600" />

@@ -178,6 +178,14 @@ const Home = () => {
             showCompletedTodosCards={showCompletedTodosCards}
             showInProgressTodosCards={showInProgressTodosCards}
             showNotStartedTodosCards={showNotStartedTodosCards}
+            handleTodoCards={handleShowTodoCards}
+            handleTodoList={handleShowTodoList}
+            handleCompletedTodosCards={handleCompletedTodosCards}
+            handleCompletedTodosList={handleCompletedTodosList}
+            handleInProgressTodosCards={handleInProgressTodosCards}
+            handleInProgressTodosList={handleInProgressTodosList}
+            handleNotStartedTodosCards={handleNotStartedTodosCards}
+            handleNotStartedTodosList={handleNotStartedTodosList}
           />
         </div>
       ) : null}
