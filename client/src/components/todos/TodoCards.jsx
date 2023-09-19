@@ -5,6 +5,8 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import UpdateTodo from "./update/UpdateTodo";
 import DeleteTodoWarning from "./delete/DeleteTodoWarning";
 import { BsList } from "react-icons/bs";
+import CreateTodos from "./create/CreateTodos";
+
 const TodoCards = ({ todos, handleTodoList }) => {
   const [showDropbox, setShowDropbox] = useState(false);
   const [selectedTodoId, setSelectedTodoId] = useState(false);
@@ -13,7 +15,40 @@ const TodoCards = ({ todos, handleTodoList }) => {
   const IN_PROGRESS = "in progress";
   const NOT_STARTED = "not started";
 
-  return (
+  const [showCreateTodoModal, setShowCreateTodoModal] = useState(false);
+
+  const handleShowCreateTodoModal = () => {
+    setShowCreateTodoModal(true);
+  };
+
+  const closeModal = () => {
+    showCreateTodoModal ? setShowCreateTodoModal(false) : null;
+  };
+
+  return todos.length === 0 ? (
+    <div className="h-[80vh] grid place-content-center">
+      <div className="flex flex-col gap-3 justify-center items-center">
+        <div className="text-center">
+          <h2 className="text-2xl text-slate-700">
+            Looks like you don't have any{" "}
+            <span className="text-purple-400">todos!</span>
+          </h2>
+          <h2 className="text-2xl text-slate-700">Create your first todo!</h2>
+        </div>
+        <div className=" grid place-items-center">
+          <button
+            className="border-2 border-gray-800 px-5 text-md text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-normal"
+            onClick={handleShowCreateTodoModal}
+          >
+            Create Todos
+          </button>
+        </div>
+        <div>
+          {showCreateTodoModal && <CreateTodos closeModal={closeModal} />}
+        </div>
+      </div>
+    </div>
+  ) : (
     <section className="flex flex-col justify-start gap-1 items-start">
       <div className="w-[56.5rem] flex justify-between items-center">
         <h1 className="text-2xl text-slate-700">MY TODOS</h1>

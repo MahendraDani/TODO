@@ -6,13 +6,47 @@ import { MdNumbers } from "react-icons/md";
 import DeleteTodoWarning from "./delete/DeleteTodoWarning";
 import UpdateTodo from "./update/UpdateTodo";
 import { IoGridOutline } from "react-icons/io5";
+import CreateTodos from "./create/CreateTodos";
+
 const TodoList = ({ todos, handleTodoCards }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
   const COMPLETED = "completed";
   const NOT_STARTED = "not started";
   const IN_PROGRESS = "in progress";
+  const [showCreateTodoModal, setShowCreateTodoModal] = useState(false);
 
-  return (
+  const handleShowCreateTodoModal = () => {
+    setShowCreateTodoModal(true);
+  };
+
+  const closeModal = () => {
+    showCreateTodoModal ? setShowCreateTodoModal(false) : null;
+  };
+
+  return todos.length === 0 ? (
+    <div className="h-[80vh] grid place-content-center">
+      <div className="flex flex-col gap-3 justify-center items-center">
+        <div className="text-center">
+          <h2 className="text-2xl text-slate-700">
+            Looks like you don't have any{" "}
+            <span className="text-purple-400">todos!</span>
+          </h2>
+          <h2 className="text-2xl text-slate-700">Create your first todo!</h2>
+        </div>
+        <div className=" grid place-items-center">
+          <button
+            className="border-2 border-gray-800 px-5 text-md text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-normal"
+            onClick={handleShowCreateTodoModal}
+          >
+            Create Todos
+          </button>
+        </div>
+        <div>
+          {showCreateTodoModal && <CreateTodos closeModal={closeModal} />}
+        </div>
+      </div>
+    </div>
+  ) : (
     <section
       className={`${
         todos.length === 0 ? "hidden" : "flex"
