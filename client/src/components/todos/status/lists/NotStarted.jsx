@@ -19,6 +19,7 @@ const NotStartedTodos = ({ todos, status, handleNotStartedTodosCards }) => {
       return todo;
     }
   });
+
   const [showCreateTodoModal, setShowCreateTodoModal] = useState(false);
 
   const handleShowCreateTodoModal = () => {
@@ -85,7 +86,7 @@ const NotStartedTodos = ({ todos, status, handleNotStartedTodosCards }) => {
         <div className="max-w-[2rem] min-w-[2rem]"></div>
       </div>
       <div>
-        {todos.map((todo, index) => {
+        {notStartedTodos.map((todo, index) => {
           return todo.status === status ? (
             <div
               key={index}

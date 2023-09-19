@@ -155,15 +155,11 @@ const Home = () => {
       {user ? (
         <div className="pl-[18rem] pt-4 w-full min-h-screen px-4">
           <Sidebar
-            onButtonClick={handleModal}
+            createTodo={handleModal}
             handleTodoList={handleShowTodoList}
-            handleTodoCards={handleShowTodoCards}
             handleCompletedTodosList={handleCompletedTodosList}
             handleNotStartedTodosList={handleNotStartedTodosList}
             handleInProgressTodosList={handleInProgressTodosList}
-            handleCompletedTodosCards={handleCompletedTodosCards}
-            handleInProgressTodosCards={handleInProgressTodosCards}
-            handleNotStartedTodosCards={handleNotStartedTodosCards}
           />
           <Header fullName={userFullName} />
           <section className="mt-4">

@@ -83,7 +83,7 @@ const CompletedTodos = ({ todos, status, handleCompletedTodosCards }) => {
         <div className="max-w-[2rem] min-w-[2rem]"></div>
       </div>
       <div>
-        {todos.map((todo, index) => {
+        {completedTodos.map((todo, index) => {
           return todo.status === status ? (
             <div
               key={index}

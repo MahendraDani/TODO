@@ -85,7 +85,7 @@ const InProgressTodos = ({ todos, status, handleInProgressTodosCards }) => {
         <div className="max-w-[2rem] min-w-[2rem]"></div>
       </div>
       <div>
-        {todos.map((todo, index) => {
+        {InProgressTodos.map((todo, index) => {
           return todo.status === status ? (
             <div
               key={index}

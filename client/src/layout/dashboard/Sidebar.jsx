@@ -1,93 +1,54 @@
 import React from "react";
-
+import DashboardButton from "../Buttons/Dashboard.button";
+import { MdDone } from "react-icons/md";
+import { LiaTasksSolid } from "react-icons/lia";
+import { BiLoaderCircle } from "react-icons/bi";
+import { RxCross2 } from "react-icons/rx";
 const Sidebar = ({
-  onButtonClick,
+  createTodo,
   handleTodoList,
-  handleTodoCards,
   handleCompletedTodosList,
   handleNotStartedTodosList,
   handleInProgressTodosList,
-  handleCompletedTodosCards,
-  handleInProgressTodosCards,
-  handleNotStartedTodosCards,
 }) => {
   return (
     <>
       {/* #83C5BE */}
-      <div className="w-64 border-2 border-slate-200 bg-slate-50 fixed top-3 left-3 bottom-3 shadow-md rounded-sm purple text-[#001011] font-medium flex flex-col justify-start items-center">
+      <div className="w-64 border-2 border-slate-200 bg-slate-50 fixed top-3 left-3 bottom-3 shadow-md rounded-sm purple text-slate-700 font-medium flex flex-col justify-start items-center">
         {/* {Create todos button} */}
-        <p className="text-xl font-bold text-slate-700 my-4">LOGO</p>
+        <p className="text-2xl font-bold text-slate-800 my-4">TODOS</p>
         <div>
           <button
             className="border-2 border-black bg-transparent hover:bg-black hover:text-white px-2 py-1 text-center min-w-[8rem] ease-in duration-200 font-normal mb-4"
-            onClick={onButtonClick}
+            onClick={createTodo}
           >
             Create Todos
           </button>
         </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
+        <div className="w-full flex justify-start items-center px-6 py-2">
+          <h1 className="text-lg">My Todos</h1>
+        </div>
+        <div className="w-full flex flex-col justify-between gap-1">
+          <DashboardButton
+            icon={<LiaTasksSolid />}
+            name={"All todos"}
             onClick={handleTodoList}
-          >
-            Todo List
-          </button>
-        </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
-            onClick={handleTodoCards}
-          >
-            Todo Cards
-          </button>
-        </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
+          />
+          <DashboardButton
+            icon={<MdDone />}
+            name={"Completed todos"}
             onClick={handleCompletedTodosList}
-          >
-            Completed List
-          </button>
-        </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
-            onClick={handleNotStartedTodosList}
-          >
-            Not Started List
-          </button>
-        </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
+          />
+          <DashboardButton
+            icon={<BiLoaderCircle />}
+            name={"In progress todos"}
             onClick={handleInProgressTodosList}
-          >
-            In Progress List
-          </button>
-        </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
-            onClick={handleCompletedTodosCards}
-          >
-            Completed Cards
-          </button>
-        </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
-            onClick={handleInProgressTodosCards}
-          >
-            In progress Cards
-          </button>
-        </div>
-        <div className="w-full">
-          <button
-            className="px-2 py-3 focus:bg-purple-300 focus:border-l-[6px] focus:border-purple-600 w-full text-center min-w-[14rem] font-normal bg-slate-50 text-slate-600 hover:bg-slate-300 ease-in-out duration-300 border-slate-100"
-            onClick={handleNotStartedTodosCards}
-          >
-            Not started Cards
-          </button>
+          />
+          <DashboardButton
+            icon={<RxCross2 />}
+            name={"Not started todos"}
+            onClick={handleNotStartedTodosList}
+          />
         </div>
       </div>
     </>
