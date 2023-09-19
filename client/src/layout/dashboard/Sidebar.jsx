@@ -74,7 +74,7 @@ const Sidebar = ({
           <div className="flex justify-between items-center gap-3 px-6 py-2">
             <h1 className="text-lg">Grid View</h1>
             <div>
-              <IoGridOutline className="text-lg" />
+              <IoGridOutline />
             </div>
           </div>
           <div className="flex flex-col justify-between gap-1">
