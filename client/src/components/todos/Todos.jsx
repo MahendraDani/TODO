@@ -8,6 +8,7 @@ import InProgressTodos from "./status/lists/InProgress";
 import CompletedCards from "./status/cards/CompletedCards";
 import InProgressCards from "./status/cards/InProgressCards";
 import NotStartedCards from "./status/cards/NotStartedCards";
+import Rightbar from "../../layout/dashboard/Rightbar";
 
 const GetTodo = ({
   showTodoList,
@@ -96,6 +97,7 @@ const GetTodo = ({
           handleNotStartedTodosList={handleNotStartedTodosList}
         />
       )}
+      <Rightbar todos={todos} />
     </div>
   );
 };

@@ -1,11 +1,13 @@
 import React from "react";
 
-const Rightbar = () => {
+const Rightbar = ({ todos }) => {
   return (
     <>
-      <div className="w-64 fixed right-5 top-[4.7rem] bottom-3 bg-slate-50 rounded-md">
-        Rightbar
-      </div>
+      {todos.length === 0 ? null : (
+        <div className="w-64 fixed right-5 top-[4.7rem] bottom-3 bg-slate-50 rounded-md">
+          Rightbar
+        </div>
+      )}
     </>
   );
 };

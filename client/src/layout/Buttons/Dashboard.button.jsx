@@ -1,6 +1,6 @@
 import React from "react";
 
-const DashboardButton = ({ icon, name, onClick }) => {
+const DashboardButton = ({ icon, name, onClick, numberOfTodos }) => {
   return (
     <div className="w-full">
       <button
@@ -8,7 +8,11 @@ const DashboardButton = ({ icon, name, onClick }) => {
         onClick={onClick}
       >
         <div>{icon}</div>
-        <p>{name}</p>
+        <div>
+          <div className="flex justify-start items-center gap-1">
+            <p>{name}</p>
+          </div>
+        </div>
       </button>
     </div>
   );

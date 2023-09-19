@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DashboardButton from "../Buttons/Dashboard.button";
 import { MdDone } from "react-icons/md";
 import { LiaTasksSolid } from "react-icons/lia";
@@ -21,7 +21,7 @@ const Sidebar = ({
   return (
     <>
       {/* #83C5BE */}
-      <div className="w-64 border-2 border-slate-200 bg-slate-50 fixed top-3 left-3 bottom-3 shadow-md rounded-sm purple text-slate-700 font-medium flex flex-col justify-start items-start gap-8">
+      <div className=" w-64 border-2 border-slate-200 bg-slate-50 fixed top-3 left-3 bottom-3 shadow-md rounded-sm purple text-slate-700 font-medium flex flex-col justify-start items-start gap-8">
         <section className="w-full">
           <div className="text-center">
             <p className="text-2xl font-extrabold text-slate-800 my-4">TODOS</p>
@@ -55,17 +55,17 @@ const Sidebar = ({
             />
             <DashboardButton
               icon={<MdDone />}
-              name={"Completed todos"}
+              name={"Completed"}
               onClick={handleCompletedTodosList}
             />
             <DashboardButton
               icon={<BiLoaderCircle />}
-              name={"In progress todos"}
+              name={"In progress"}
               onClick={handleInProgressTodosList}
             />
             <DashboardButton
               icon={<RxCross2 />}
-              name={"Not started todos"}
+              name={"Not started"}
               onClick={handleNotStartedTodosList}
             />
           </div>
@@ -85,17 +85,17 @@ const Sidebar = ({
             />
             <DashboardButton
               icon={<MdDone />}
-              name={"Completed todos"}
+              name={"Completed"}
               onClick={handleCompletedTodosCards}
             />
             <DashboardButton
               icon={<BiLoaderCircle />}
-              name={"In progress todos"}
+              name={"In progress"}
               onClick={handleInProgressTodosCards}
             />
             <DashboardButton
               icon={<RxCross2 />}
-              name={"Not started todos"}
+              name={"Not started"}
               onClick={handleNotStartedTodosCards}
             />
           </div>
