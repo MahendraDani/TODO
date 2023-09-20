@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
@@ -6,48 +6,79 @@ import { MdNumbers } from "react-icons/md";
 import DeleteTodoWarning from "./delete/DeleteTodoWarning";
 import UpdateTodo from "./update/UpdateTodo";
 import { IoGridOutline } from "react-icons/io5";
-import CreateTodos from "./create/CreateTodos";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import ReactPaginate from "react-paginate";
 
 const TodoList = ({ todos, handleTodoCards }) => {
   const [selectedTodoId, setSelectedTodoId] = useState("");
   const COMPLETED = "completed";
   const NOT_STARTED = "not started";
   const IN_PROGRESS = "in progress";
-  const [showCreateTodoModal, setShowCreateTodoModal] = useState(false);
 
-  const handleShowCreateTodoModal = () => {
-    setShowCreateTodoModal(true);
+  const [pageNumber, setPageNumber] = useState(0);
+  const todosPerPage = 8;
+  const pagesVisited = pageNumber * todosPerPage;
+  const pageCount = Math.ceil(todos.length / todosPerPage);
+  const displayTodos = todos
+    .slice(pagesVisited, pagesVisited + todosPerPage)
+    .map((todo, index) => {
+      return (
+        <div
+          key={index}
+          onClick={() => {
+            setSelectedTodoId(todo._id);
+          }}
+          className={`flex flex-row justify-start items-center ${
+            index == 0
+              ? `border-t-[1.6px] border-b-[1.6px] hover:border-t-[1.6px] hover:border-slate-50`
+              : `border-b-[1.6px]`
+          }  p-2 gap-2 border-slate-50 even:bg-slate-50 hover:bg-slate-200 ease-in duration-200 cursor-default`}
+        >
+          <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
+            {index + 1}
+          </div>
+          <div className="max-w-[35rem] min-w-[35rem] ">
+            <h2 className="flex justify-start items-center text-slate-600 mb-1 gap-2 ">
+              <div>{todo.title}</div>
+              <div
+                className={`font-normal w-2 h-2 rounded-full text-sm ${
+                  todo.status === COMPLETED
+                    ? "bg-green-400"
+                    : null || todo.status === NOT_STARTED
+                    ? "bg-red-400"
+                    : null || todo.status === IN_PROGRESS
+                    ? "bg-yellow-400"
+                    : null
+                }`}
+              ></div>
+            </h2>
+            <p className=" text-slate-400 mr-2 text-sm ">{todo.description}</p>
+          </div>
+          <p className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-400 text-sm">
+            {todo.createdOn}
+          </p>
+          <p className="max-w-[6rem] min-w-[6rem] text-slate-400 text-sm">
+            {todo.createdAt}
+          </p>
+
+          <div className="grid place-content-center min-w-[2rem] max-w-[2rem] pr-7">
+            <UpdateTodo todoId={selectedTodoId} todos={todos} />
+          </div>
+          <div>
+            <div className="text-sm max-w-[2rem] min-w-[2rem]">
+              <DeleteTodoWarning todoId={selectedTodoId} />
+            </div>
+          </div>
+        </div>
+      );
+    });
+
+  const onPageChange = ({ selected }) => {
+    setPageNumber(selected);
   };
-
-  const closeModal = () => {
-    showCreateTodoModal ? setShowCreateTodoModal(false) : null;
-  };
-
-  return todos.length === 0 ? (
-    <div className="h-[80vh] grid place-content-center">
-      <div className="flex flex-col gap-3 justify-center items-center">
-        <div className="text-center">
-          <h2 className="text-2xl text-slate-700">
-            Looks like you don't have any{" "}
-            <span className="text-purple-400">todos!</span>
-          </h2>
-          <h2 className="text-2xl text-slate-700">Create your first todo!</h2>
-        </div>
-        <div className=" grid place-items-center">
-          <button
-            className="border-2 border-gray-800 px-5 text-md text-gray-800 rounded-sm hover:bg-gray-800 hover:text-slate-200 ease-in duration-300 font-normal"
-            onClick={handleShowCreateTodoModal}
-          >
-            Create Todos
-          </button>
-        </div>
-        <div>
-          {showCreateTodoModal && <CreateTodos closeModal={closeModal} />}
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div className="px-4">
+  // Main component here
+  return (
+    <div className="pl-2">
       <section
         className={`${
           todos.length === 0 ? "hidden" : "flex"
@@ -62,7 +93,7 @@ const TodoList = ({ todos, handleTodoCards }) => {
             />
           </div>
         </div>
-        <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
+        <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-100 gap-2">
           <div className="min-w-[2rem] text-center">
             <MdNumbers className="ml-2 text-xl text-slate-800" />
           </div>
@@ -79,59 +110,30 @@ const TodoList = ({ todos, handleTodoCards }) => {
           <div className="max-w-[2rem] min-w-[2rem]"></div>
         </div>
         <div>
-          {todos.map((todo, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => {
-                  setSelectedTodoId(todo._id);
-                }}
-                className={`flex flex-row justify-start items-center ${
-                  index == 0
-                    ? `border-t-[1.6px] border-b-[1.6px] hover:border-t-[1.6px] hover:border-slate-50`
-                    : `border-b-[1.6px]`
-                }  p-2 gap-2 border-slate-50 hover:bg-slate-200 ease-in duration-200 cursor-default odd:bg-slate-50`}
-              >
-                <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
-                  {index + 1}
-                </div>
-                <div className="max-w-[35rem] min-w-[35rem] ">
-                  <h2 className="flex justify-start items-center text-slate-600 mb-1 gap-2 ">
-                    <div>{todo.title}</div>
-                    <div
-                      className={`font-normal w-2 h-2 rounded-full text-sm ${
-                        todo.status === COMPLETED
-                          ? "bg-green-400"
-                          : null || todo.status === NOT_STARTED
-                          ? "bg-red-400"
-                          : null || todo.status === IN_PROGRESS
-                          ? "bg-yellow-400"
-                          : null
-                      }`}
-                    ></div>
-                  </h2>
-                  <p className=" text-slate-400 mr-2 text-sm ">
-                    {todo.description}
-                  </p>
-                </div>
-                <p className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-400 text-sm">
-                  {todo.createdOn}
-                </p>
-                <p className="max-w-[6rem] min-w-[6rem] text-slate-400 text-sm">
-                  {todo.createdAt}
-                </p>
-
-                <div className="grid place-content-center min-w-[2rem] max-w-[2rem] pr-7">
-                  <UpdateTodo todoId={selectedTodoId} todos={todos} />
-                </div>
+          <div>
+            <div className="relative">{displayTodos}</div>
+            <ReactPaginate
+              previousLabel={
                 <div>
-                  <div className="text-sm max-w-[2rem] min-w-[2rem]">
-                    <DeleteTodoWarning todoId={selectedTodoId} />
-                  </div>
+                  <BsArrowLeft />
                 </div>
-              </div>
-            );
-          })}
+              }
+              nextLabel={
+                <div>
+                  <BsArrowRight />
+                </div>
+              }
+              pageCount={pageCount}
+              onPageChange={onPageChange}
+              containerClassName={
+                "absolute bottom-5 flex justify-center items-center gap-1"
+              }
+              previousLinkClassName=""
+              nextLinkClassName=""
+              activeLinkClassName="bg-purple-200"
+              pageLinkClassName="px-3 py-1 bg-slate-100 hover:bg-slate-200 ease-in duration-100"
+            />
+          </div>
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Pie, PolarArea } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 
 const Rightbar = ({ todos }) => {
   const [numberOfCompletedTodos, setNumberOfCompletedTodos] = useState(0);
@@ -49,11 +49,10 @@ const Rightbar = ({ todos }) => {
       },
     ],
   };
-
   return (
     <>
       {todos.length === 0 ? null : (
-        <div className="w-64 fixed right-5 top-[4.7rem] bottom-3 border-[1.3px] rounded-md p-4">
+        <div className="w-64 bg-slate-50 fixed right-5 top-[4.7rem] bottom-3 border-[1.3px] border-slate-200 rounded-sm -z-10 p-4">
           <div className="flex flex-col justify-between items-center gap-6">
             <h3 className="text-xl text-slate-700">My Stats</h3>
             <div>

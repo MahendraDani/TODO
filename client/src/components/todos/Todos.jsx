@@ -41,8 +41,8 @@ const GetTodo = ({
     const response = await axios.get("http://localhost:3000/users/todos", {
       headers,
     });
-    const TODOS = response.data;
-    const REVERSE_TODOS = TODOS.reverse();
+    const TODOS = await response.data;
+    const REVERSE_TODOS = await TODOS.reverse();
     setTodos(REVERSE_TODOS);
   };
 

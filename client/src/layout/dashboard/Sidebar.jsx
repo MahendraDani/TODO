@@ -7,6 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 import { IoAddSharp } from "react-icons/io5";
 import { BsList } from "react-icons/bs";
 import { IoGridOutline } from "react-icons/io5";
+
 const Sidebar = ({
   createTodo,
   handleTodoList,
@@ -21,7 +22,7 @@ const Sidebar = ({
   return (
     <>
       {/* #83C5BE */}
-      <div className=" w-64 border-2 border-slate-200 bg-slate-50 fixed top-3 left-3 bottom-3 shadow-md rounded-sm purple text-slate-700 font-medium flex flex-col justify-start items-start gap-8">
+      <div className=" w-64 border-2 border-slate-100 bg-slate-50 fixed top-3 left-3 bottom-3 rounded-sm purple text-slate-700 font-medium flex flex-col justify-start items-start gap-8">
         <section className="w-full">
           <div className="text-center">
             <p className="text-2xl font-extrabold text-slate-800 my-4">TODOS</p>
