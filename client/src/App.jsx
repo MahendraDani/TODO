@@ -2,7 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
+ChartJS.register(ArcElement, Tooltip);
 function App() {
   return (
     <>

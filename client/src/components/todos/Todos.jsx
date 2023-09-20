@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import TodoCards from "./TodoCards";
 import CompletedTodos from "./status/lists/Completed";
@@ -46,7 +46,10 @@ const GetTodo = ({
     setTodos(REVERSE_TODOS);
   };
 
-  useState(getTodosOfUser, []);
+  // useState(getTodosOfUser, []);
+  useEffect(() => {
+    getTodosOfUser();
+  }, []);
   return (
     <div>
       {showTodoCards && (
