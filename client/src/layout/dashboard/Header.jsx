@@ -46,7 +46,7 @@ const Header = (props) => {
           </div>
         </button>
         {dropdown && (
-          <div className="w-36 absolute top-12 right-4 bg-white shadow-lg rounded-sm">
+          <div className=" z-50 w-36 absolute top-12 right-4 bg-white shadow-lg rounded-sm">
             <div
               className="flex justify-evenly items-center px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white ease-in duration-300"
               onClick={handleLogout}

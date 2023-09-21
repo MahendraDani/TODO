@@ -50,9 +50,19 @@ const signupController = async (req, res) => {
 
         USERS.push(newUser);
         fs.writeFileSync(USERS_DIRECTORY, JSON.stringify(USERS));
+        const token = jwt.sign(
+          {
+            id: newUser.id,
+            createdAt: newUser.createdAt,
+          },
+          process.env.JWT_SECRET,
+          { expiresIn: "3d" }
+        );
         res.status(statusCodes.SUCCESS).json({
           message: "User signed up successfully",
-          id: newUser.id,
+          userId: newUser.id,
+          fullName: newUser.fullName,
+          accessToken: token,
         });
       }
     }

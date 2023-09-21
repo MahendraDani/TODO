@@ -26,8 +26,13 @@ const Signup = () => {
           }
         );
 
-        const userId = response.data.id;
-        navigate("/login");
+        const token = response.data.accessToken;
+        const userFullName = response.data.fullName;
+        const userId = response.data.userId;
+        localStorage.setItem("userFullName", userFullName);
+        localStorage.setItem("token", token);
+        localStorage.setItem("userId", userId);
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
