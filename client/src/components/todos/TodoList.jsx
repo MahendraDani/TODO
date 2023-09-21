@@ -128,9 +128,7 @@ const TodoList = ({ todos, handleTodoCards }) => {
               containerClassName={
                 "absolute bottom-5 flex justify-center items-center gap-1"
               }
-              previousLinkClassName=""
-              nextLinkClassName=""
-              activeLinkClassName="bg-purple-200"
+              activeLinkClassName="bg-slate-300"
               pageLinkClassName="px-3 py-1 bg-slate-100 hover:bg-slate-200 ease-in duration-100"
             />
           </div>

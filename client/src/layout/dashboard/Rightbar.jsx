@@ -31,8 +31,9 @@ const Rightbar = ({ todos }) => {
   useEffect(() => {
     handleNumberOfTodos();
   }, [todos]);
+
   const PieChartdata = {
-    labels: ["Completed todos", "In progress todos", "Not started todos"],
+    labels: ["Completed", "Ongoing", "Not started"],
     datasets: [
       {
         data: [
@@ -45,19 +46,22 @@ const Rightbar = ({ todos }) => {
           "rgb(253 224 71)",
           "rgb(248 113 113 )",
         ],
-        borderWidth: 0.2,
+        borderWidth: 0,
       },
     ],
+  };
+  const options = {
+    labels: {
+      position: "bottom",
+    },
   };
   return (
     <>
       {todos.length === 0 ? null : (
-        <div className="w-64 bg-slate-50 fixed right-5 top-[4.7rem] bottom-3 border-[1.3px] border-slate-200 rounded-sm -z-10 p-4">
+        <div className="w-64 bg-slate-50 fixed right-5 top-[4.7rem] bottom-3 border-[1.3px] border-slate-200 rounded-sm p-4">
           <div className="flex flex-col justify-between items-center gap-6">
-            <h3 className="text-xl text-slate-700">My Stats</h3>
-            <div>
-              <Pie data={PieChartdata} className="w-[14rem]"></Pie>
-            </div>
+            <h3 className="text-xl text-slate-700 z-30">My Stats</h3>
+            <Pie data={PieChartdata} options={options} />
           </div>
         </div>
       )}

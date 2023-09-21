@@ -60,7 +60,7 @@ const TodoCards = ({ todos, handleTodoList }) => {
             />
           </div>
         </div>
-        <div className="w-[70rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
+        <div className="w-[60rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
           {todos.map((todo, index) => {
             return (
               <section
