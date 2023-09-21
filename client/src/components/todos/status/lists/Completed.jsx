@@ -55,9 +55,7 @@ const CompletedTodos = ({ todos, status, handleCompletedTodosCards }) => {
           </div>
           <div className="max-w-[35rem] min-w-[35rem] ">
             <h2 className="flex justify-start items-center text-slate-600 mb-1 gap-2 ">
-              <div className="hover:text-sky-400 hover:cursor-pointer">
-                {todo.title}
-              </div>
+              <div>{todo.title}</div>
               <div
                 className={`font-normal w-2 h-2 rounded-full text-sm ${
                   todo.status === COMPLETED

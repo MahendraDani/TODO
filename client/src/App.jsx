@@ -4,7 +4,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip);
 
 function App() {
   return (
