@@ -78,7 +78,7 @@ const TodoList = ({ todos, handleTodoCards }) => {
   };
   // Main component here
   return (
-    <div className="pl-2">
+    <div className="px-4">
       <section
         className={`${
           todos.length === 0 ? "hidden" : "flex"
@@ -93,7 +93,7 @@ const TodoList = ({ todos, handleTodoCards }) => {
             />
           </div>
         </div>
-        <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-100 gap-2">
+        <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
           <div className="min-w-[2rem] text-center">
             <MdNumbers className="ml-2 text-xl text-slate-800" />
           </div>

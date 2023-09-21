@@ -48,7 +48,7 @@ const CompletedTodos = ({ todos, status, handleCompletedTodosCards }) => {
             index == 0
               ? `border-t-[1.6px] border-b-[1.6px] hover:border-t-[1.6px] hover:border-slate-50`
               : `border-b-[1.6px]`
-          }  p-2 gap-2 border-slate-50 hover:bg-slate-200 ease-in duration-200 cursor-default odd:bg-slate-50`}
+          }  p-2 gap-2 border-slate-50 hover:bg-slate-200 ease-in duration-200 cursor-default even:bg-slate-50`}
         >
           <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
             {index + 1}
