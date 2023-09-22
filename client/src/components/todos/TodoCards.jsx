@@ -139,11 +139,11 @@ const TodoCards = ({ todos, handleTodoList }) => {
   ) : (
     <div className="pl-4">
       <section className="flex flex-col justify-start gap-1 items-start">
-        <div className="w-[56.5rem] flex justify-between items-center">
+        <div className="w-[57.5rem] flex justify-between items-center">
           <h1 className="text-2xl text-slate-700">MY TODOS</h1>
           <div>
             <BsList
-              className="text-xl text-slate-800 cursor-pointer"
+              className="text-2xl text-slate-800 cursor-pointer"
               onClick={handleTodoList}
             />
           </div>
@@ -151,7 +151,7 @@ const TodoCards = ({ todos, handleTodoList }) => {
         <div>
           <div>
             <div className="relative">
-              <div className="w-[60rem] flex flex-row flex-wrap justify-start items-start gap-6 mt-4">
+              <div className="w-[60rem] flex flex-row flex-wrap justify-start items-start gap-7 mt-4">
                 {displayTodos}
               </div>
             </div>

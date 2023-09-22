@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BiTask } from "react-icons/bi";
+import { BiCheckbox, BiSolidCheckboxChecked, BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
@@ -14,6 +14,16 @@ const TodoList = ({ todos, handleTodoCards }) => {
   const COMPLETED = "completed";
   const NOT_STARTED = "not started";
   const IN_PROGRESS = "in progress";
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleIsChecked = () => {
+    if (isChecked) {
+      setIsChecked(false);
+    } else {
+      setIsChecked(true);
+    }
+  };
 
   const [pageNumber, setPageNumber] = useState(0);
   const todosPerPage = 8;
@@ -35,7 +45,24 @@ const TodoList = ({ todos, handleTodoCards }) => {
           }  p-2 gap-2 border-slate-50 even:bg-slate-50 hover:bg-slate-200 ease-in duration-200 cursor-default`}
         >
           <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
-            {index + 1}
+            <label>
+              <BiSolidCheckboxChecked
+                className={`${
+                  isChecked === false ? "hidden" : "text-xl cursor-pointer"
+                }`}
+                onClick={handleIsChecked}
+              />
+              <BiCheckbox
+                className={`${
+                  isChecked === true ? "hidden" : "text-xl cursor-pointer"
+                }`}
+                onClick={() => {
+                  selectedTodoId === todo._id
+                    ? setIsChecked(true)
+                    : setIsChecked(false);
+                }}
+              />
+            </label>
           </div>
           <div className="max-w-[35rem] min-w-[35rem] ">
             <h2 className="flex justify-start items-center text-slate-600 mb-1 gap-2 ">
