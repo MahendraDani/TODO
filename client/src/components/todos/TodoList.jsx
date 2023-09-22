@@ -49,6 +49,7 @@ const TodoList = ({ todos, handleTodoCards }) => {
         >
           <div className="min-w-[2.5rem] text-center text-slate-400 grid place-content-center">
             <label
+              className="cursor-pointer"
               onClick={() => {
                 toggleTodoChecked(todo._id);
               }}

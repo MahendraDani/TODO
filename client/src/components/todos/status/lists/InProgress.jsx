@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BiTask } from "react-icons/bi";
+import { BiCheckbox, BiSolidCheckboxChecked, BiTask } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { MdNumbers } from "react-icons/md";
@@ -36,10 +36,22 @@ const InProgressTodos = ({ todos, status, handleInProgressTodosCards }) => {
   const todosPerPage = 8;
   const pagesVisited = pageNumber * todosPerPage;
   const pageCount = Math.ceil(InProgressTodos.length / todosPerPage);
+
+  const [checkedTodos, setCheckedTodos] = useState({});
+  const [isTodoChecked, setIsTodoChecked] = useState(false);
+
+  const toggleTodoChecked = (todoId) => {
+    setCheckedTodos((prevCheckedTodos) => ({
+      ...prevCheckedTodos,
+      [todoId]: !prevCheckedTodos[todoId],
+    }));
+  };
+
   const displayTodos = InProgressTodos.slice(
     pagesVisited,
     pagesVisited + todosPerPage
   ).map((todo, index) => {
+    const isTodoChecked = checkedTodos[todo._id] || false;
     return todo.status === status ? (
       <div
         key={index}
@@ -52,12 +64,35 @@ const InProgressTodos = ({ todos, status, handleInProgressTodosCards }) => {
             : `border-b-[1.6px]`
         }  p-2 gap-2 border-slate-50 hover:bg-slate-200 ease-in duration-200 cursor-default odd:bg-slate-50`}
       >
-        <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
-          {index + 1}
+        <div className="min-w-[2.5rem] text-center text-slate-400 grid place-content-center">
+          <label
+            className="cursor-pointer"
+            onClick={() => {
+              toggleTodoChecked(todo._id);
+            }}
+          >
+            {!isTodoChecked ? (
+              <BiCheckbox
+                className="text-xl"
+                onClick={() => {
+                  setIsTodoChecked(!isTodoChecked);
+                }}
+              />
+            ) : (
+              <BiSolidCheckboxChecked
+                className="text-xl"
+                onClick={() => {
+                  setIsTodoChecked(!isTodoChecked);
+                }}
+              />
+            )}
+          </label>
         </div>
         <div className="max-w-[35rem] min-w-[35rem] ">
           <h2 className="flex justify-start items-center text-slate-600 mb-1 gap-2 ">
-            <div>{todo.title}</div>
+            <div className={`${isTodoChecked ? "line-through" : ""}`}>
+              {todo.title}
+            </div>
             <div
               className={`font-normal w-2 h-2 rounded-full text-sm ${
                 todo.status === COMPLETED
@@ -70,7 +105,13 @@ const InProgressTodos = ({ todos, status, handleInProgressTodosCards }) => {
               }`}
             ></div>
           </h2>
-          <p className=" text-slate-400 mr-2 text-sm">{todo.description}</p>
+          <p
+            className={`${
+              isTodoChecked ? "line-through" : ""
+            } text-slate-400 mr-2 text-sm`}
+          >
+            {todo.description}
+          </p>
         </div>
         <p className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-400 text-sm">
           {todo.createdOn}
