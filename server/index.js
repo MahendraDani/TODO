@@ -7,10 +7,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const { validateUser } = require("./middlewares/validateUser");
+const { connectDB } = require("./config/connectDB");
 
 app.use(bodyParser.json());
 app.use(cors());
 
+connectDB();
 //Routes
 app.use("/", require("./routes/index")); // home route
 app.use("/users", require("./routes/users/auth")); // login and signup user

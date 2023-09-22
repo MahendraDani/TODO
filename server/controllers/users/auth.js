@@ -10,6 +10,8 @@ const {
 } = require("../../constants/globals/getIndexFromEmail");
 const { setTime } = require("../../constants/globals/time");
 
+const { User } = require("../../models/users/Users");
+
 const USERS_DIRECTORY = path.join(
   __dirname,
   "..",
@@ -26,46 +28,43 @@ const signupController = async (req, res) => {
       res
         .status(statusCodes.BAD_REQUEST)
         .json({ message: "All fields are required!" });
-    } else {
-      const data = fs.readFileSync(USERS_DIRECTORY, "utf8");
-      let USERS = await JSON.parse(data);
-
-      const userIndex = getIndexFromEmail(USERS, email);
-      if (userIndex !== -1) {
-        res
-          .status(statusCodes.UNAUTHORIZED)
-          .json({ message: "User is already signed up!" });
-      } else {
-        const hashedPassword = bcrypt.hashSync(password, 10);
-        const newUser = {
-          id: uuid(),
-          firstName: firstName,
-          lastName: lastName,
-          fullName: `${firstName} ${lastName}`,
-          email: email,
-          password: hashedPassword,
-          createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
-          createdAt: setTime(),
-        };
-
-        USERS.push(newUser);
-        fs.writeFileSync(USERS_DIRECTORY, JSON.stringify(USERS));
-        const token = jwt.sign(
-          {
-            id: newUser.id,
-            createdAt: newUser.createdAt,
-          },
-          process.env.JWT_SECRET,
-          { expiresIn: "3d" }
-        );
-        res.status(statusCodes.SUCCESS).json({
-          message: "User signed up successfully",
-          userId: newUser.id,
-          fullName: newUser.fullName,
-          accessToken: token,
-        });
-      }
+      return;
     }
+    // check if user with an email already exists in data
+    const isExistingUser = await User.findOne({ email });
+    if (isExistingUser) {
+      res
+        .status(statusCodes.UNAUTHORIZED)
+        .json({ message: "User is already signed up!" });
+      return;
+    }
+    const hashedPassword = bcrypt.hashSync(password, 10);
+
+    const newUser = new User({
+      id: uuid(),
+      firstName: firstName,
+      lastName: lastName,
+      fullName: `${firstName} ${lastName}`,
+      email: email,
+      password: hashedPassword,
+      createdOn: format(new Date(), "dd-MM-yyyy").split("-").join("."),
+      createdAt: setTime(),
+    });
+    await newUser.save();
+    const token = jwt.sign(
+      {
+        id: newUser.id,
+        createdAt: newUser.createdAt,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "3d" }
+    );
+    res.status(statusCodes.SUCCESS).json({
+      message: "User signed up successfully",
+      userId: newUser.id,
+      fullName: newUser.fullName,
+      accessToken: token,
+    });
   } catch (error) {
     console.log(error);
   }
