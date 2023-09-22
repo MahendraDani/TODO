@@ -77,45 +77,39 @@ const loginController = async (req, res) => {
       res
         .status(statusCodes.BAD_REQUEST)
         .json({ message: "All fields are required!" });
-    } else {
-      // check if user exists!
-      const data = fs.readFileSync(USERS_DIRECTORY, "utf-8");
-      let USERS = await JSON.parse(data);
-
-      const userIndex = getIndexFromEmail(USERS, email);
-      if (userIndex === -1) {
+      return;
+    }
+    await User.findOne({ email }).then((user) => {
+      if (!user) {
         res
           .status(statusCodes.UNAUTHORIZED)
           .json({ message: "Email or password invalid" });
-      } else {
-        // check if the password is valid for the email at userIndex
-        const userExists = bcrypt.compareSync(
-          password,
-          USERS[userIndex].password
-        );
-        if (!userExists) {
+        return;
+      }
+
+      bcrypt.compare(password, user.password).then((isPasswordMatch) => {
+        if (!isPasswordMatch) {
           res
             .status(statusCodes.UNAUTHORIZED)
             .json({ message: "Invalid password!" });
-        } else {
-          // sign jwt here
-          const token = jwt.sign(
-            {
-              id: USERS[userIndex].id,
-              createdAt: USERS[userIndex].createdAt,
-            },
-            process.env.JWT_SECRET,
-            { expiresIn: "3d" }
-          );
-          res.status(statusCodes.SUCCESS).json({
-            message: "User logged in successfully",
-            accessToken: token,
-            userId: USERS[userIndex].id,
-            user: USERS[userIndex],
-          });
+          return;
         }
-      }
-    }
+        const token = jwt.sign(
+          {
+            id: user.id,
+            createdAt: user.createdAt,
+          },
+          process.env.JWT_SECRET,
+          { expiresIn: "3d" }
+        );
+        res.status(statusCodes.SUCCESS).json({
+          message: "User logged in successfully",
+          accessToken: token,
+          userId: user.id,
+          user: user,
+        });
+      });
+    });
   } catch (error) {
     console.log(error);
   }
