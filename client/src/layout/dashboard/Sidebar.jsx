@@ -33,11 +33,13 @@ const Sidebar = ({
             <div className="flex justify-start items-center px-6">
               <h1 className="text-lg">Create Todos</h1>
             </div>
-            <DashboardButton
-              icon={<IoAddSharp />}
-              name={"New todo"}
-              onClick={createTodo}
-            />
+            <div className="bg-slate-200 border-slate-200">
+              <DashboardButton
+                icon={<IoAddSharp />}
+                name={"New todo"}
+                onClick={createTodo}
+              />
+            </div>
           </div>
         </section>
 
