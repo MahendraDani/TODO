@@ -56,7 +56,7 @@ const TodoList = ({ todos, handleTodoCards }) => {
               {!isTodoChecked ? (
                 <BiCheckbox
                   className="text-xl"
-                  onClick={(e) => {
+                  onClick={() => {
                     setIsTodoChecked(!isTodoChecked);
                   }}
                 />
