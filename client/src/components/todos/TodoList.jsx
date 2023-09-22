@@ -15,23 +15,26 @@ const TodoList = ({ todos, handleTodoCards }) => {
   const NOT_STARTED = "not started";
   const IN_PROGRESS = "in progress";
 
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleIsChecked = () => {
-    if (isChecked) {
-      setIsChecked(false);
-    } else {
-      setIsChecked(true);
-    }
-  };
-
   const [pageNumber, setPageNumber] = useState(0);
   const todosPerPage = 8;
   const pagesVisited = pageNumber * todosPerPage;
   const pageCount = Math.ceil(todos.length / todosPerPage);
+
+  const [isTodoChecked, setIsTodoChecked] = useState(false);
+
+  const [checkedTodos, setCheckedTodos] = useState({});
+
+  const toggleTodoChecked = (todoId) => {
+    setCheckedTodos((prevCheckedTodos) => ({
+      ...prevCheckedTodos,
+      [todoId]: !prevCheckedTodos[todoId],
+    }));
+  };
+
   const displayTodos = todos
     .slice(pagesVisited, pagesVisited + todosPerPage)
     .map((todo, index) => {
+      const isTodoChecked = checkedTodos[todo._id] || false;
       return (
         <div
           key={index}
@@ -44,29 +47,34 @@ const TodoList = ({ todos, handleTodoCards }) => {
               : `border-b-[1.6px]`
           }  p-2 gap-2 border-slate-50 even:bg-slate-50 hover:bg-slate-200 ease-in duration-200 cursor-default`}
         >
-          <div className="min-w-[2.5rem] max-w-[2rem] text-center text-slate-400">
-            <label>
-              <BiSolidCheckboxChecked
-                className={`${
-                  isChecked === false ? "hidden" : "text-xl cursor-pointer"
-                }`}
-                onClick={handleIsChecked}
-              />
-              <BiCheckbox
-                className={`${
-                  isChecked === true ? "hidden" : "text-xl cursor-pointer"
-                }`}
-                onClick={() => {
-                  selectedTodoId === todo._id
-                    ? setIsChecked(true)
-                    : setIsChecked(false);
-                }}
-              />
+          <div className="min-w-[2.5rem] text-center text-slate-400 grid place-content-center">
+            <label
+              onClick={() => {
+                toggleTodoChecked(todo._id);
+              }}
+            >
+              {!isTodoChecked ? (
+                <BiCheckbox
+                  className="text-xl"
+                  onClick={(e) => {
+                    setIsTodoChecked(!isTodoChecked);
+                  }}
+                />
+              ) : (
+                <BiSolidCheckboxChecked
+                  className="text-xl"
+                  onClick={() => {
+                    setIsTodoChecked(!isTodoChecked);
+                  }}
+                />
+              )}
             </label>
           </div>
           <div className="max-w-[35rem] min-w-[35rem] ">
             <h2 className="flex justify-start items-center text-slate-600 mb-1 gap-2 ">
-              <div>{todo.title}</div>
+              <div className={`${isTodoChecked ? "line-through" : ""}`}>
+                {todo.title}
+              </div>
               <div
                 className={`font-normal w-2 h-2 rounded-full text-sm ${
                   todo.status === COMPLETED
@@ -79,7 +87,13 @@ const TodoList = ({ todos, handleTodoCards }) => {
                 }`}
               ></div>
             </h2>
-            <p className=" text-slate-400 mr-2 text-sm ">{todo.description}</p>
+            <p
+              className={`${
+                isTodoChecked ? "line-through" : ""
+              } text-slate-400 mr-2 text-sm`}
+            >
+              {todo.description}
+            </p>
           </div>
           <p className="max-w-[6rem] min-w-[6rem] mr-2 text-slate-400 text-sm">
             {todo.createdOn}
@@ -121,7 +135,7 @@ const TodoList = ({ todos, handleTodoCards }) => {
           </div>
         </div>
         <div className="flex flex-row justify-between items-center p-2 -mb-4 bg-slate-200 gap-2">
-          <div className="min-w-[2rem] text-center">
+          <div className="min-w-[2rem] grid place-content-center ">
             <MdNumbers className="ml-2 text-xl text-slate-800" />
           </div>
           <div className="min-w-[35.5rem] pl-2 text-lg font-semibold text-[#2b2d42]">

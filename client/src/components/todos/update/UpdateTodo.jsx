@@ -29,7 +29,6 @@ const UpdateTodo = ({ todoId, todos }) => {
   const handleUpdateTodo = async (e) => {
     try {
       e.preventDefault();
-      console.log(todos.reverse());
       const response = await axios.put(
         `http://localhost:3000/todos/update/${todoId}`,
         {
