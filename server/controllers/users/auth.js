@@ -1,25 +1,10 @@
-const fs = require("fs");
-const path = require("path");
 const { format } = require("date-fns");
 const { statusCodes } = require("../../constants/globals/statuscodes");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const {
-  getIndexFromEmail,
-} = require("../../constants/globals/getIndexFromEmail");
 const { setTime } = require("../../constants/globals/time");
-
 const { User } = require("../../models/users/Users");
-
-const USERS_DIRECTORY = path.join(
-  __dirname,
-  "..",
-  "..",
-  "models",
-  "users",
-  "users.json"
-);
 
 const signupController = async (req, res) => {
   try {
