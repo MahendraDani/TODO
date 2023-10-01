@@ -1,20 +1,10 @@
-const fs = require("fs");
-const path = require("path");
+const { Todo } = require("../../models/todos/Todos");
 const { statusCodes } = require("../../constants/globals/statuscodes");
-const TODOS_DIRECTORY = path.join(
-  __dirname,
-  "..",
-  "..",
-  "models",
-  "todos",
-  "todos.json"
-);
 
 const getAllTodos = async (req, res) => {
   try {
-    const data = fs.readFileSync(TODOS_DIRECTORY, "utf8");
-    const TODOS = await JSON.parse(data);
-    res.status(statusCodes.SUCCESS).json(TODOS);
+    const todos = await Todo.find();
+    res.status(statusCodes.SUCCESS).json(todos);
   } catch (error) {
     console.log(error);
   }
