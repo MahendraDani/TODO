@@ -30,6 +30,7 @@ app.use(
   validateUser,
   require("./routes/todos/updateTodoDescription")
 );
+app.use("/todos", validateUser, require("./routes/todos/updateTodoTitle"));
 
 app.use("/users", validateUser, require("./routes/notes/createNote")); // create a new note
 app.use("/users", validateUser, require("./routes/notes/getNote")); // get a note by its id
