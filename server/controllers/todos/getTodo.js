@@ -1,18 +1,5 @@
-const fs = require("fs");
-const path = require("path");
 const { statusCodes } = require("../../constants/globals/statuscodes");
-const {
-  getTodoIndexFromId,
-} = require("../../constants/todos/getTodoIndexFromId");
-
-const TODOS_DIRECTORY = path.join(
-  __dirname,
-  "..",
-  "..",
-  "models",
-  "todos",
-  "todos.json"
-);
+const { Todo } = require("../../models/todos/Todos");
 
 const getTodo = async (req, res) => {
   try {
@@ -21,17 +8,17 @@ const getTodo = async (req, res) => {
       res
         .status(statusCodes.BAD_REQUEST)
         .json({ message: "Todo id is required!" });
-    } else {
-      const TODOS = await JSON.parse(fs.readFileSync(TODOS_DIRECTORY, "utf8"));
-      const todoIndex = getTodoIndexFromId(TODOS, todoId);
-      if (todoIndex === -1) {
-        res
-          .status(statusCodes.FORBIDDEN)
-          .json({ message: "Invalid or incorrect todo id!" });
-      } else {
-        res.status(statusCodes.SUCCESS).json(TODOS[todoIndex]);
-      }
+      return;
     }
+    const todo = await Todo.findOne({ todoId });
+    if (!todo) {
+      res
+        .status(statusCodes.FORBIDDEN)
+        .json({ message: "Invalid or incorrect todo id!" });
+      return;
+    }
+
+    res.status(statusCodes.SUCCESS).json(todo);
   } catch (error) {
     console.log(error);
   }

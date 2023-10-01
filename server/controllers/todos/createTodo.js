@@ -23,7 +23,7 @@ const createTodo = async (req, res) => {
       return;
     }
 
-    const user = User.findOne({ id: userId });
+    const user = await User.findOne({ id: userId });
     if (!user) {
       res.status(statusCodes.NOT_FOUND).json({ message: "User not found!" });
       return;
