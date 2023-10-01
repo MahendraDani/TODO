@@ -3,6 +3,6 @@ const {
   updateTodoDescription,
 } = require("../../controllers/todos/updateTodoDescription");
 
-router.put("/update/desc/:todoId", updateTodoDescription);
+router.put("/update/desc/:id/:todoId", updateTodoDescription);
 
 module.exports = router;
