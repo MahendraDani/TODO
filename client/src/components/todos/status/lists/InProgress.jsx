@@ -51,12 +51,12 @@ const InProgressTodos = ({ todos, status, handleInProgressTodosCards }) => {
     pagesVisited,
     pagesVisited + todosPerPage
   ).map((todo, index) => {
-    const isTodoChecked = checkedTodos[todo._id] || false;
+    const isTodoChecked = checkedTodos[todo.todoId] || false;
     return todo.status === status ? (
       <div
         key={index}
         onClick={() => {
-          setSelectedTodoId(todo._id);
+          setSelectedTodoId(todo.todoId);
         }}
         className={`flex flex-row justify-start items-center ${
           index == 0
@@ -68,7 +68,7 @@ const InProgressTodos = ({ todos, status, handleInProgressTodosCards }) => {
           <label
             className="cursor-pointer"
             onClick={() => {
-              toggleTodoChecked(todo._id);
+              toggleTodoChecked(todo.todoId);
             }}
           >
             {!isTodoChecked ? (

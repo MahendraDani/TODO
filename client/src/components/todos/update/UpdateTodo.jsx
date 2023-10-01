@@ -16,7 +16,7 @@ const UpdateTodo = ({ todoId, todos }) => {
   };
   const handleShowUpdateModal = () => {
     let selectedTodo = todos.find((todo) => {
-      if (todo._id === todoId) {
+      if (todo.todoId === todoId) {
         return todo;
       }
     });
@@ -29,8 +29,9 @@ const UpdateTodo = ({ todoId, todos }) => {
   const handleUpdateTodo = async (e) => {
     try {
       e.preventDefault();
+      const userId = localStorage.getItem("userId");
       const response = await axios.put(
-        `http://localhost:3000/todos/update/${todoId}`,
+        `http://localhost:3000/todos/update/${userId}/${todoId}`,
         {
           newTitle: newTitle,
           newDescription: newDescription,
@@ -38,7 +39,6 @@ const UpdateTodo = ({ todoId, todos }) => {
         },
         {
           headers: {
-            id: localStorage.getItem("userId"),
             authorization: localStorage.getItem("token"),
           },
         }

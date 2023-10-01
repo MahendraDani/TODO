@@ -36,11 +36,13 @@ const GetTodo = ({
     const headers = {
       "Content-Type": "Appilcation/json",
       authorization: token,
-      id: userId,
     };
-    const response = await axios.get("http://localhost:3000/users/todos", {
-      headers,
-    });
+    const response = await axios.get(
+      `http://localhost:3000/users/todos/all/${userId}`,
+      {
+        headers,
+      }
+    );
     const TODOS = await response.data;
     const REVERSE_TODOS = await TODOS.reverse();
     setTodos(REVERSE_TODOS);

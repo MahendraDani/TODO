@@ -38,7 +38,7 @@ const TodoCards = ({ todos, handleTodoList }) => {
           key={index}
           className="relative"
           onClick={() => {
-            setSelectedTodoId(todo._id);
+            setSelectedTodoId(todo.todoId);
           }}
         >
           <div>
@@ -68,7 +68,7 @@ const TodoCards = ({ todos, handleTodoList }) => {
                     <BiDotsVerticalRounded className="text-lg text-slate-600  w-fit h-fit  rounded-full hover:bg-slate-200 duration-300 ease-in p-1" />
                   </div>
                 </div>
-                {(todo._id === selectedTodoId ? showDropbox : null) && (
+                {(todo.todoId === selectedTodoId ? showDropbox : null) && (
                   <aside
                     id="dropbox"
                     className={`${
